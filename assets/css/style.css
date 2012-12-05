@@ -225,6 +225,13 @@ html {
 		}
 	}
 
+	@media screen and (min-device-pixel-ratio: 1.5) {
+		.site-header {
+			background-image: url('/assets/images/header-png@2x.png');
+			background-size: 171px 48px;
+		}
+	}
+
 	@media screen and (max-width: 960px) {
 		.site-header {
 			margin-bottom: 0;
@@ -281,6 +288,10 @@ html {
 	text-shadow: 0 1px 3px rgba(0,0,0,.7);
 	background-image: url('/assets/images/promo.jpg');
 	background-image: -webkit-linear-gradient(-45deg, rgba(0,0,0,.9), transparent 75%), url('/assets/images/promo.jpg');
+	background-image:    -moz-linear-gradient(-45deg, rgba(0,0,0,.9), transparent 75%), url('/assets/images/promo.jpg');
+	background-image:     -ms-linear-gradient(-45deg, rgba(0,0,0,.9), transparent 75%), url('/assets/images/promo.jpg');
+	background-image:      -o-linear-gradient(-45deg, rgba(0,0,0,.9), transparent 75%), url('/assets/images/promo.jpg');
+	background-image:         linear-gradient(-45deg, rgba(0,0,0,.9), transparent 75%), url('/assets/images/promo.jpg');
 	background-size: cover;
 	background-position: center;
 }
@@ -343,7 +354,13 @@ html {
 	.challenges .unavailable {
 		background-color: #fbfbfb;
 		color: #bbb;
+		cursor: not-allowed;
 	}
+
+		.challenges .unavailable * {
+			cursor: not-allowed;
+			pointer-events: none;
+		}
 
 		.challenges .unavailable a {
 			color: inherit;
@@ -356,7 +373,26 @@ html {
 			background-color: rgba(231,249,255,.85);
 			color: #00465f;
 			box-shadow: inset 0 0 0 1px rgba(163,230,255,.5), 0 2px 5px rgba(0,70,95,.1);
+			opacity: 0;
+			-webkit-transform: translateY(.5rem) scale(.975);
+			   -moz-transform: translateY(.5rem) scale(.975);
+			    -ms-transform: translateY(.5rem) scale(.975);
+			     -o-transform: translateY(.5rem) scale(.975);
+			        transform: translateY(.5rem) scale(.975);
+			-webkit-transition: .3s;
+			   -moz-transition: .3s;
+			     -o-transition: .3s;
+			        transition: .3s;
 		}
+
+			.unavailable:hover .modal {
+				opacity: 1;
+				-webkit-transform: none;
+				   -moz-transform: none;
+				    -ms-transform: none;
+				     -o-transform: none;
+				        transform: none;
+			}
 
 			.modal .challenge-title {
 				display: block;
