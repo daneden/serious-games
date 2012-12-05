@@ -1,0 +1,137 @@
+/*-----------------------------------*\
+	$RESET
+\*-----------------------------------*/
+
+* {
+	margin: 0;
+	padding: 0;
+
+	/*
+	 * Include padding & borders in width declarations for easier sizing of elements. 
+	 * More info: http://css-tricks.com/box-sizing/ (IE8+)
+	 */
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+
+	/* 
+	 * This cures a lot of headaches with positioning.
+	 * http://css-tricks.com/things-it-might-be-funuseful-to-try-the-universal-selector-on/
+	 */
+	position: relative;
+}
+
+img {
+	display: block;
+}
+
+/*-----------------------------------*\
+	$SHARED
+	Shared margins and other abstracted properties
+\*-----------------------------------*/
+
+h1, h2, h3,
+.alpha, .beta, .gamma, .mega,
+p, ul, ol, dl, table, pre, hr {
+	/*
+	 * Rems with px fallback FTW
+	 * http://snook.ca/archives/html_and_css/font-size-with-rem
+	 */
+	margin-bottom: 24px;
+	margin-bottom: 1.5rem;
+}
+
+ul, ol {
+	padding-left: 24px;
+	padding-left: 1.5rem;
+}
+
+li > ul, li > ol {
+	margin-bottom: 0;
+}
+
+/*-----------------------------------*\
+	$TYPE
+\*-----------------------------------*/
+
+h1, .alpha {
+	font-size: 48px;
+	font-size: 3rem;
+	line-height: 1;
+	font-weight: 400;
+}
+
+h2, .beta {
+	font-size: 24px;
+	font-size: 1.5rem;
+	line-height: 1;
+	font-weight: 700;
+}
+
+h3, .gamma {
+	font-size: 14px;
+	font-size: .875rem;
+	line-height: 1.7142857143;
+	font-family: proxima-nova, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-weight: 700;
+	letter-spacing: .1em;
+}
+
+/*-----------------------------------*\
+	$OBJECTS
+	If you spot a styling pattern, abstract it to its own class and put it here
+\*-----------------------------------*/
+
+/* Centering content in the page */
+/*div*/.wrap {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+/* Padding out content */
+/*div*/.island {
+	padding: 24px;
+	padding: 1.5rem;
+}
+
+/* The nav abstraction - http://csswizardry.com/2011/09/the-nav-abstraction/ */
+.nav {
+	list-style: none;
+}
+
+	.nav li, .nav a {
+		display: inline-block;
+		/* IE6/7 inline-block hack */
+		*display: inline;
+		*zoom: 1;
+	}
+
+/*-----------------------------------*\
+	$MAIN
+\*-----------------------------------*/
+
+html {
+	background-color: #eee;
+	color: #222;
+	font: 100%/1.5 freight-sans-pro, Helvetica Neue, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+/*-----------------------------------*\
+	$HEADER
+\*-----------------------------------*/
+
+.site-header {
+	background-color: #333;
+	background-image: url('/assets/images/header-bg.png');
+	background-repeat: repeat-x;
+	height: 48px;
+	height: 3rem;
+}
+	
+	@media and (-webkit-min-device-pixel-ratio: 1.5) {
+		.site-header {
+			background-image: url('/assets/images/header-png@2x.png');
+			background-size: 171px 48px;
+		}
+	}
