@@ -1,12 +1,5 @@
 <?php require_once('inc/header.php'); ?>
 <div class="wrap">
-	<div class="home-hero">
-		<img src="/assets/images/promo.jpg" class="hero-banner">
-		<div class="hero-intro">
-			<h1>Welcome to Gateway</h1>
-			<p class="intro"><strong>Gateway</strong> is a website for learning the vocational skills you need to find a job. Start now by <a href="/signup">signing up</a>.</p>
-		</div>
-	</div>
 	<div class="content two-col">
 		<div class="main-col island">
 			<h1>Hi, Dan!</h1>

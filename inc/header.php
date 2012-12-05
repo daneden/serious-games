@@ -9,7 +9,15 @@
 </head>
 <body>
 <header class="site-header">
-	<div class="wrap">
+	<div class="wrap isle cf">
 		<a href="/" title="Gateway Home" class="site-title"><img width="132" height="34" src="/assets/images/site-logo@2x.png" alt="Gateway logo"></a>
+		<nav class="user-nav">
+			<a class="user-link" href="/user">
+				<span class="user-name">Dan Eden</span>
+				<figure class="navatar">
+					<img src="http://0.gravatar.com/avatar/ce22c94e6c291345223e0118bfdd8714?s=64&d=identicon&r=R" width="32px" height="32px">
+				</figure>
+			</a>
+		</nav>
 	</div>
 </header>
