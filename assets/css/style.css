@@ -286,6 +286,7 @@ html {
 .home-hero {
 	color: #fff;
 	text-shadow: 0 1px 3px rgba(0,0,0,.7);
+	background-color: #009dd6;
 	background-image: url('../images/promo.jpg');
 	background-image: -webkit-linear-gradient(-45deg, rgba(0,0,0,.9), transparent 75%), url('../images/promo.jpg');
 	background-image:    -moz-linear-gradient(-45deg, rgba(0,0,0,.9), transparent 75%), url('../images/promo.jpg');
