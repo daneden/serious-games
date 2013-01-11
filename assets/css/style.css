@@ -336,6 +336,10 @@ html {
 		background-color: #d8fad7;
 		color: #105f0d;
 	}
+	
+		.challenges .completed + li {
+			border-top-color: #105f0d;
+		}
 
 		.challenge-complete {
 			list-style-image: url('/assets/images/completed-check-small.png'); 
