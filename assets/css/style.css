@@ -19,11 +19,21 @@
 	 * http://css-tricks.com/things-it-might-be-funuseful-to-try-the-universal-selector-on/
 	 */
 	position: relative;
+
+	/* Set backgrounds to display inside borders, not including */
+	-webkit-background-clip: padding-box;
+	   -moz-background-clip: padding-box;
+	     -o-background-clip: padding-box;
+	        background-clip: padding-box;
 }
 
 img {
 	display: block;
 	max-width: 100%;
+}
+
+input, label, button, textarea {
+	font: inherit;
 }
 
 /*-----------------------------------*\
@@ -47,7 +57,7 @@ img {
 
 h1, h2,
 .alpha, .beta, .mega,
-p, ul, ol, dl, table, pre, hr {
+p, ul, ol, dl, table, pre, hr, .p {
 	/*
 	 * Rems with px fallback FTW
 	 * http://snook.ca/archives/html_and_css/font-size-with-rem
@@ -107,6 +117,21 @@ a {
 	line-height: 1.1428571429;
 }
 
+.helper {
+	font-size: 14px;
+	font-size: .875rem;
+	opacity: .5;
+	line-height: 1.1428571429;
+}
+
+hr {
+	display: block;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	border-bottom-color: rgba(0,0,0,.1);
+	margin-top: -1px;
+}
+
 /*-----------------------------------*\
 	$OBJECTS
 	If you spot a styling pattern, abstract it to its own class and put it here
@@ -142,7 +167,7 @@ a {
 		*zoom: 1;
 	}
 
-.modal {
+/*div*/.modal {
 	background-color: #fff;
 	background-color: rgba(255,255,255,.85);
 	box-shadow: 0 2px 5px rgba(0,0,0,.3), inset 0 0 10px 5px #fff, 0 0 0 1px rgba(0,0,0,.1);
@@ -164,6 +189,14 @@ a {
 
 .standalone {
 	margin-bottom: 0;
+}
+
+/* Throw elements into inline-block */
+/*div*/.in {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	margin-right: -.24em; /* Make up for inline spacing */
 }
 
 /*-----------------------------------*\
@@ -190,6 +223,80 @@ a {
 
 .sidebar {
 	color: #999;
+}
+
+/*-----------------------------------*\
+	$GRID
+\*-----------------------------------*/
+
+.grid {
+	margin-left: -3%;
+	max-width: 105%;
+}
+
+.unit {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: top;
+	margin-left: 3%;
+	margin-right: -.25em;
+}
+
+.span-grid {
+	width: 97%;
+}
+
+.one-of-two { width: 47%; }
+
+.one-of-three { width: 30.36%; }
+.two-of-three { width: 63.666666666%; }
+
+.one-of-four { width: 22.05%; }
+.three-of-four { width: 72%; }
+
+.one-of-five { width: 17.07%; }
+.two-of-five { width: 37%; }
+.three-of-five { width: 57%; }
+.four-of-five { width: 77%; }
+
+@media screen and (max-width: 650px) {
+	.grid {
+		margin-left: 0;
+		max-width: none;
+	}
+
+	.unit {
+		width: auto;
+		margin: 0;
+		display: block;
+	}
+}
+
+
+/*-----------------------------------*\
+	$FORMS
+\*-----------------------------------*/
+
+input, .input,
+label, .label,
+textarea, button {
+	display: block;
+	/* Remove browser styling for inputs */
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	        appearance: none;
+	width: 100%;
+}
+
+input, .input {
+	background-color: #fff;
+	border-radius: .25em;
+	border: 1px solid #ddd;
+	border-color: rgba(0,0,0,.3);
+	padding: .25em .5em;
+	margin-bottom: .75em;
+	box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
 }
 
 /*-----------------------------------*\
@@ -314,6 +421,24 @@ html {
 	background-color: #fff;
 	box-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
+
+/*-----------------------------------*\
+	$SIGNUP
+\*-----------------------------------*/
+
+.signup-form {
+	background-color: #fffbeb;
+	background-image: -webkit-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.25));
+	box-shadow: 0 1px 2px rgba(0,0,0,.1), inset 0 0 0 1px rgba(0,0,0,.1);
+	color: #524000;
+}
+
+	.signup-form .input {
+		background-color: rgba(0,0,0,.025);
+		box-shadow: none;
+		border-radius: 0;
+		border-color: rgba(0,0,0,.1);
+	}
 
 /*-----------------------------------*\
 	$CHALLENGES

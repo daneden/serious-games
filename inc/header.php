@@ -4,6 +4,9 @@
 	<meta charset="utf-8">
 	<title>Gateway</title>
 	<link rel="stylesheet" href="assets/css/style.css">
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 	<script type="text/javascript" src="//use.typekit.net/cnh2osh.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
