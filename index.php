@@ -9,7 +9,7 @@
 	<div class="content two-col">
 		<div class="main-col island">
 			<h1>Hi, Dan!</h1>
-			<p class="helper">Welcome to your dashboard! From here, you can view available challenges, retake challenges you&rsquo;ve previously completed, and a load of other junk.</p>
+			<p>Welcome to your dashboard! From here, you can view available challenges, retake challenges you&rsquo;ve previously completed, and a load of other junk.</p>
 		</div>
 		<div class="sidebar secondary-col island">
 			<h2>Profile Overview</h2>
