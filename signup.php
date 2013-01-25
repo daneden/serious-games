@@ -28,6 +28,10 @@
 						<input type="password" class="input" name="confirm-password" id="confirm-password">
 					</div>
 					<p class="helper unit span-grid">Your password must be at least 8 characters long, with at least one digit.</p>
+					<hr class="unit span-grid">
+					<div class="unit span-grid">
+						<input class="alignright butt butt-primary submit" type="submit" value="Sign Up">
+					</div>
 				</div>
 			</form>
 		</div>

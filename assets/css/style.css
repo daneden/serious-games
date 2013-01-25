@@ -64,6 +64,7 @@ p, ul, ol, dl, table, pre, hr, .p {
 	 */
 	margin-bottom: 24px;
 	margin-bottom: 1.5rem;
+	display: block;
 }
 
 ul, ol {
@@ -124,6 +125,15 @@ a {
 	line-height: 1.1428571429;
 }
 
+	/* Helper text in a state (error, warning, etc) needs bringing back to full opacity */
+	.helper.state {
+		opacity: 1;
+	}
+
+.error {
+	color: #b70e0c !important;
+}
+
 hr {
 	display: block;
 	border: none;
@@ -153,6 +163,17 @@ hr {
 /*div*/.isle {
 	padding: 12px;
 	padding: .75rem;
+}
+
+/* Alignments */
+.alignleft {
+	float: left;
+	margin-right: .25em;
+}
+
+.alignright {
+	float: right;
+	margin-left: .25em;
 }
 
 /* The nav abstraction - http://csswizardry.com/2011/09/the-nav-abstraction/ */
@@ -197,6 +218,43 @@ hr {
 	*display: inline;
 	*zoom: 1;
 	margin-right: -.24em; /* Make up for inline spacing */
+}
+
+.visually-hidden {
+	position: absolute;
+	left: -9999px;
+	height: 1px;
+}
+
+/*-----------------------------------*\
+	$TOOLTIPS
+\*-----------------------------------*/
+
+[data-tooltip]:after {
+	content: attr(data-tooltip);
+	position: absolute;
+	z-index: 100;
+	top: 100%;
+	right: 0;
+	margin-top: .3em;
+	padding: .25em .75em;
+	background-color: #333;
+	background-color: rgba(0,0,0,.8);
+	border-radius: .25em;
+	font-size: .85em;
+	font-weight: 700;
+	color: #fff;
+}
+
+[data-tooltip]:before {
+	content: '';
+	position: absolute;
+	z-index: 101;
+	top: 0;
+	right: .5em;
+	border: .5em solid transparent;
+	border-bottom-color: #333;
+	border-bottom-color: rgba(0,0,0,.8);
 }
 
 /*-----------------------------------*\
@@ -278,7 +336,7 @@ hr {
 	$FORMS
 \*-----------------------------------*/
 
-input, .input,
+.input,
 label, .label,
 textarea, button {
 	display: block;
@@ -289,15 +347,73 @@ textarea, button {
 	width: 100%;
 }
 
-input, .input {
+.input {
 	background-color: #fff;
-	border-radius: .25em;
+	border-radius: .15em;
 	border: 1px solid #ddd;
-	border-color: rgba(0,0,0,.3);
+	border-color: rgba(0,0,0,.25);
 	padding: .25em .5em;
 	margin-bottom: .75em;
 	box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
 }
+
+.butt {
+	cursor: pointer;
+	background-color: #fff;
+	background-image: -webkit-linear-gradient(transparent, rgba(0,0,0,.1));
+	background-image:    -moz-linear-gradient(transparent, rgba(0,0,0,.1));
+	background-image:      -o-linear-gradient(transparent, rgba(0,0,0,.1));
+	background-image:         linear-gradient(transparent, rgba(0,0,0,.1));
+	box-shadow: inset 0 0 0 1px rgba(255,255,255,.1), inset 0 1px rgba(255,255,255,.1);
+	border-radius: .15em;
+	border: 1px solid #bbb;
+	border-bottom-color: #aaa;
+	font-weight: 700;
+	color: #333;
+	text-shadow: 0 1px rgba(255,255,255,.1);
+	padding: .15em .5em;
+}
+
+	.butt:active {
+		background-image: -webkit-linear-gradient(rgba(0,0,0,.1), transparent);
+		background-image:    -moz-linear-gradient(rgba(0,0,0,.1), transparent);
+		background-image:      -o-linear-gradient(rgba(0,0,0,.1), transparent);
+		background-image:         linear-gradient(rgba(0,0,0,.1), transparent);
+		border-color: #aaa;
+		box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+	}
+
+	.butt-disabled, .butt-disabled:active {
+		color: #aaa;
+		background-color: #f6f6f6;
+		cursor: default;
+		background-image: -webkit-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.1));
+		box-shadow: none;
+	}
+
+	.butt-primary {
+		background-color: #11bf33;
+		color: #fff;
+		text-shadow: 0 1px 1px rgba(0,0,0,.1);
+		border-color: #0d9027;
+		border-bottom-color: #0c8022;
+	}
+
+		.butt-primary:active {
+			border-color: #0c8022;
+		}
+
+	.butt-danger {
+		background-color: #d7100e;
+		color: #fff;
+		text-shadow: 0 1px 1px rgba(0,0,0,.1);
+		border-color: #b70e0c;
+		border-bottom-color: #870a09;
+	}
+
+		.butt-danger:active {
+			border-color: #870a09;
+		}
 
 /*-----------------------------------*\
 	$MAIN
@@ -433,13 +549,6 @@ html {
 	color: #524000;
 }
 
-	.signup-form .input {
-		background-color: rgba(0,0,0,.025);
-		box-shadow: none;
-		border-radius: 0;
-		border-color: rgba(0,0,0,.1);
-	}
-
 /*-----------------------------------*\
 	$CHALLENGES
 \*-----------------------------------*/
@@ -464,7 +573,7 @@ html {
 	}
 	
 		.challenges .completed + li {
-			border-top-color: #105f0d;
+			border-top-color: #8dc08b;
 		}
 
 		.challenge-complete {
@@ -527,3 +636,24 @@ html {
 			.modal .challenge-title {
 				display: block;
 			}
+
+/*-----------------------------------*\
+	$LESSON
+\*-----------------------------------*/
+
+.lesson-progress {
+	background-color: #ddd;
+	border-radius: 5em;
+	height: .75em;
+	box-shadow: inset 0 0 0 2px rgba(0,0,0,.05);
+}
+
+	.progress-measure {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		background-color: #8dbc00;
+		border-radius: 5em;
+		box-shadow: inset 0 0 2px rgba(0,0,0,.1);
+	}
