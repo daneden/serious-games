@@ -12,8 +12,11 @@
 			<p>Welcome to your dashboard! From here, you can view available challenges, retake challenges you&rsquo;ve previously completed, and a load of other junk.</p>
 		</div>
 		<div class="sidebar secondary-col island">
-			<h2>Profile Overview</h2>
-			<p>Blah, blah, blah</p>
+			<h2>Page Designs</h2>
+			<ul>
+				<li><a href="/dashboard.php">Dashboard</a></li>
+				<li><a href="/signup.php">Signup</a></li>
+				<li><a href="/lesson.php">Lesson</a>
 		</div>
 	</div>
 </div>
