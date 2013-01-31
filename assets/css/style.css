@@ -55,8 +55,8 @@ input, label, button, textarea {
 	Shared margins and other abstracted properties
 \*-----------------------------------*/
 
-h1, h2,
-.alpha, .beta, .mega,
+h1, h2, h3,
+.alpha, .beta, .gamma, .mega,
 p, ul, ol, dl, table, pre, hr, .p {
 	/*
 	 * Rems with px fallback FTW
@@ -101,7 +101,6 @@ h3, .gamma {
 	font-weight: 700;
 	letter-spacing: .1em;
 	text-transform: uppercase;
-	margin-bottom: 0;
 }
 
 a {
@@ -218,6 +217,11 @@ hr {
 	*display: inline;
 	*zoom: 1;
 	margin-right: -.24em; /* Make up for inline spacing */
+}
+
+/* Throw elements into block */
+/*span*/.b {
+	display: block;
 }
 
 .visually-hidden {
@@ -338,7 +342,7 @@ hr {
 
 .input,
 label, .label,
-textarea, button {
+textarea {
 	display: block;
 	/* Remove browser styling for inputs */
 	-webkit-appearance: none;
@@ -392,15 +396,15 @@ textarea, button {
 	}
 
 	.butt-primary {
-		background-color: #11bf33;
+		background-color: #8dbc00;
 		color: #fff;
-		text-shadow: 0 1px 1px rgba(0,0,0,.1);
-		border-color: #0d9027;
-		border-bottom-color: #0c8022;
+		text-shadow: 0 1px 1px rgba(0,0,0,.2);
+		border-color: #6b8f00;
+		border-bottom-color: #4d6600;
 	}
 
 		.butt-primary:active {
-			border-color: #0c8022;
+			border-color: #4d6600;
 		}
 
 	.butt-danger {
@@ -641,6 +645,15 @@ html {
 	$LESSON
 \*-----------------------------------*/
 
+.lesson-header {
+	font-weight: 400;
+	color: #666;
+}
+
+	.lesson-title {
+		color: #222;
+	}
+
 .lesson-progress {
 	background-color: #ddd;
 	border-radius: 5em;
@@ -654,6 +667,54 @@ html {
 		left: 0;
 		bottom: 0;
 		background-color: #8dbc00;
+		background-image: -webkit-linear-gradient(0deg, rgba(255,255,255,.4), rgba(255,255,255,0));
+		background-image:    -moz-linear-gradient(0deg, rgba(255,255,255,.4), rgba(255,255,255,0));
+		background-image:     -ms-linear-gradient(0deg, rgba(255,255,255,.4), rgba(255,255,255,0));
+		background-image:      -o-linear-gradient(0deg, rgba(255,255,255,.4), rgba(255,255,255,0));
+		background-image:         linear-gradient(0deg, rgba(255,255,255,.4), rgba(255,255,255,0));
 		border-radius: 5em;
 		box-shadow: inset 0 0 2px rgba(0,0,0,.1);
 	}
+
+.question-header, .lesson-navigation {
+	background-color: #f6f6f6;
+}
+
+.question-header {
+	border-bottom: 1px solid #ddd;
+}
+
+.lesson-navigation {
+	border-top: 1px solid #ddd;
+}
+
+	.questions-total {
+		font-weight: 400;
+		color: #999;
+	}
+
+	.question-answer-group {
+		list-style: none;
+		padding-left: 0;
+		font-size: 1.3125rem;
+		line-height: 1.1428571429;
+	}
+
+		.question-answer:hover {
+			background-color: #fbfbfb;
+		}
+
+			.question-answer + .question-answer {
+				border-top: 1px solid #eee;
+				margin-top: -1px;
+			}
+
+			.selected-answer {
+				background-color: #e7f9ff;
+				background-color: rgba(231,249,255,.85);
+			}
+
+			.qa-in {
+				margin-right: 1em;
+				margin-top: .15em;
+			}
