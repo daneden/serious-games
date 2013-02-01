@@ -28,9 +28,13 @@
 }
 
 img {
-	display: block;
+	/*display: block;*/
 	max-width: 100%;
 }
+
+	a img {
+		border: none;
+	}
 
 input, label, button, textarea {
 	font: inherit;
