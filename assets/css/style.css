@@ -33,7 +33,7 @@ img {
 }
 
 	a img {
-		border: none;
+		border: 0;
 	}
 
 input, label, button, textarea {
