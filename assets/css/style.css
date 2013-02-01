@@ -392,6 +392,9 @@ textarea {
 		background-color: #f6f6f6;
 		cursor: default;
 		background-image: -webkit-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.1));
+		background-image:    -moz-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.1));
+		background-image:      -o-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.1));
+		background-image:         linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.1));
 		box-shadow: none;
 	}
 
@@ -549,6 +552,9 @@ html {
 .signup-form {
 	background-color: #fffbeb;
 	background-image: -webkit-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.25));
+	background-image:    -moz-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.25));
+	background-image:      -o-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.25));
+	background-image:         linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.25));
 	box-shadow: 0 1px 2px rgba(0,0,0,.1), inset 0 0 0 1px rgba(0,0,0,.1);
 	color: #524000;
 }
@@ -671,7 +677,7 @@ html {
 		background-image:    -moz-linear-gradient(0deg, rgba(255,255,255,.4), rgba(255,255,255,0));
 		background-image:     -ms-linear-gradient(0deg, rgba(255,255,255,.4), rgba(255,255,255,0));
 		background-image:      -o-linear-gradient(0deg, rgba(255,255,255,.4), rgba(255,255,255,0));
-		background-image:         linear-gradient(0deg, rgba(255,255,255,.4), rgba(255,255,255,0));
+		background-image:         linear-gradient(90deg, rgba(255,255,255,.4), rgba(255,255,255,0));
 		border-radius: 5em;
 		box-shadow: inset 0 0 2px rgba(0,0,0,.1);
 	}
