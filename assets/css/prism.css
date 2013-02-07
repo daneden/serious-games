@@ -36,7 +36,7 @@ pre[class*="language-"] {
 pre[class*="language-"],
 :not(pre) > code[class*="language-"] {
 	background: #fcfbfa;
-	border-left: 1px solid #f5efeb;
+	border-left: 1px solid #e5dfdb;
 }
 
 /* Code blocks */
