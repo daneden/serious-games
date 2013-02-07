@@ -1,4 +1,0 @@
-AuthUserFile /var/www/docs/dev.gateway-learning.com/.htpasswd
-AuthType Basic
-AuthName "Gateway Dev Server"
-Require valid-user
