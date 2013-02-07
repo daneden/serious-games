@@ -61,7 +61,7 @@ input, label, button, textarea {
 
 h1, h2, h3,
 .alpha, .beta, .gamma, .mega,
-p, ul, ol, dl, table, pre, hr, .p {
+p, ul, ol, dl, table, form, pre, hr, .p {
 	/*
 	 * Rems with px fallback FTW
 	 * http://snook.ca/archives/html_and_css/font-size-with-rem
@@ -124,16 +124,11 @@ a {
 .helper {
 	font-size: 14px;
 	font-size: .875rem;
-	opacity: .5;
+	color: #999;
 	line-height: 1.1428571429;
 }
 
-	/* Helper text in a state (error, warning, etc) needs bringing back to full opacity */
-	.helper.state {
-		opacity: 1;
-	}
-
-.error {
+.message-error {
 	color: #b70e0c !important;
 }
 
@@ -143,6 +138,14 @@ hr {
 	border-bottom: 1px solid #ddd;
 	border-bottom-color: rgba(0,0,0,.1);
 	margin-top: -1px;
+}
+
+pre {
+	white-space: pre-wrap;
+	background-color: #456;
+	color: #f0c662;
+	padding: 12px;
+	padding: .75rem;
 }
 
 /*-----------------------------------*\
@@ -288,8 +291,19 @@ hr {
 }
 
 .sidebar {
-	color: #999;
+	color: #666;
 }
+
+	.sidebar-helper {
+		position: absolute;
+		width: 39.6%;
+		left: 100%;
+	}
+
+		.sidebar-helper p {
+			margin-left: 24px;
+			margin-left: 1.5rem;
+		}
 
 /*-----------------------------------*\
 	$GRID
@@ -308,6 +322,14 @@ hr {
 	margin-left: 3%;
 	margin-right: -.25em;
 }
+
+	.unit.demo {
+		background-color: #fff8eb;
+		height: 48px;
+		height: 3rem;
+		margin-bottom: 24px;
+		margin-bottom: 1.5rem;
+	}
 
 .span-grid {
 	width: 97%;
@@ -368,6 +390,7 @@ textarea {
 	.input:focus {
 		border-color: #d2a958;
 		box-shadow: 0 0 0 1px #f1c877, inset 0 1px 2px rgba(0,0,0,.1);
+		outline: none;
 	}
 
 .butt {

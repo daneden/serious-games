@@ -16,7 +16,9 @@
 			<ul>
 				<li><a href="/dashboard.php">Dashboard</a></li>
 				<li><a href="/signup.php">Signup</a></li>
-				<li><a href="/lesson.php">Lesson</a>
+				<li><a href="/lesson.php">Lesson</a></li>
+				<li><a href="/styleguide.php">Styleguide</a></li>
+			</ul>
 		</div>
 	</div>
 </div>

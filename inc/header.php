@@ -4,6 +4,8 @@
 	<meta charset="utf-8">
 	<title>Gateway</title>
 	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/prism.css">
+	<link rel="shortcut icon" href="assets/images/favicon.png">
 	<!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
