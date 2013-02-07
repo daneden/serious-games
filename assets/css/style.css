@@ -304,6 +304,29 @@ pre {
 			margin-left: 1.5rem;
 		}
 
+@media screen and (max-width: 650px) {
+	.two-col .main-col, .two-col .secondary-col {
+		display: block;
+		width: auto;
+		margin-right: 0;
+	}
+
+	.two-col .main-col {
+		border-right: none;
+		border-bottom: 2px solid #eee;
+	}
+
+	.sidebar-helper {
+		position: relative;
+		left: auto;
+		width: auto;
+	}
+
+		.sidebar-helper p {
+			margin-left: auto;
+		}
+}
+
 /*-----------------------------------*\
 	$GRID
 \*-----------------------------------*/

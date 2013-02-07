@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Gateway</title>
+	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="/assets/css/style.css">
 	<link rel="stylesheet" href="/assets/css/prism.css">
 	<link rel="shortcut icon" href="/assets/images/favicon.png">
