@@ -116,5 +116,5 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript" src="assets/js/prism.min.js"></script>
+<script type="text/javascript" src="/assets/js/prism.min.js"></script>
 <?php require_once('inc/footer.php'); ?>
