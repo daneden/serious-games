@@ -27,25 +27,12 @@
 	        background-clip: padding-box;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary {
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
     display: block;
 }
 
 /* Correct `inline-block` display not defined in IE 8/9. */
-audio,
-canvas,
-video {
+audio, canvas, video {
     display: inline-block;
 }
 
