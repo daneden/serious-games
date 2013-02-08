@@ -343,6 +343,9 @@ pre {
 	vertical-align: top;
 	margin-left: 3%;
 	margin-right: -.25em;
+	/* Clearfix */
+	overflow: hidden;
+	*overflow: visible;
 }
 
 	.unit.demo {

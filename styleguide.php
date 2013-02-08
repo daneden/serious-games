@@ -27,11 +27,15 @@
     &lt;div class="grid"&gt;
         &lt;div class="unit one-of-two"&gt;
             &lt;label form="first-name"&gt;First Name&lt;/label&gt;
-            &lt;input class="input" name="first-name" id="first-name"&gt;
+            &lt;input type="text" class="input" name="first-name" id="first-name"&gt;
+            &lt;p class="helper message-error"&gt;This is a generated error message&lt;/p&gt;
         &lt;/div&gt;
         &lt;div class="unit one-of-two"&gt;
             &lt;label form="last-name"&gt;Last Name&lt;/label&gt;
-            &lt;input class="input" name="last-name" id="last-name"&gt;
+            &lt;input type="text" class="input" name="last-name" id="last-name"&gt;
+        &lt;/div&gt;
+        &lt;div class="unit span-grid"&gt;
+            &lt;input type="submit" value="Submit" class="butt butt-primary alignright" name="submit" id="submit"&gt;
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/form&gt;</code></pre>
