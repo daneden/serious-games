@@ -1,7 +1,6 @@
 <?php
-	if ( file_exists( dirname( __FILE__ ) . 'inc/db/connect-local.php' ) ) {	
-		require_once dirname(__FILE__) . 'inc/db/connect-local.php';
-		define( 'WP_LOCAL_DEV', true);
+	if ( require_once dirname(__FILE__) . '\connect-local.php' ) {	
+
 	} else {
 		$DB_hostname = "localhost";
 		$DB_username = "root";

@@ -4,7 +4,7 @@
 		<div class="main-col island">
 			<h1>Sign Up</h1>
 			<p>Hi there! You&rsquo;re only a few minutes away from learning the vocational skills you need to get a job. Complete the form below and we&rsquo;ll do the rest.</p>
-			<form class="signup-form island" action="/signup.php" method="post">
+			<form class="signup-form island" action="/assets/php/signup.php" method="post">
 				<div class="grid">
 					<div class="unit one-of-two">
 						<label for="first-name">First Name</label>
@@ -28,6 +28,46 @@
 						<input type="password" class="input" name="confirm-password" id="confirm-password">
 					</div>
 					<p class="helper unit span-grid">Your password must be at least 8 characters long, with at least one digit.</p>
+                    <hr class="unit span-grid">
+                    <div class="unit one-of-two p">
+                    	<label for="language">Language</label>
+                        <p class="helper">Please select your native language.</p>
+                    	<select class="input dropdown" name="language">
+                            <option value="albanian">Albanian</option>
+                            <option value="arabic">Arabic</option>
+                            <option value="bengali">Bengali</option>
+                            <option value="creole">Creole Malay</option>
+                            <option value="dari">Dari</option>
+                            <option value="english">English</option>
+                            <option value="farsi">Farsi</option>
+                            <option value="french">French</option>
+                            <option value="georgian">Georgian</option>
+                            <option value="german">German</option>
+                            <option value="hasua">Hausa</option>
+                            <option value="igbo">Igbo</option>
+                            <option value="igrinya">Igrinya</option>
+                            <option value="indo-portuguese">Indo-Portuguese</option>
+                            <option value="italian">Italian</option>
+                            <option value="kurdish">Kurdish</option>
+                            <option value="lingala">Lingala</option>
+                            <option value="ndebele">Ndebele</option>
+                            <option value="pashto">Pashto</option>
+                            <option value="persian">Persian</option>
+                            <option value="polish">Polish</option>
+                            <option value="portuguese">Portuguese</option>
+                            <option value="russian">Russian</option>
+                            <option value="shona">Shona</option>
+                            <option value="sinhala">Sinhala</option>
+                            <option value="somali">Somali</option>
+                            <option value="swahili">Swahili</option>
+                            <option value="tamil">Tamil</option>
+                            <option value="tigringa">Tigringa</option>
+                            <option value="turkish">Turkish</option>
+                            <option value="urdu">Urdu</option>
+                            <option value="vedah">Vedah</option>
+                            <option value="yoruba">Yoruba</option>
+                        </select>
+                    </div>                    
 					<hr class="unit span-grid">
                     <div class="unit grid">
                     	<label class="unit span-grid" for="specialisation">Specialisation</label>
@@ -46,45 +86,6 @@
                             <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation" value="teaching" id="teaching"><label for="teaching" class="in">Teaching</label></span>
                             <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation" value="transport" id="transport"><label for="transport" class="in">Transport</label></span>
                         </div>
-                    </div>
-                    <hr class="unit span-grid">
-                    <div class="unit one-of-two">
-                    	<label for="language">Language</label>
-                    	<select class="input dropdown" name="language">
-                            <option>Albanian</option>
-                            <option>Arabic</option>
-                            <option>Bengali</option>
-                            <option>Creole Malay</option>
-                            <option>Dari</option>
-                            <option>English</option>
-                            <option>Farsi</option>
-                            <option>French</option>
-                            <option>Georgian</option>
-                            <option>German</option>
-                            <option>Hausa</option>
-                            <option>Igbo</option>
-                            <option>Igrinya</option>
-                            <option>Indo-Portuguese</option>
-                            <option>Italian</option>
-                            <option>Kurdish</option>
-                            <option>Lingala</option>
-                            <option>Ndebele</option>
-                            <option>Pashto</option>
-                            <option>Persian</option>
-                            <option>Polish</option>
-                            <option>Portuguese</option>
-                            <option>Russian</option>
-                            <option>Shona</option>
-                            <option>Sinhala</option>
-                            <option>Somali</option>
-                            <option>Swahili</option>
-                            <option>Tamil</option>
-                            <option>Tigringa</option>
-                            <option>Turkish</option>
-                            <option>Urdu</option>
-                            <option>Vedah</option>
-                            <option>Yoruba</option>
-                        </select>
                     </div>
                     <hr class="unit span-grid">
 					<div class="unit span-grid">
