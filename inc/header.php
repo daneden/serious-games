@@ -17,13 +17,18 @@
 <header class="site-header">
 	<div class="wrap isle cf">
 		<a href="/" title="Gateway Home" class="site-title"><img width="132" height="34" src="assets/images/site-logo@2x.png" alt="Gateway logo"></a>
-		<nav class="user-nav">
+		<nav class="isle user-nav">
 			<a class="user-link" href="/user">
 				<span class="user-name">Dan Eden</span>
 				<figure class="navatar">
 					<img src="http://0.gravatar.com/avatar/ce22c94e6c291345223e0118bfdd8714?s=64&d=identicon&r=R" width="32" height="32">
 				</figure>
 			</a>
+			<button class="user-nav-toggle" title="Toggle Menu">Toggle Menu</button>
+			<ul class="user-nav-items">
+				<li><a class="isle" href="/edit-profile.php">Edit Profile</a></li>
+				<li><a class="isle" href="/logout.php">Log Out</a></li>
+			</ul>
 		</nav>
 	</div>
 </header>

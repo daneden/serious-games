@@ -247,6 +247,7 @@ pre {
 	*display: inline;
 	*zoom: 1;
 	margin-right: -.24em; /* Make up for inline spacing */
+	width: auto;
 }
 
 /* Throw elements into block */
@@ -563,7 +564,14 @@ html {
 
 	.user-nav {
 		float: right;
+		z-index: 1;
+		margin: -12px;
+		margin: -.75rem;
 	}
+
+		.user-nav.toggled-on {
+			background-color: #222;
+		}
 
 		.navatar {
 			display: inline-block;
@@ -588,6 +596,61 @@ html {
 				bottom: 0;
 				border-radius: 100%;
 				box-shadow: inset 0 0 0 1px rgba(255,255,255,.2), 0 0 0 1px rgba(0,0,0,.2);
+			}
+
+		.user-nav-toggle {
+			display: inline-block;
+			text-indent: 100%;
+			overflow: hidden;
+			white-space: nowrap;
+			border: none;
+			background-color: transparent;
+			cursor: pointer;
+			background-image: url(/assets/images/light-dropdown.png);
+			background-repeat: no-repeat;
+			background-position: center;
+			width: 16px;
+			width: 1rem;
+			height: 16px;
+			height: 1rem;
+			margin-left: 4px;
+			margin-left: .25rem;
+			opacity: .5;
+			line-height: 1;
+		}
+
+			.user-nav-toggle:hover {
+				opacity: 1;
+			}
+
+		.user-nav-items {
+			display: none;
+			list-style: none;
+			width: 100%;
+			padding-left: 0;
+			margin-bottom: -12px;
+			margin-top: 6px;
+		}
+
+			.user-nav-items a {
+				-webkit-box-sizing: content-box;
+				   -moz-box-sizing: content-box;
+				        box-sizing: content-box;
+				margin-left: -12px;
+				margin-left: -.75rem;
+				display: block;
+				padding: 6px 12px;
+				padding: .375rem .75rem;
+				width: 100%;
+				border-top: 1px solid #444;
+			}
+
+				.user-nav-items a:hover {
+					background-color: #333;
+				}
+
+			.toggled-on .user-nav-items {
+				display: block;
 			}
 
 /*-----------------------------------*\
