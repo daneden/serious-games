@@ -1,2 +1,3 @@
 .htaccess
 inc/db/connect-local.php
+.DS_Store
