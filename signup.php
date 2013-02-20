@@ -48,6 +48,45 @@
                         </div>
                     </div>
                     <hr class="unit span-grid">
+                    <div class="unit one-of-two">
+                    	<label for="language">Language</label>
+                    	<select class="input dropdown" name="language">
+                            <option>Albanian</option>
+                            <option>Arabic</option>
+                            <option>Bengali</option>
+                            <option>Creole Malay</option>
+                            <option>Dari</option>
+                            <option>English</option>
+                            <option>Farsi</option>
+                            <option>French</option>
+                            <option>Georgian</option>
+                            <option>German</option>
+                            <option>Hausa</option>
+                            <option>Igbo</option>
+                            <option>Igrinya</option>
+                            <option>Indo-Portuguese</option>
+                            <option>Italian</option>
+                            <option>Kurdish</option>
+                            <option>Lingala</option>
+                            <option>Ndebele</option>
+                            <option>Pashto</option>
+                            <option>Persian</option>
+                            <option>Polish</option>
+                            <option>Portuguese</option>
+                            <option>Russian</option>
+                            <option>Shona</option>
+                            <option>Sinhala</option>
+                            <option>Somali</option>
+                            <option>Swahili</option>
+                            <option>Tamil</option>
+                            <option>Tigringa</option>
+                            <option>Turkish</option>
+                            <option>Urdu</option>
+                            <option>Vedah</option>
+                            <option>Yoruba</option>
+                        </select>
+                    </div>
+                    <hr class="unit span-grid">
 					<div class="unit span-grid">
 						<input class="alignright butt butt-primary submit" type="submit" value="Sign Up">
 					</div>
