@@ -445,7 +445,7 @@ textarea {
 	.dropdown {
 		background-image: url(/assets/images/dark-dropdown.png);
 		background-repeat: no-repeat;
-		background-position: right center;
+		background-position: 85% center;
 	}
 
 	.input:focus {
