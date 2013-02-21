@@ -4,7 +4,7 @@
 		<div class="main-col bordered-col island">
 			<h1>Sign Up</h1>
 			<p>Hi there! You&rsquo;re only a few minutes away from learning the vocational skills you need to get a job. Complete the form below and we&rsquo;ll do the rest.</p>
-			<form class="signup-form island" action="/assets/php/signup.php" method="post">
+			<form class="signup-form island" action="/inc/globals/signup.php" method="post">
 				<div class="grid">
 					<div class="unit one-of-two">
 						<label for="first-name">First Name</label>

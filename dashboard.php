@@ -1,8 +1,13 @@
-<?php require_once('inc/header.php'); ?>
+<?php
+	require_once('inc/header.php');
+	require_once('inc/db/connect.php');
+	require_once('inc/globals/functions.php');
+	verify_user();
+?>
 <div class="wrap">
 	<div class="content two-col">
 		<div class="main-col island">
-			<h1>Hi, Dan!</h1>
+			<h1>Hi, <?php get_user_fname() ?>!</h1>
 			<p>Welcome to your dashboard! From here, you can view available challenges, retake challenges you&rsquo;ve previously completed, and a load of other junk.</p>
 			<ul class="challenges">
 				<li class="completed island">
@@ -40,7 +45,7 @@
 		</div>
 		<div class="sidebar secondary-col island">
 			<h2>Profile Overview</h2>
-			<p>Blah, blah, blah</p>
+			<h2><?php get_user_fname(); ?> <?php get_user_sname(); ?></h2>
 		</div>
 	</div>
 </div>

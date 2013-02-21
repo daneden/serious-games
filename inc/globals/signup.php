@@ -1,5 +1,5 @@
 <?php
-	require_once('../../inc/db/connect.php');
+	require_once('../db/connect.php');
 	$userFName = mysql_real_escape_string($_POST['first-name']);
 	$userSName = mysql_real_escape_string($_POST['last-name']);
 	$userEmail = mysql_real_escape_string($_POST['email']);
