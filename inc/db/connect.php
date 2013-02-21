@@ -2,7 +2,7 @@
 	if ( require_once dirname(__FILE__) . '/connect-local.php' ) {	
 
 	} else {
-		$DB_hostname = "localhost";
+		$DB_hostname = "127.0.0.1";
 		$DB_username = "root";
 		$DB_password = "blahblah";
 		$DB_database = "gateway";
