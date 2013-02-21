@@ -558,21 +558,11 @@ html {
 			background-image: url('/assets/images/header-bg@2x.png');
 			background-size: 171px 48px;
 		}
-
-		.admin-area .site-header {
-			background-image: url('/assets/images/admin-header-bg@2x.png');
-			background-size: 171px 48px;
-		}
 	}
 
 	@media screen and (min-device-pixel-ratio: 1.5) {
 		.site-header {
 			background-image: url('/assets/images/header-bg@2x.png');
-			background-size: 171px 48px;
-		}
-
-		.admin-area .site-header {
-			background-image: url('/assets/images/admin-header-bg@2x.png');
 			background-size: 171px 48px;
 		}
 	}
