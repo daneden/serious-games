@@ -1,7 +1,7 @@
 <?php require_once('inc/header.php'); ?>
 <div class="wrap">
 	<div class="content two-col">
-		<div class="main-col island">
+		<div class="main-col border-col island">
 			<h1>Vocational Language</h1>
 			<span class="gamma lesson-header">Lesson 1: <strong class="lesson-title">Introduction</strong></span>
 			<div class="p lesson-progress">
