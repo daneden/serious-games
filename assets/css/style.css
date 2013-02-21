@@ -544,10 +544,20 @@ html {
 	margin-bottom: 24px;
 	margin-bottom: 1.5rem;
 }
+
+	.admin-area .site-header {
+		background-color: #4a76c6;
+		background-image: url('/assets/images/admin-header-bg.png');
+	}
 	
 	@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
 		.site-header {
 			background-image: url('/assets/images/header-bg@2x.png');
+			background-size: 171px 48px;
+		}
+
+		.admin-area .site-header {
+			background-image: url('/assets/images/admin-header-bg@2x.png');
 			background-size: 171px 48px;
 		}
 	}
@@ -555,6 +565,11 @@ html {
 	@media screen and (min-device-pixel-ratio: 1.5) {
 		.site-header {
 			background-image: url('/assets/images/header-bg@2x.png');
+			background-size: 171px 48px;
+		}
+
+		.admin-area .site-header {
+			background-image: url('/assets/images/admin-header-bg@2x.png');
 			background-size: 171px 48px;
 		}
 	}
@@ -587,6 +602,10 @@ html {
 		.user-nav.toggled-on {
 			background-color: #222;
 		}
+
+			.admin-area .user-nav.toggled-on {
+				background-color: rgba(0,0,0,.8);
+			}
 
 		.navatar {
 			display: inline-block;
@@ -644,7 +663,7 @@ html {
 			width: 100%;
 			padding-left: 0;
 			margin-bottom: -12px;
-			margin-top: 6px;
+			margin-top: 8px;
 		}
 
 			.user-nav-items a {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"<?php if (isset($isAdmin) && ($isAdmin === true)): ?> class="admin-area"<?php endif; ?>>
 <head>
 	<meta charset="utf-8">
 	<title>Gateway</title>
@@ -16,7 +16,13 @@
 <body>
 <header class="site-header">
 	<div class="wrap isle cf">
-		<a href="/" title="Gateway Home" class="site-title"><img width="132" height="34" src="assets/images/site-logo@2x.png" alt="Gateway logo"></a>
+		<a href="/" title="Gateway Home" class="site-title">
+			<?php if (isset($isAdmin) && ($isAdmin === true)) { ?>
+				<img width="165" height="34" src="/assets/images/admin-site-logo@2x.png" alt="Gateway logo">
+			<?php } else { ?>
+				<img width="132" height="34" src="/assets/images/site-logo@2x.png" alt="Gateway logo">
+			<?php } ?>
+		</a>
 		<nav class="isle user-nav">
 			<a class="user-link" href="/user">
 				<span class="user-name">Dan Eden</span>
