@@ -1,6 +1,7 @@
 <?php
 	$isAdmin = true;
 	require_once('../inc/header.php');
+	require_once('../inc/db/connect.php');
 ?>
 <div class="wrap">
 	<div class="content two-col">
