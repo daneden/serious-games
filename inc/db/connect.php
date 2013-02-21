@@ -1,5 +1,5 @@
 <?php
-	if ( require_once dirname(__FILE__) . '\connect-local.php' ) {	
+	if ( require_once dirname(__FILE__) . '/connect-local.php' ) {	
 
 	} else {
 		$DB_hostname = "localhost";
