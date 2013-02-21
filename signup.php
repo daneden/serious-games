@@ -73,18 +73,18 @@
                     	<label class="unit span-grid" for="specialisation">Specialisation</label>
 						<p class="helper unit span-grid">Specialisations help us to help you choose which modules to take in order to get the most out of Gateway.</p>
                         <div class="p">                    
-                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation" id="accounting" value="accounting"><label for="accounting" class="in">Accounting & Finance</label></span>
-                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation" id="administration" value="administration"><label for="administration" class="in">Administration</label></span>
-                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation" value="education" id="education"><label for="education" class="in">Education</label></span>
-                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation" value="engineering" id="engineering"><label for="engineering" class="in">Engineering</label></span>
-                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation" value="health" id="health"><label for="health" class="in">Health & Beautry</label></span>
-                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation" value="human"><label for="human" class="in">Human Resources</label></span>
-                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation" value="industrial" id="industrial"><label for="industrial" class="in">Industrial</label></span>
-                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation" value="maintenance" id="maintenance"><label for="maintenance" class="in">Maintenance</label></span>
-                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation" value="science" id="science"><label for="scienceg" class="in">Science & Technology</label></span>
-                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation" value="social" id="social"><label for="social" class="in">Social Services</label></span>
-                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation" value="teaching" id="teaching"><label for="teaching" class="in">Teaching</label></span>
-                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation" value="transport" id="transport"><label for="transport" class="in">Transport</label></span>
+                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation[]" id="accounting" value="accounting"><label for="accounting" class="in">Accounting & Finance</label></span>
+                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation[]" id="administration" value="administration"><label for="administration" class="in">Administration</label></span>
+                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation[]" value="education" id="education"><label for="education" class="in">Education</label></span>
+                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation[]" value="engineering" id="engineering"><label for="engineering" class="in">Engineering</label></span>
+                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation[]" value="health" id="health"><label for="health" class="in">Health & Beautry</label></span>
+                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation[]" value="human"><label for="human" class="in">Human Resources</label></span>
+                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation[]" value="industrial" id="industrial"><label for="industrial" class="in">Industrial</label></span>
+                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation[]" value="maintenance" id="maintenance"><label for="maintenance" class="in">Maintenance</label></span>
+                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation[]" value="science" id="science"><label for="science" class="in">Science & Technology</label></span>
+                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation[]" value="social" id="social"><label for="social" class="in">Social Services</label></span>
+                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation[]" value="teaching" id="teaching"><label for="teaching" class="in">Teaching</label></span>
+                            <span class="unit one-of-three"><input type="checkbox" class="checkbox" name="specialisation[]" value="transport" id="transport"><label for="transport" class="in">Transport</label></span>
                         </div>
                     </div>
                     <hr class="unit span-grid">
