@@ -7,7 +7,7 @@
 		</div>
 	</div>
 	<div class="content two-col">
-		<div class="main-col island">
+		<div class="main-col bordered-col island">
 			<h1>Hi there, Dan!</h1>
 			<p>Welcome to your dashboard! From here, you can view available challenges, retake challenges you&rsquo;ve previously completed, and a load of other junk.</p>
 		</div>

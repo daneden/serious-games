@@ -1,7 +1,7 @@
 <?php require_once('inc/header.php'); ?>
 <div class="wrap">
 	<div class="content two-col">
-		<div class="main-col island">
+		<div class="main-col bordered-col island">
 			<h1>Styleguide</h1>
 			<p class="intro">This styleguide is a visual description of the elements that make up the interface &amp; design of Gateway.</p>
 			<h2>Headings, paragraphs and lists</h2>
