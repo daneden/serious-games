@@ -17,9 +17,14 @@
 		<div class="main-col island">
 			<h1>Modules</h1>
 			<p>Welcome to the Modules Page! From here, you view the current modules and edit existing ones, remove modules and more.</p>
-			
-			
-			
+			<h2> List of Modules </h2>
+			<p>
+			<?php
+            $query=mysql_query("SELECT * FROM lessonTable");
+			$result=mysql_fetch_assoc($query);
+			echo $result['lessonTitle'];
+			?>
+			</p>
 		</div>
 	</div>
 </div>
