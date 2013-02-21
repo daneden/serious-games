@@ -307,12 +307,15 @@ pre {
 
 .two-col .main-col {
 	width: 71.8%;
-	border-right: 1px solid #eee;
 }
 
 .two-col .secondary-col {
 	width: 28.2%;
 }
+
+	.bordered-col {
+		border-right: 1px solid #eee;
+	}
 
 .sidebar {
 	color: #666;
@@ -546,8 +549,8 @@ html {
 }
 
 	.admin-area .site-header {
-		background-color: #4a76c6;
-		background-image: url('/assets/images/admin-header-bg.png');
+		background-color: #5babe4;
+		background-image: -webkit-linear-gradient(#5babe4, #2578b4);
 	}
 	
 	@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
