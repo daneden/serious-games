@@ -551,6 +551,7 @@ html {
 	.admin-area .site-header {
 		background-color: #5babe4;
 		background-image: -webkit-linear-gradient(#5babe4, #2578b4);
+		border-color: #1c5b87;
 	}
 	
 	@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
