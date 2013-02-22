@@ -551,6 +551,10 @@ html {
 	.admin-area .site-header {
 		background-color: #5babe4;
 		background-image: -webkit-linear-gradient(#5babe4, #2578b4);
+		background-image:    -moz-linear-gradient(#5babe4, #2578b4);
+		background-image:     -ms-linear-gradient(#5babe4, #2578b4);
+		background-image:      -o-linear-gradient(#5babe4, #2578b4);
+		background-image:         linear-gradient(#5babe4, #2578b4);
 		border-color: #1c5b87;
 	}
 	
