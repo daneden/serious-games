@@ -20,7 +20,7 @@
 			<h2> List of Modules </h2>
 			<p>
 			<?php
-            $query=mysql_query("SELECT * FROM lessonTable");
+            $query=mysql_query("SELECT * FROM lessontable");
 			$result=mysql_fetch_assoc($query);
 			echo $result['lessonTitle'];
 			?>
