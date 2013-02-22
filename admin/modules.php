@@ -15,7 +15,7 @@
 			</ul>
 		</div>
 		<div class="main-col island">
-			<h1>Modules</h1>
+			<h1>Module</h1>
 			<p>Welcome to the Modules Page! From here, you view the current modules and edit existing ones, remove modules and more.</p>
 			<h2> List of Modules </h2>
 			<p>
@@ -25,6 +25,9 @@
 			echo $result['lessonTitle'];
 			?>
 			</p>
+			<div class="unit span-grid">
+						<input class="alignright butt butt-danger submit" type="submit" value="Delete">
+					</div>
 		</div>
 	</div>
 </div>
