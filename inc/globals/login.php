@@ -14,7 +14,13 @@
 	if ($count==1){
 		session_start();
 		$_SESSION['UserID'] = $UserDetails['userID'];
-		header("location:../../dashboard.php");
+		if($UserDetails['userIsAdmin'] == 1){
+			$_SESSION['AdminState'] = 1;
+			header("location:../../admin/index.php");
+		} else {
+			$_SESSION['AdminState'] = 0;
+			header("location:../../dashboard.php");
+		}
 	} else {
 		echo "Wrong Username or Password!";	
 	}

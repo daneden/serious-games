@@ -6,28 +6,32 @@
 <div class="wrap">
 	<div class="content two-col">
 		<div class="sidebar bordered-col secondary-col island">
-			<h2>Page Designs</h2>
-			<ul>
-				<li><a href="/dashboard.php">Dashboard</a></li>
-				<li><a href="/signup.php">Signup</a></li>
-				<li><a href="/lesson.php">Lesson</a></li>
-				<li><a href="/styleguide.php">Styleguide</a></li>
-			</ul>
+			<?php include('inc/php/admin_sidebar.php') ?>
 		</div>
 		<div class="main-col island">
-			<h1>Module</h1>
+			<h1>Modules</h1>
 			<p>Welcome to the Modules Page! From here, you view the current modules and edit existing ones, remove modules and more.</p>
-			<h2> List of Modules </h2>
-			<p>
-			<?php
-            $query=mysql_query("SELECT * FROM lessontable");
-			$result=mysql_fetch_assoc($query);
-			echo $result['lessonTitle'];
-			?>
-			</p>
-			<div class="unit span-grid">
-						<input class="alignright butt butt-danger submit" type="submit" value="Delete">
-					</div>
+			<h2>List of Modules </h2>
+            	<div class="grid">
+				<?php
+                $query=mysql_query("SELECT * FROM lessontable");
+                while ($result = mysql_fetch_assoc($query)) {
+                ?>
+                        <div class="unit p one-of-two"><a href="edit_module.php?mID=<?php echo $result['lessonID'] ?>"><?php echo $result['lessonTitle'] ?></a></div>
+                        <div class="unit one-of-four"><?php
+								$questionsQuery = mysql_query('SELECT * FROM questiontable WHERE questionLessonID = "'.$result['lessonID'].'"');
+								$getNoOfQuestions = mysql_num_rows($questionsQuery);
+								if ($getNoOfQuestions == 1) {
+									echo "1 Question";	
+								} else {
+									echo $getNoOfQuestions." Questions";
+								}
+							 ?>
+                             	<a class="butt alignright" href="add-question.php?Mid=<?php echo $result['lessonID']?>">Add</a>
+                        </div>
+                        <div class="unit one-of-four"><a class="alignright butt butt-danger submit" href="delete_module.php?id=<?php echo $result['lessonID']?>">Delete</a></div>
+                <?php } ?>
+            </div>
 		</div>
 	</div>
 </div>
