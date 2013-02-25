@@ -23,6 +23,8 @@
             <form class="form" action="inc/php/edit_category.php" method="post">
                 <label for="category-name">Category Name</label>
                 <input type="text" class="input" value="<?php echo $category['categoryTitle']?>" name="category-name">
+                <label for="category-description">Category Description</label>
+                <textarea class="input" name="category-description"><?php echo $category['categoryDescription']?></textarea>                
                 <label for="prerequisite-category">Prerequisite Category</label>
                 <select class="input" name="prerequisite-category">
                 	<option value="0">None</option>
