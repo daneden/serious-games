@@ -18,6 +18,8 @@
             <form class="form" action="inc/php/create_new_category.php" method="post">
                 <label for="category-name">Category Name</label>
                 <input type="text" class="input" name="category-name">
+                <label for="category-description">Category Description</label>
+                <textarea class="input" name="category-description"></textarea>
                 <label for="prerequisite-category">Prerequisite Category</label>
                 <select class="input" name="prerequisite-category">
                 	<option value="0">None</option>
