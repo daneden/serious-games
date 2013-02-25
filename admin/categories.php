@@ -17,8 +17,8 @@
                 $query=mysql_query("SELECT * FROM categorytable");
                 while ($result = mysql_fetch_assoc($query)) {
                 ?>
-                        <div class="unit p three-of-four"><a href="edit_module.php?mID=<?php echo $result['lessonID'] ?>"><?php echo $result['categoryTitle'] ?></a></div>
-                        <div class="unit one-of-four"><a class="alignright butt butt-danger submit" href="inc/php/delete_module.php?Mid=<?php echo $result['lessonID']?>">Delete</a></div>
+                        <div class="unit p three-of-four"><a href="edit_category.php?cID=<?php echo $result['categoryID'] ?>"><?php echo $result['categoryTitle'] ?></a></div>
+                        <div class="unit one-of-four"><a class="alignright butt butt-danger submit" href="inc/php/delete_category.php?Cid=<?php echo $result['categoryID']?>">Delete</a></div>
                 <?php } ?>
                 <div class="unit span-grid">
                 	<a class="alignright butt" href="create_category.php">Create Category</a>
