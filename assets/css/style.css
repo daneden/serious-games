@@ -205,6 +205,11 @@ pre {
 	margin-left: .25em;
 }
 
+.alignmiddle { /* Only used when things in grids need to be centered (i.e. the questions radio buttons)*/
+	text-align:center;
+	padding-top:5px;
+}
+
 /* The nav abstraction - http://csswizardry.com/2011/09/the-nav-abstraction/ */
 /*ul*/.nav {
 	list-style: none;
