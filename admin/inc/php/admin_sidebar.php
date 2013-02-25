@@ -5,6 +5,10 @@
             <li><a href="create_module.php">Create Module</a></li>
         </ul>
     </li>
+    <li><a href="categories.php">Categories</a>
+		<ul>
+            <li><a href="create_category.php">Create Category</a></li>
+        </ul>
     <li><a href="users.php">Users</a></li>
     <li><a href="/styleguide.php">Styleguide</a></li>
 </ul>
