@@ -29,7 +29,7 @@
 							 ?>
                              	<a class="butt alignright" href="add_question.php?Mid=<?php echo $result['lessonID']?>">Add</a>
                         </div>
-                        <div class="unit one-of-four"><a class="alignright butt butt-danger submit" href="delete_module.php?id=<?php echo $result['lessonID']?>">Delete</a></div>
+                        <div class="unit one-of-four"><a class="alignright butt butt-danger submit" href="inc/php/delete_module.php?Mid=<?php echo $result['lessonID']?>">Delete</a></div>
                 <?php } ?>
             </div>
 		</div>

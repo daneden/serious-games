@@ -28,6 +28,21 @@
                 <input type="hidden" value="<?php echo $lessonID ?>" name="module-id">
                 <input type="submit" value="Submit" class="butt butt-primary alignright" name="submit" id="submit">
             </form>
+            <h2 class="clear">Questions in Module</h2>
+            <div class="grid">
+            <?php
+            	$getQuestions = mysql_query('SELECT * FROM questiontable WHERE questionLessonID ="'.$lessonID.'"');
+				while($questions = mysql_fetch_assoc($getQuestions)){
+			?>
+            	<div class="unit span-grid p">
+                	<a href="edit_question.php?Qid=<?php echo $questions['questionID'];?>"><?php echo $questions['questionName'] ?></a>
+                	<a class=" alignright butt butt-danger" href="inc/php/delete_question.php?Qid=<?php echo $questions['questionID'];?>">Delete</a>
+                </div>                
+            <?php } ?>
+            	<div class="unit span-grid alignright">
+                	<a class="butt alignright" href="add_question.php?Mid=<?php echo $lessonID?>">Add</a>
+                </div>
+            </div>
 		</div>
 	</div>
 </div>
