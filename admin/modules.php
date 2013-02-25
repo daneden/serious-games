@@ -31,6 +31,9 @@
                         </div>
                         <div class="unit one-of-four"><a class="alignright butt butt-danger submit" href="inc/php/delete_module.php?Mid=<?php echo $result['lessonID']?>">Delete</a></div>
                 <?php } ?>
+                <div class="unit span-grid">
+                	<a class="alignright butt" href="create_module.php">Create Module</a>
+                </div>                
             </div>
 		</div>
 	</div>
