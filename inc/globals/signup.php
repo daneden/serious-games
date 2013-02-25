@@ -19,7 +19,8 @@
 		} else {
 		if (mysql_query('Insert INTO usertable (userID, userEmail, userFName, userSName, userPassword, userLanguage, userSpecialisation, userIsAdmin) VALUES ( NULL, "'.$userEmail.'", "'.$userFName.'", "'.$userSName.'", "'.$userPassword.'", "'.$userLanguage.'", "'.$userSpecialisation.'", 0)')) {
 			session_start();
-			$_SESSION['userEmail'] = $UserEmail;
+			$UserID = mysql_insert_id();
+			$_SESSION['UserID'] = $UserID;
 			header("location:../../dashboard.php");				
 		} else {
 			echo mysql_error();
