@@ -9,6 +9,9 @@
 	if(!isset($_SESSION['CurrentQuestion'])){
 		$_SESSION['CurrentQuestion'] = 1;
 	}
+	if(!isset($_SESSION['Answers'])){
+		$_SESSION['Answers'] = array();
+	}
 	$currentQuestion = $_SESSION['CurrentQuestion'];
 	$getLesson = mysql_query('SELECT * FROM lessontable WHERE lessonID = "'.$lessonID.'"');
 	$lesson = mysql_fetch_assoc($getLesson);
@@ -23,6 +26,7 @@
 	get_questions($lessonID);
 	get_question_details($questionArray[$currentQuestion]);
 	decode_array($questionDetails['questionAnswers']);
+	$progressPercent = floor((($currentQuestion - 1)/(count($questionArray)))*100);
 	
 ?>
 <div class="wrap">
@@ -31,7 +35,7 @@
 			<h1><?php echo $module['categoryTitle'] ?></h1>
 			<span class="gamma lesson-header">Lesson <?php echo $lessonNumber; ?>: <strong class="lesson-title"><?php echo $lesson['lessonTitle']?></strong></span>
 			<div class="p lesson-progress">
-				<div class="progress-measure" style="width: 33%;" data-tooltip="33% Complete"><span class="visually-hidden">33% Complete</span></div>
+				<div class="progress-measure" style="width: <?php echo $progressPercent ?>%;" data-tooltip="<?php echo $progressPercent ?>% Complete"><span class="visually-hidden"><?php echo $progressPercent ?>% Complete</span></div>
 			</div>
 
 			<div class="lesson-content">
@@ -42,17 +46,17 @@
 						<p class="intro standalone"><?php get_question_title() ?></p>
 					</div>
 					<ol class="question-answer-group standalone">
-						<li class="question-answer isle"><input checked class="alignleft qa-in" type="radio" value="0" name="answer"><label for="q2-a1"><?php echo $arrayResult[0] ?></label></li>
-						<li class="question-answer isle"><input class="alignleft qa-in" type="radio" value="1" name="answer"><label for="q2-a2"><?php echo $arrayResult[1] ?></label></li>
-						<li class="question-answer isle"><input class="alignleft qa-in" type="radio" value="2" name="answer"><label for="q2-a3"><?php echo $arrayResult[2] ?></label></li>
-                        <li class="question-answer isle"><input class="alignleft qa-in" type="radio" value="3" name="answer"><label for="q-a3"><?php echo $arrayResult[3] ?></label></li>
+						<li class="question-answer isle"><input checked class="alignleft qa-in" type="radio" value="0" id="q-a1" name="answer"><label for="q-a1"><?php echo $arrayResult[0] ?></label></li>
+						<li class="question-answer isle"><input class="alignleft qa-in" type="radio" value="1" id="q-a2" name="answer"><label for="q-a2"><?php echo $arrayResult[1] ?></label></li>
+						<li class="question-answer isle"><input class="alignleft qa-in" type="radio" value="2" id="q-a3" name="answer"><label for="q-a3"><?php echo $arrayResult[2] ?></label></li>
+                        <li class="question-answer isle"><input class="alignleft qa-in" type="radio" value="3" id="q-a4" name="answer"><label for="q-a4"><?php echo $arrayResult[3] ?></label></li>
 					</ol>
 				</div>
 				<div class="lesson-navigation cf island">
                 	<input type="hidden" name="lesson-id" value="<?php echo $lessonID?>" />
-                    <input type="hidden" name="question-id" value="<?php echo $currentQuestion?>" />
+                    <input type="hidden" name="question-id" value="<?php get_question_id()?>" />
                     <input type="hidden" name="num-questions" value="<?php echo count($questionArray); ?>" />
-					<input type="submit" value="Next Question" name="answer" class="butt butt-primary alignright">
+					<input type="submit" value="Next Question" name="answerQuestion" class="butt butt-primary alignright">
 					<?php if($_SESSION['CurrentQuestion'] > 1) {?><input type="submit" value="Go Back" name="go-back"class="butt alignleft"><?php } ?>
 				</div>
                 </form>
