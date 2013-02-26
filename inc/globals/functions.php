@@ -56,5 +56,38 @@
 			}
 		}
 		
+		/* This function retrieves all of the Question IDs that are in the Lesson ID that is passed into it */
+		function get_questions($lessonID) {
+			global $questionArray;
+			$i = 1;
+			$getQuestions = mysql_query('SELECT questionID FROM questiontable WHERE questionLessonID ="'.$lessonID.'" ORDER BY questionID ASC');
+			while($questions = mysql_fetch_array($getQuestions)){
+				$questionArray[$i] = $questions['questionID'];
+				$i++;
+			}
+			return $questionArray;
+		}
 		
+		function get_question_details($questionID) {
+			global $questionDetails;
+			$getQuestion = mysql_query('SELECT * FROM questiontable WHERE questionID ="'.$questionID.'"');
+			$questionDetails = mysql_fetch_assoc($getQuestion);
+		}
+		
+			function get_question_title() {
+				global $questionDetails;
+				echo $questionDetails['questionName'];	
+			}
+
+			function get_question_helper() {
+				global $questionDetails;
+				echo $questionDetails['questionHelperText'];	
+			}
+
+		function decode_array($array) {
+			global $arrayResult;
+			$arrayResult = json_decode($array);
+			return $arrayResult;
+		}
+	
 ?>
