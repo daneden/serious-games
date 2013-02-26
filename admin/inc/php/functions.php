@@ -25,10 +25,5 @@ function fetch_categories() {
 	}
 }
 
-function decode_array($array) {
-	global $arrayResult;
-	$arrayResult = json_decode($array);
-	return $arrayResult;
-}
 
 ?>

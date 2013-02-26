@@ -2,6 +2,7 @@
 	$isAdmin = true;
 	require_once('../inc/header.php');
 	require_once('../inc/db/connect.php');
+	require_once('../inc/globals/functions.php');	
 	require_once('inc/php/functions.php');
 	$questionID = $_GET['Qid'];
 	$getQuestion = mysql_query('SELECT * FROM questiontable WHERE questionID = "'.$questionID.'"');

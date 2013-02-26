@@ -48,7 +48,7 @@
 								$getLessons = mysql_query('SELECT * FROM lessontable WHERE lessonCategoryID = "'.$category['categoryID'].'"');
 								while ($lesson = mysql_fetch_assoc($getLessons)) {
 							?>
-                            <li><a href="lesson.php?Lid=<?php echo $lesson['lessonID'] ?>"><?php echo $lesson['lessonTitle'] ?></a></li>
+                            <li <?php lesson_completed($lesson['lessonID']) ?> ><a href="lesson.php?Lid=<?php echo $lesson['lessonID'] ?>"><?php echo $lesson['lessonTitle'] ?></a></li>
                             <?php } ?>
                         </ol>
                     </li>
@@ -83,11 +83,24 @@
 				global $questionDetails;
 				echo $questionDetails['questionHelperText'];	
 			}
+			
+			function get_question_id() {
+				global $questionDetails;
+				echo $questionDetails['questionID'];	
+			}
 
 		function decode_array($array) {
 			global $arrayResult;
 			$arrayResult = json_decode($array);
 			return $arrayResult;
+		}
+		
+		function lesson_completed($lesson) {
+			$lessonID = $lesson;
+			$lessonCompleted = mysql_query('SELECT * FROM progressiontable WHERE progressionUserID = "'.$_SESSION['UserID'].'" AND progressionlessonID = "'.$lessonID.'"');
+			if($lessonFetch = mysql_fetch_assoc($lessonCompleted)){
+				echo 'class="challenge-complete"';
+			}
 		}
 	
 ?>
