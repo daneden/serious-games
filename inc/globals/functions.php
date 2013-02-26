@@ -48,11 +48,13 @@
 								$getLessons = mysql_query('SELECT * FROM lessontable WHERE lessonCategoryID = "'.$category['categoryID'].'"');
 								while ($lesson = mysql_fetch_assoc($getLessons)) {
 							?>
-                            <li><a href="lesson?Lid=<?php echo $lesson['lessonID'] ?>"><?php echo $lesson['lessonTitle'] ?></a></li>
+                            <li><a href="lesson.php?Lid=<?php echo $lesson['lessonID'] ?>"><?php echo $lesson['lessonTitle'] ?></a></li>
                             <?php } ?>
                         </ol>
                     </li>
                 <?php
 			}
 		}
+		
+		
 ?>

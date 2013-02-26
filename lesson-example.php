@@ -1,31 +1,12 @@
-<?php
-	
-	require_once('inc/header.php');
-	require_once('inc/db/connect.php');
-	require_once('inc/globals/functions.php');
-	verify_user();
-	$lessonNum[] = "";
-	$i = 1;
-	$lessonID = $_GET['Lid'];
-	$getLesson = mysql_query('SELECT * FROM lessontable WHERE lessonID = "'.$lessonID.'"');
-	$lesson = mysql_fetch_assoc($getLesson);
-	$getModule = mysql_query('SELECT * FROM categorytable WHERE categoryID = "'.$lesson['lessonCategoryID'].'"');
-	$module = mysql_fetch_assoc($getModule);
-	$getLessonNum = mysql_query('SELECT lessonID FROM lessontable WHERE lessonCategoryID = "'.$module['categoryID'].'"');
-	while ($getLessonNumArray = mysql_fetch_assoc($getLessonNum)) {
-		$lessonNum[$i] = $getLessonNumArray['lessonID'];
-		$i++;
-	}
-	$lessonNumber = array_search($lessonID, $lessonNum);
-?>
+<?php require_once('inc/header.php'); ?>
 <div class="wrap">
 	<div class="content two-col">
 		<div class="main-col border-col island">
-			<h1><?php echo $module['categoryTitle'] ?></h1>
-			<span class="gamma lesson-header">Lesson <?php echo $lessonNumber; ?>: <strong class="lesson-title"><?php echo $lesson['lessonTitle']?></strong></span>
-			<!-- <div class="p lesson-progress">
+			<h1>Vocational Language</h1>
+			<span class="gamma lesson-header">Lesson 1: <strong class="lesson-title">Introduction</strong></span>
+			<div class="p lesson-progress">
 				<div class="progress-measure" style="width: 33%;" data-tooltip="33% Complete"><span class="visually-hidden">33% Complete</span></div>
-			</div> -->
+			</div>
 
 			<div class="lesson-content">
 				<div class="lesson-question">
