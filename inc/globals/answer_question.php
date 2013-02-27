@@ -35,9 +35,9 @@
 				$categoryID = $category['lessonCategoryID'];
 				$userID = $_SESSION['UserID'];
 				mysql_query ('INSERT INTO progressiontable (progressionID, progressionUserID, progressionCategoryID, progressionLessonID, progressionScore) VALUES ( NULL, "'.$userID.'", "'.$categoryID.'","'.$lessonID.'","'.$score.'")');
-				
 			}
-			header('location:../../dashboard.php');
+			$_SESSION['score'] = floor($score)."%";
+			header('location:../../results.php?Lid='.$lessonID);
 		}
 				
 		if($_SESSION['CurrentQuestion'] < $numQuestions){

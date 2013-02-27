@@ -905,3 +905,33 @@ html {
 				margin-right: 1em;
 				margin-top: .15em;
 			}
+
+/*-----------------------------------*\
+	$RESULT
+\*-----------------------------------*/
+	.answers li{
+		padding:5px 5px 5px 20px;
+		margin-right: 1em;
+		margin-top: .15em;	
+		list-style:none;
+	}
+		.correct-answer {
+			background-image: url('/assets/images/completed-check-small.png'); 
+			background-color: #d8fad7;
+			color: #105f0d;
+			background-repeat:no-repeat;
+			background-position:left center;
+		}
+
+		.incorrect-answer {
+			background-image: url('/assets/images/incorrect-cross-small.png'); 
+			background-color: #fad7d7;
+			color: #5f0d0d;
+			background-repeat:no-repeat;
+			background-position:left center;
+		}
+		
+			.result {
+				font-weight:700;
+				text-transform:uppercase;	
+			}

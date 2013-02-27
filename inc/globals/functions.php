@@ -102,5 +102,4 @@
 				echo 'class="challenge-complete"';
 			}
 		}
-	
 ?>
