@@ -29,6 +29,12 @@
 			echo $userDetails['userFName'];	
 		}
 		
+		/* This function prints the user's first name*/
+		function get_user_email() {
+			global $userDetails;
+			echo $userDetails['userEmailAddress'];	
+		}		
+		
 		/* This function prints the user's last name*/
 		function get_user_sname() {
 			global $userDetails;
