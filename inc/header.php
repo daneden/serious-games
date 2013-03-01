@@ -28,9 +28,9 @@
 		<nav class="isle user-nav">
 			<a class="user-link" href="/user">
 				<span class="user-name"><?php get_user_fname();?> <?php get_user_sname();?></span>
-				<figure class="navatar">
-					<img src="http://0.gravatar.com/avatar/<?php echo md5(get_user_email()); ?>?s=64&d=identicon&r=R" width="32" height="32">
-				</figure>
+				 <!-- <figure class="navatar">
+					<img src="http://0.gravatar.com/avatar/?s=64&d=identicon&r=R" width="32" height="32">
+				</figure> -->
 			</a>
 			<button class="user-nav-toggle" title="Toggle Menu">Toggle Menu</button>
 			<ul class="user-nav-items">
