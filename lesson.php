@@ -46,7 +46,7 @@
 						<p class="intro standalone"><?php get_question_title() ?></p>
 					</div>
 					<ol class="question-answer-group standalone">
-						<li class="question-answer isle"><input checked class="alignleft qa-in" type="radio" value="0" id="q-a1" name="answer"><label for="q-a1"><?php echo $arrayResult[0] ?></label></li>
+						<li class="question-answer isle"><input class="alignleft qa-in" type="radio" value="0" id="q-a1" name="answer"><label for="q-a1"><?php echo $arrayResult[0] ?></label></li>
 						<li class="question-answer isle"><input class="alignleft qa-in" type="radio" value="1" id="q-a2" name="answer"><label for="q-a2"><?php echo $arrayResult[1] ?></label></li>
 						<li class="question-answer isle"><input class="alignleft qa-in" type="radio" value="2" id="q-a3" name="answer"><label for="q-a3"><?php echo $arrayResult[2] ?></label></li>
                         <li class="question-answer isle"><input class="alignleft qa-in" type="radio" value="3" id="q-a4" name="answer"><label for="q-a4"><?php echo $arrayResult[3] ?></label></li>
