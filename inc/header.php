@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start(); include_once('/inc/globals/functions.php');?>
 <!DOCTYPE html>
 <html lang="en"<?php if (isset($isAdmin) && ($isAdmin === true)): ?> class="admin-area"<?php endif; ?>>
 <head>
