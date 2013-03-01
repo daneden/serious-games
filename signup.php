@@ -94,10 +94,10 @@
 				</div>
 			</form>
 		</div>
-		<div class="sidebar secondary-col island">
+		<!-- <div class="sidebar secondary-col island">
 			<h2>Need some help?</h2>
 			<p>Blah, blah, blah</p>
-		</div>
+		</div> -->
 	</div>
 </div>
 <?php require_once('inc/footer.php'); ?>
