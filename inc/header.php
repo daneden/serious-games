@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en"<?php if (isset($isAdmin) && ($isAdmin === true)): ?> class="admin-area"<?php endif; ?>>
 <head>
