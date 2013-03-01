@@ -23,6 +23,7 @@
 				<img width="132" height="34" src="/assets/images/site-logo@2x.png" alt="Gateway logo">
 			<?php } ?>
 		</a>
+		<?php if(isset($_SESSION['UserID'])){ ?>
 		<nav class="isle user-nav">
 			<a class="user-link" href="/user">
 				<span class="user-name">Dan Eden</span>
@@ -36,5 +37,6 @@
 				<li><a class="isle" href="/logout.php">Log Out</a></li>
 			</ul>
 		</nav>
+		<?php } ?>
 	</div>
 </header>
