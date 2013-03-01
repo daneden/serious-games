@@ -21,7 +21,7 @@
 		</div>
 		<div class="sidebar secondary-col island">
 			<h2>Profile Overview</h2>
-			<h2><?php get_user_fname(); ?> <?php get_user_sname(); ?></h2>
+			<h3><?php get_user_fname(); ?> <?php get_user_sname(); ?></h3>
 		</div>
 	</div>
 </div>
