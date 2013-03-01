@@ -30,10 +30,10 @@
 		}
 		
 		/* This function prints the user's first name*/
-		function get_user_email() {
+		/* function get_user_email() {
 			global $userDetails;
 			return $userDetails['userEmail'];	
-		}		
+		} */	
 		
 		/* This function prints the user's last name*/
 		function get_user_sname() {
