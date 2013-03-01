@@ -7,7 +7,7 @@
 		</div>
 	</div>
 	<div class="content two-col">
-		<div class="main-col island">
+		<div class="main-col island bordered-col">
 			<h1>Login</h1>
 			<p>Please enter your login details into the boxes below.</p>
             <form action="inc/globals/login.php" method="post">
