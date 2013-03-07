@@ -1,7 +1,10 @@
 <?php
 	$isAdmin = true;
-	require_once('../inc/header.php');
-	require_once('../inc/db/connect.php');
+	require_once('../inc/db/connect.php');	
+	require_once('../inc/globals/functions.php');
+	verify_user();
+	verify_admin();	
+	require_once('../inc/header.php');	
 ?>
 <div class="wrap">
 	<div class="content two-col">
