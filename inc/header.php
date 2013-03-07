@@ -1,4 +1,3 @@
-<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en"<?php if (isset($isAdmin) && ($isAdmin === true)): ?> class="admin-area"<?php endif; ?>>
 <head>
@@ -27,10 +26,10 @@
 		<?php if(isset($_SESSION['UserID'])){ ?>
 		<nav class="isle user-nav">
 			<a class="user-link" href="/user">
-				<span class="user-name">User Name</span>
-				 <!-- <figure class="navatar">
-					<img src="http://0.gravatar.com/avatar/?s=64&d=identicon&r=R" width="32" height="32">
-				</figure> -->
+				<span class="user-name"><?php get_user_fname(); ?> <?php get_user_sname(); ?></span>
+				 <figure class="navatar">
+					<img src="http://0.gravatar.com/avatar/<?php echo md5(get_user_email());?>?s=64&d=identicon&r=R" width="32" height="32">
+				</figure>
 			</a>
 			<button class="user-nav-toggle" title="Toggle Menu">Toggle Menu</button>
 			<ul class="user-nav-items">

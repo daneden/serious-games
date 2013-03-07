@@ -4,11 +4,11 @@
 		error_reporting(0);
 	}
 	$_SESSION['CurrentQuestion'] = 1;
-	require_once('inc/header.php');
 	require_once('inc/db/connect.php');
 	require_once('inc/globals/functions.php');
 	$_SESSION['Answers'] = array();
 	verify_user();
+	require_once('inc/header.php');	
 ?>
 <div class="wrap">
 	<div class="content two-col">

@@ -1,9 +1,9 @@
 <?php
 	$_SESSION['CurrentQuestion'] = 1;
-	require_once('inc/header.php');
 	require_once('inc/db/connect.php');
 	require_once('inc/globals/functions.php');
 	verify_user();
+	require_once('inc/header.php');	
 	$lessonID = $_GET['Lid'];
 	$getQuestions = mysql_query('SELECT * FROM questiontable WHERE questionLessonID = "'.$lessonID.'"');
 	$i = 1;
