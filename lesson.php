@@ -64,7 +64,7 @@
 		</div>
 		<div class="sidebar secondary-col island">
 			<h2>Need some help?</h2>
-			<p><?php get_question_helper(); ?></p>
+			<p><?php nl2br(get_question_helper()); ?></p>
 		</div>
 	</div>
 </div>
