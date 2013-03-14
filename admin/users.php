@@ -14,18 +14,29 @@
 		<div class="main-col island">
 			<h1>Users</h1>
 			<p>Welcome to the Users Page! From here, you can delete users, or promote registered users to administrators!</p>
-			<h2>List of Users</h2>
-            	<div class="grid">
-				<?php
-                $query=mysql_query("SELECT * FROM usertable");
-                while ($result = mysql_fetch_assoc($query)) {
-                ?>
-                        <div class="unit one-of-three"><?php echo $result['userID'] ?> <?php echo $result['userFName'] ?> <?php echo $result['userSName']?></div>
-                        <div class="unit one-of-three"><?php echo $result['userEmail'] ?>
-                        </div>
-                        <div class="unit one-of-three"><a class="alignright butt butt-danger submit" href="delete_module.php?id=">Delete</a></div>
-                <?php } ?>
-            </div>
+			<table class="table zebra admin-user-list">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>User Name</th>
+						<th>Email</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+					$query=mysql_query("SELECT * FROM usertable");
+					while ($result = mysql_fetch_assoc($query)) {
+					?>
+					<tr>
+						<td><?php echo $result['userID'] ?></td>
+						<td><?php echo $result['userFName'] ?> <?php echo $result['userSName']?></td>
+						<td><?php echo $result['userEmail'] ?></td>
+						<td><a class="message-danger" href="delete_module.php?id=">Delete</a></td>
+					</tr>
+					<?php } ?>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </div>
