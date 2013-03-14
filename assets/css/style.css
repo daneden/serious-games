@@ -320,7 +320,7 @@ pre {
 	*display: inline;
 	*zoom: 1;
 	vertical-align: top;
-	margin-right: -.24em;
+	margin-right: -.25em;
 }
 
 .two-col .main-col {
@@ -331,8 +331,14 @@ pre {
 	width: 28.2%;
 }
 
-	.bordered-col {
+	.two-col > div {
 		border-right: 1px solid #eee;
+	}
+
+	.two-col > div + div {
+		border-left: 1px solid #eee;
+		border-right: 0;
+		margin-left: -1px;
 	}
 
 .sidebar {
