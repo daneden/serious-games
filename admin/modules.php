@@ -14,30 +14,44 @@
 		<div class="main-col island">
 			<h1>Modules</h1>
 			<p>Welcome to the Modules Page! From here, you view the current modules and edit existing ones, remove modules and more.</p>
-			<h2>List of Modules </h2>
-            	<div class="grid">
-				<?php
-                $query=mysql_query("SELECT * FROM lessontable");
-                while ($result = mysql_fetch_assoc($query)) {
-                ?>
-                        <div class="unit p one-of-two"><a href="edit_module.php?mID=<?php echo $result['lessonID'] ?>"><?php echo $result['lessonTitle'] ?></a></div>
-                        <div class="unit one-of-four"><?php
-								$questionsQuery = mysql_query('SELECT * FROM questiontable WHERE questionLessonID = "'.$result['lessonID'].'"');
-								$getNoOfQuestions = mysql_num_rows($questionsQuery);
-								if ($getNoOfQuestions == 1) {
-									echo "1 Question";	
-								} else {
-									echo $getNoOfQuestions." Questions";
-								}
-							 ?>
-                             	<a class="butt alignright" href="add_question.php?Mid=<?php echo $result['lessonID']?>">Add</a>
-                        </div>
-                        <div class="unit one-of-four"><a class="alignright butt butt-danger submit" href="inc/php/delete_module.php?Mid=<?php echo $result['lessonID']?>">Delete</a></div>
-                <?php } ?>
-                <div class="unit span-grid">
-                	<a class="alignright butt" href="create_module.php">Create Module</a>
-                </div>                
-            </div>
+				<table class="table zebra admin-module-list">
+					<thead>
+						<tr>
+							<th>Module Name</th>
+							<th>Questions</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+						$query=mysql_query("SELECT * FROM lessontable");
+						while ($result = mysql_fetch_assoc($query)) {
+						?>
+						<tr>
+								<td><a href="edit_module.php?mID=<?php echo $result['lessonID'] ?>"><?php echo $result['lessonTitle'] ?></a></td>
+								<td><?php
+										$questionsQuery = mysql_query('SELECT * FROM questiontable WHERE questionLessonID = "'.$result['lessonID'].'"');
+										$getNoOfQuestions = mysql_num_rows($questionsQuery);
+										if ($getNoOfQuestions == 1) {
+											echo "1 Question";	
+										} else {
+											echo $getNoOfQuestions." Questions";
+										}
+									 ?>
+								</td>
+								<td>
+									<nav class="admin-actions">
+										<ul class="nav">
+											<li><a href="add_question.php?Mid=<?php echo $result['lessonID']?>">Add question</a></li>
+											<li><a class="message-danger" href="inc/php/delete_module.php?Mid=<?php echo $result['lessonID']?>">Delete</a></li>
+										</ul>
+									</nav>
+								</td>
+						</tr>
+						<?php } ?>
+					</tbody>            
+				</table>
+				<a class="alignright butt butt-primary" href="create_module.php">Create Module</a>
 		</div>
 	</div>
 </div>
