@@ -47,7 +47,7 @@
 			while($category = mysql_fetch_assoc($getCategories)){
 				?>
                     <li class="island">
-                        <h2 class="standalone"><?php echo $category['categoryTitle'];?></h2>
+                        <h2 class="standalone <?php check_completed($category['categoryID']) ?>"><?php echo $category['categoryTitle'];?></h2>
                         <p class="desc"><?php echo $category['categoryDescription']?></p>
                         <ol class="sub-challenges">
                         	<?php 
@@ -61,6 +61,10 @@
                 <?php
 			}
 		}
+		
+			function check_completed($categoryID){
+				
+			}
 		
 		/* This function retrieves all of the Question IDs that are in the Lesson ID that is passed into it */
 		function get_questions($lessonID) {

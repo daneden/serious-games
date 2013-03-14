@@ -26,9 +26,12 @@
 			$checkProgression = mysql_query ('SELECT * FROM progressiontable WHERE progressionUserID = "'.$_SESSION['UserID'].'" AND progressionlessonID = "'.$lessonID.'"');
 			$hasProgress = mysql_num_rows ($checkProgression);
 			if ($hasProgress > 0){
+				$progress = mysql_fetch_assoc($checkProgression);
 				$userID = $_SESSION['UserID'];
+				if($progress['progressionScore'] < $score) {
 				$updateQuery = "UPDATE progressiontable SET progressionScore ='$score' WHERE progressionUserID = '$userID' AND progressionlessonID = $lessonID";
 				mysql_query($updateQuery);
+				}
 			} else {
 				$getCategoryID = mysql_query ('SELECT * FROM lessontable WHERE lessonID = "'.$lessonID.'"');
 				$category = mysql_fetch_assoc ($getCategoryID);

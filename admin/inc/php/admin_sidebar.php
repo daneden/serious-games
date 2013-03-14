@@ -12,5 +12,5 @@
         </ul>
     <li><a href="users.php">Users</a></li>
     <li><a href="/dashboard.php">User Dashboard</a></li>
-    <li><a href="/styleguide.php">Styleguide</a></li>
+    <li><a href="/admin/styleguide.php">Styleguide</a></li>
 </ul>
