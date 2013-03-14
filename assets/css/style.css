@@ -150,7 +150,7 @@ a {
 	line-height: 1.1428571429;
 }
 
-.message-error {
+.message-error, .message-danger {
 	color: #b70e0c !important;
 }
 
@@ -168,6 +168,43 @@ pre {
 	color: #f0c662;
 	padding: 12px;
 	padding: .75rem;
+}
+
+/*-----------------------------------*\
+	$TABLES
+\*-----------------------------------*/
+
+table {
+	max-width: 100%;
+	background-color: 
+	transparent;
+	border-collapse: collapse;
+	border-spacing: 0;
+	display: table;
+}
+
+.table {
+	width: 100%;
+}
+
+.table th {
+	font-weight: bold;
+}
+
+.table th, .table td {
+	padding: 8px;
+	line-height: 20px;
+	text-align: left;
+	vertical-align: top;
+	border-top: 1px solid #dddddd;
+}
+
+.zebra tbody > tr:nth-child(odd), .zebra tbody > tr:nth-child(odd) {
+	background-color: #f9f9f9;
+}
+
+.table caption + thead tr:first-child th, .table caption + thead tr:first-child td, .table colgroup + thead tr:first-child th, .table colgroup + thead tr:first-child td, .table thead:first-child tr:first-child th, .table thead:first-child tr:first-child td {
+	border-top: 0;
 }
 
 /*-----------------------------------*\
@@ -212,6 +249,8 @@ pre {
 /* The nav abstraction - http://csswizardry.com/2011/09/the-nav-abstraction/ */
 /*ul*/.nav {
 	list-style: none;
+	margin-bottom: 0;
+	padding-left: 0;
 }
 
 	.nav li, .nav a {
@@ -621,6 +660,7 @@ html {
 		z-index: 1;
 		margin: -12px;
 		margin: -.75rem;
+		text-align: right;
 	}
 
 		.user-nav.toggled-on {
@@ -684,6 +724,7 @@ html {
 			padding-left: 0;
 			margin-bottom: -12px;
 			margin-top: 8px;
+			text-align: left;
 		}
 
 			.user-nav-items a {
@@ -1009,3 +1050,15 @@ html {
 				font-weight:700;
 				text-transform:uppercase;	
 			}
+
+/*-----------------------------------*\
+	$ADMIN
+\*-----------------------------------*/
+
+.admin-actions .nav li + li {
+	margin-left: 4px;
+	margin-left: .375rem;
+	padding-left: 8px;
+	padding-left: .5rem;
+	border-left: 1px solid #ddd;
+}
