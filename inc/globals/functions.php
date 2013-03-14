@@ -74,33 +74,38 @@
 			return $questionArray;
 		}
 		
+		/* This function retrieves all of the information about the question */
 		function get_question_details($questionID) {
 			global $questionDetails;
 			$getQuestion = mysql_query('SELECT * FROM questiontable WHERE questionID ="'.$questionID.'"');
 			$questionDetails = mysql_fetch_assoc($getQuestion);
 		}
 		
+		/* This outputs the question name */
 			function get_question_title() {
 				global $questionDetails;
 				echo $questionDetails['questionName'];	
 			}
 
+		/* This outputs the question helper test */
 			function get_question_helper() {
 				global $questionDetails;
 				echo $questionDetails['questionHelperText'];	
 			}
 			
+		/* This outputs the question ID */
 			function get_question_id() {
 				global $questionDetails;
 				echo $questionDetails['questionID'];	
 			}
-
+		/* This function takes in a field of the database that is a JSON string and returns an array */
 		function decode_array($array) {
 			global $arrayResult;
 			$arrayResult = json_decode($array);
 			return $arrayResult;
 		}
 		
+		/* This function adds the class "challenge-complete" to completed lessons */
 		function lesson_completed($lesson) {
 			$lessonID = $lesson;
 			$lessonCompleted = mysql_query('SELECT * FROM progressiontable WHERE progressionUserID = "'.$_SESSION['UserID'].'" AND progressionlessonID = "'.$lessonID.'"');

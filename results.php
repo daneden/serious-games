@@ -34,7 +34,7 @@
             <p>You have finished the lesson, let's take a look at how you've done!</p>
             <ul class="answers">
             	<?php while ($getAnswers = mysql_fetch_assoc($getQuestions)){?>
-                	<li <?php if($_SESSION['Answers'][$i] == 1){ ?>class="correct-answer"<?php } else { ?>class="incorrect-answer"<?php }?>><?php if($_SESSION['Answers'][$i] == 1){ ?><span class="result">Correct</span> <?php } else {?><span class="result">INCORRECT</span> <?php } ?><?php echo $getAnswers['questionName']?></li>
+                	<li <?php if($_SESSION['Answers'][$i] == 1){ ?>class="correct-answer"<?php } else { ?>class="incorrect-answer"<?php }?>><?php if($_SESSION['Answers'][$i] == 1){ ?><span class="result">Correct</span> <?php } else {?><span class="result">INCORRECT</span> <?php } ?><?php echo $getAnswers['questionName']?><br /><?php if($_SESSION['Answers'][$i] == 0){ ?><b>Correct Answer:</b> <?php decode_array($getAnswers['questionAnswers']); echo $arrayResult[$getAnswers['questionAnswerIndex']] ?><?php } ?></li>
                 <?php $i++; } ?>
             </ul>
             <h2>Your final score is: <?php echo $_SESSION['score']; ?></h2>
@@ -44,7 +44,7 @@
         </div>
 		<div class="sidebar secondary-col island">
 			<h2>Profile Overview</h2>
-			<h2><?php get_user_fname(); ?> <?php get_user_sname(); ?></h2>
+			<h3><?php get_user_fname(); ?> <?php get_user_sname(); ?></h3>
 		</div>
 	</div>
 </div>
