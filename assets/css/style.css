@@ -750,7 +750,7 @@ html {
 
 	.admin-area .user-nav.toggled-on {
 		background-color: #1c5b87;
-		box-shadow: inset 0 0 10px rgba(0,0,0,.2);
+		box-shadow: inset 0 0 10px rgba(0,0,100,.2);
 	}
 
 		.admin-area .user-nav-items a {
