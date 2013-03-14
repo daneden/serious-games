@@ -13,7 +13,7 @@
 		</div>
 		<div class="main-col island">
 			<h1>Modules</h1>
-			<p>Welcome to the Modules Page! From here, you view the current modules and edit existing ones, remove modules and more.</p>
+			<p>Welcome to the Modules Page! From here, you can edit existing or remove modules and more.</p>
 				<table class="table zebra admin-module-list">
 					<thead>
 						<tr>
