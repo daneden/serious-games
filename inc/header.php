@@ -33,6 +33,8 @@
 			</a>
 			<button class="user-nav-toggle" title="Toggle Menu">Toggle Menu</button>
 			<ul class="user-nav-items">
+            	<?php if($isAdmin && $_SESSION['AdminState'] == 1) { ?><li><a class="isle" href="/dashboard.php">Switch to Front End</a></li><?php } else if (!$isAdmin && $_SESSION['AdminState'] == 1){?>
+                <li><a class="isle" href="/admin">Switch to Back End</a></li><?php } ?>
 				<li><a class="isle" href="/edit-profile.php">Edit Profile</a></li>
 				<li><a class="isle" href="/logout.php">Log Out</a></li>
 			</ul>
