@@ -1055,6 +1055,47 @@ html {
 	$ADMIN
 \*-----------------------------------*/
 
+.admin-sidebar-nav, .admin-sidebar-nav ul {
+	list-style: none;
+	padding-left: 0;
+	margin-bottom: 0;
+}
+
+	.admin-sidebar-nav:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 10px;
+		box-shadow: inset -7px 0 5px -7px rgba(0,0,0,.1);
+		-webkit-mask-image: -webkit-linear-gradient(#000, transparent);
+		pointer-events: none;
+	}
+
+	.admin-sidebar-nav li a {
+		display: block;
+		padding: 12px 16px;
+		padding: .75rem 1rem;
+		background-color: #f9f9f9;
+		font-weight: 700;
+		color: #333;
+	}
+
+	.admin-sidebar-nav .current-item {
+		background-color: #e7f9ff;
+		color: #16496b;
+	}
+
+		.admin-sidebar-nav li + li a {
+			border-top: 1px solid #eee;
+		}
+
+		.admin-sidebar-nav ul li a {
+			background-color: transparent;
+			font-weight: 400;
+		}
+
 .admin-actions .nav li + li {
 	margin-left: 4px;
 	margin-left: .375rem;
