@@ -267,9 +267,18 @@ pre {
 
 /*-----------------------------------*\
 	$TOOLTIPS
+
+	Usage:
+	<p data-tooltip="This is a tooltip">This tooltip will read "This is a tooltip"</p>
+
 \*-----------------------------------*/
 
+[data-tooltip] {
+	white-space: nowrap;
+}
+
 [data-tooltip]:after {
+	visibility: hidden;
 	content: attr(data-tooltip);
 	position: absolute;
 	z-index: 100;
@@ -286,6 +295,7 @@ pre {
 }
 
 [data-tooltip]:before {
+	visibility: hidden;
 	content: '';
 	position: absolute;
 	z-index: 101;
@@ -294,6 +304,10 @@ pre {
 	border: .5em solid transparent;
 	border-bottom-color: #333;
 	border-bottom-color: rgba(0,0,0,.8);
+}
+
+[data-tooltip]:hover:after, [data-tooltip]:hover:before {
+	visibility: visible;
 }
 
 /*-----------------------------------*\
@@ -554,33 +568,35 @@ html {
 
 	.admin-area .site-header {
 		background-color: #5babe4;
+		background-image: none;
 		background-image: -webkit-linear-gradient(#5babe4, #2578b4);
 		background-image:    -moz-linear-gradient(#5babe4, #2578b4);
 		background-image:     -ms-linear-gradient(#5babe4, #2578b4);
 		background-image:      -o-linear-gradient(#5babe4, #2578b4);
 		background-image:         linear-gradient(#5babe4, #2578b4);
 		border-color: #1c5b87;
+		text-shadow: 0 1px 1px rgba(0,0,100,.2);
 	}
 	
-	@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
-		.site-header {
-			background-image: url('/assets/images/header-bg@2x.png');
-			background-size: 171px 48px;
+		@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+			.site-header {
+				background-image: url('/assets/images/header-bg@2x.png');
+				background-size: 171px 48px;
+			}
 		}
-	}
 
-	@media screen and (min-device-pixel-ratio: 1.5) {
-		.site-header {
-			background-image: url('/assets/images/header-bg@2x.png');
-			background-size: 171px 48px;
+		@media screen and (min-device-pixel-ratio: 1.5) {
+			.site-header {
+				background-image: url('/assets/images/header-bg@2x.png');
+				background-size: 171px 48px;
+			}
 		}
-	}
 
-	@media screen and (max-width: 960px) {
-		.site-header {
-			margin-bottom: 0;
+		@media screen and (max-width: 960px) {
+			.site-header {
+				margin-bottom: 0;
+			}
 		}
-	}
 
 	.site-header a {
 		color: #fff;
@@ -604,10 +620,6 @@ html {
 		.user-nav.toggled-on {
 			background-color: #222;
 		}
-
-			.admin-area .user-nav.toggled-on {
-				background-color: rgba(0,0,0,.8);
-			}
 
 		.navatar {
 			display: inline-block;
@@ -689,6 +701,19 @@ html {
 				display: block;
 			}
 
+	.admin-area .user-nav.toggled-on {
+		background-color: #1c5b87;
+		box-shadow: inset 0 0 10px rgba(0,0,0,.2);
+	}
+
+		.admin-area .user-nav-items a {
+			border-top-color: rgba(0,0,0,.2);
+		}
+
+			.admin-area .user-nav-items a:hover {
+				background-color: rgba(0,0,0,.2);
+			}
+
 /*-----------------------------------*\
 	$HERO
 \*-----------------------------------*/
@@ -767,8 +792,28 @@ html {
 		}
 
 		.challenge-complete {
-			list-style-image: url('/assets/images/completed-check-small.png'); 
+			list-style: none;
+			padding-left: 24px;
+			padding-left: 1.5rem;
+			margin-left: -24px;
+			margin-left: -1.5rem;
+			background-image: url('../images/completed-check-small.png');
+			background-size: 16px 15px;
+			background-repeat: no-repeat;
+			background-position: left center;
 		}
+
+			@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+				.challenge-complete {
+					background-image: url('../images/completed-check-small@2x.png');
+				}
+			}
+
+			@media screen and (min-device-pixel-ratio: 1.5) {
+				.challenge-complete {
+					background-image: url('../images/completed-check-small@2x.png');
+				}
+			}
 
 		.challenge-complete a {
 			text-decoration: line-through;
@@ -895,7 +940,7 @@ html {
 				margin-top: -1px;
 			}
 
-			.selected-answer {
+			.selected-answer, .selected-answer:hover {
 				background-color: #e7f9ff;
 				background-color: rgba(231,249,255,.85);
 			}
@@ -908,27 +953,51 @@ html {
 /*-----------------------------------*\
 	$RESULT
 \*-----------------------------------*/
-	.answers li{
-		padding:5px 5px 5px 20px;
-		margin-right: 1em;
-		margin-top: .15em;	
+
+.answers {
+	padding-left: 0;
+}
+
+	.answers li {
+		padding: 6px;
+		padding: .375rem;
+		padding-left: 32px;
+		padding-left: 2rem;
 		list-style:none;
+		background-repeat: no-repeat;
+		background-position: 8px center;
+		background-position: .5rem center;
 	}
+
+	.answers li + li {
+		border-top: 1px solid #ccc;
+		border-color: rgba(0,0,0,.1);
+		margin-top: -1px;
+	}
+
 		.correct-answer {
 			background-image: url('/assets/images/completed-check-small.png'); 
 			background-color: #d8fad7;
 			color: #105f0d;
-			background-repeat:no-repeat;
-			background-position:left center;
+			background-size: 16px 15px;
 		}
 
 		.incorrect-answer {
 			background-image: url('/assets/images/incorrect-cross-small.png'); 
 			background-color: #fad7d7;
 			color: #5f0d0d;
-			background-repeat:no-repeat;
-			background-position:left center;
+			background-size: 13px;
 		}
+
+			@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+				.correct-answer {
+					background-image: url('/assets/images/completed-check-small@2x.png');
+				}
+
+				.incorrect-answer {
+					background-image: url('/assets/images/incorrect-cross-small@2x.png');
+				}
+			}
 		
 			.result {
 				font-weight:700;
