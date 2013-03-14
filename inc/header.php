@@ -19,7 +19,7 @@
 <body>
 <header class="site-header">
 	<div class="wrap isle cf">
-		<a href="<?php if(isset($_SESSION['UserID']) && !$isAdmin){?>/dashboard.php<?php } else if(isset($_SESSION['UserID']) && $isAdmin){?>/admin<?php } else {?>/<?php } ?>" title="Gateway Home" class="site-title">
+		<a href="<?php if(isset($_SESSION['UserID']) && !isset($isAdmin)){?>/dashboard.php<?php } else if(isset($_SESSION['UserID']) && isset($isAdmin)){?>/admin<?php } else {?>/<?php } ?>" title="Gateway Home" class="site-title">
 			<?php if (isset($isAdmin) && ($isAdmin === true)) { ?>
 				<img width="165" height="34" src="/assets/images/admin-site-logo@2x.png" alt="Gateway logo">
 			<?php } else { ?>
@@ -36,7 +36,7 @@
 			</a>
 			<button class="user-nav-toggle" title="Toggle Menu">Toggle Menu</button>
 			<ul class="user-nav-items">
-            	<?php if($isAdmin && $_SESSION['AdminState'] == 1) { ?><li><a class="isle" href="/dashboard.php">Switch to Front End</a></li><?php } else if (!$isAdmin && $_SESSION['AdminState'] == 1){?>
+            	<?php if(isset($isAdmin) && $_SESSION['AdminState'] == 1) { ?><li><a class="isle" href="/dashboard.php">Switch to Front End</a></li><?php } else if (!isset($isAdmin) && $_SESSION['AdminState'] == 1){?>
                 <li><a class="isle" href="/admin">Switch to Back End</a></li><?php } ?>
 				<li><a class="isle" href="/edit-profile.php">Edit Profile</a></li>
 				<li><a class="isle" href="/logout.php">Log Out</a></li>
