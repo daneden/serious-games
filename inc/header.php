@@ -16,7 +16,7 @@
 <body>
 <header class="site-header">
 	<div class="wrap isle cf">
-		<a href="<?php if(isset($_SESSION['UserID'])){?>/dashboard.php<?php } else {?>/<?php } ?>" title="Gateway Home" class="site-title">
+		<a href="<?php if(isset($_SESSION['UserID']) && !$_SESSION['AdminState'] == 1){?>/dashboard.php<?php } else if(isset($_SESSION['UserID']) && $_SESSION['AdminState'] == 1){?>/admin<?php } else {?>/<?php } ?>" title="Gateway Home" class="site-title">
 			<?php if (isset($isAdmin) && ($isAdmin === true)) { ?>
 				<img width="165" height="34" src="/assets/images/admin-site-logo@2x.png" alt="Gateway logo">
 			<?php } else { ?>
