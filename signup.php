@@ -1,7 +1,7 @@
 <?php require_once('inc/header.php'); ?>
 <div class="wrap">
 	<div class="content two-col">
-		<div class="main-col bordered-col island">
+		<div class="main-col island">
 			<h1>Sign Up</h1>
 			<p>Hi there! You&rsquo;re only a few minutes away from learning the vocational skills you need to get a job. Complete the form below and we&rsquo;ll do the rest.</p>
 			<form class="signup-form island" action="/inc/globals/signup.php" method="post">

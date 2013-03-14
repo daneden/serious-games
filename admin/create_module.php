@@ -9,7 +9,7 @@
 ?>
 <div class="wrap">
 	<div class="content two-col">
-		<div class="sidebar bordered-col secondary-col island">
+		<div class="sidebar secondary-col">
 			<?php include('inc/php/admin_sidebar.php') ?>
 		</div>
 		<div class="main-col island">
