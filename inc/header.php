@@ -10,6 +10,9 @@
 	<!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+	<!--[if lt IE 8]>
+	<script src="/assets/js/pngFix.jquery.js"></script>
+	<![endif]-->
 	<script type="text/javascript" src="//use.typekit.net/cnh2osh.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
