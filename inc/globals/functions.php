@@ -46,8 +46,8 @@
 			$getCategories = mysql_query('SELECT * FROM categorytable');
 			while($category = mysql_fetch_assoc($getCategories)){
 				?>
-                    <li class="island">
-                        <h2 class="standalone <?php check_completed($category['categoryID']) ?>"><?php echo $category['categoryTitle'];?></h2>
+                    <li class="island <?php check_completed($category['categoryID']) ?>">
+                        <h2 class="standalone"><?php echo $category['categoryTitle'];?></h2>
                         <p class="desc"><?php echo $category['categoryDescription']?></p>
                         <ol class="sub-challenges">
                         	<?php 
@@ -63,7 +63,13 @@
 		}
 		
 			function check_completed($categoryID){
-				
+				$getNumLessons = mysql_query('SELECT * FROM lessontable WHERE lessonCategoryID ="'.$categoryID.'"');
+				$numLessons = mysql_num_rows($getNumLessons);
+				$getNumProgressions = mysql_query('SELECT * FROM progressiontable WHERE progressionCategoryID = "'.$categoryID.'" AND progressionUserID = "'.$_SESSION['UserID'].'"');
+				$numProgressRows = mysql_num_rows($getNumProgressions);
+				if ($numProgressRows == $numLessons) {
+					echo 'completed';
+				}
 			}
 		
 		/* This function retrieves all of the Question IDs that are in the Lesson ID that is passed into it */
