@@ -26,8 +26,8 @@
 					$query=mysql_query("SELECT * FROM categorytable");
 					while ($result = mysql_fetch_assoc($query)) {
 					?>
-							<td><a href="edit_category.php?cID=<?php echo $result['categoryID'] ?>"><?php echo $result['categoryTitle'] ?></a></td>
-							<td><a class="message-danger" href="inc/php/delete_category.php?Cid=<?php echo $result['categoryID']?>">Delete</a></td>
+							<tr><td><a href="edit_category.php?cID=<?php echo $result['categoryID'] ?>"><?php echo $result['categoryTitle'] ?></a></td>
+							<td><a class="message-danger" href="inc/php/delete_category.php?Cid=<?php echo $result['categoryID']?>">Delete</a></td></tr>
 					<?php } ?>
 				</tbody>
 			</table>

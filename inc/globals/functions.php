@@ -45,7 +45,7 @@
 		function get_categories() {
 			$getCategories = mysql_query('SELECT * FROM categorytable');
 			while($category = mysql_fetch_assoc($getCategories)){
-				?>
+				if(check_available($category['categoryID'])) {?>
                     <li class="island <?php check_completed($category['categoryID']) ?>">
                         <h2 class="standalone"><?php echo $category['categoryTitle'];?></h2>
                         <p class="desc"><?php echo $category['categoryDescription']?></p>
@@ -59,6 +59,29 @@
                         </ol>
                     </li>
                 <?php
+				} else { 
+					$getPrequisiteDetails = mysql_query('SELECT * FROM lessonprerequisitetable WHERE prereqUnlocksID = "'.$category['categoryID'].'"');
+					$prequisiteDetails = mysql_fetch_assoc($getPrequisiteDetails);
+					$getPrequisite = mysql_query('SELECT * FROM categorytable WHERE categoryID = "'.$prequisiteDetails['prereqCategoryID'].'"');
+					$prerequisite = mysql_fetch_assoc($getPrequisite);
+				?>
+					<li class="unavailable island">
+						<div class="modal island">
+							<h3>Challenges Unavailable</h3>
+							<p>Unlock these challenges by scoring more than <strong><?php echo $prequisiteDetails['prereqScore'] ?></strong> in <em class="challenge-title">&ldquo;<?php echo $prerequisite['categoryTitle'] ?>.&rdquo;</em></p>
+						</div>
+						<h2 class="standalone"><?php echo $category['categoryTitle'];?></h2>
+						<p class="desc"><?php echo $category['categoryDescription']?></p>
+						<ol class="sub-challenges">
+							<?php 
+								$getLessons = mysql_query('SELECT * FROM lessontable WHERE lessonCategoryID = "'.$category['categoryID'].'"');
+								while ($lesson = mysql_fetch_assoc($getLessons)) {
+							?>
+							<li <?php lesson_completed($lesson['lessonID']) ?> ><a href="lesson.php?Lid=<?php echo $lesson['lessonID'] ?>"><?php echo $lesson['lessonTitle'] ?></a></li>
+							<?php } ?>
+						</ol>
+					</li>
+			<?php }
 			}
 		}
 		
@@ -69,6 +92,42 @@
 				$numProgressRows = mysql_num_rows($getNumProgressions);
 				if ($numProgressRows == $numLessons) {
 					echo 'completed';
+				}
+			}
+			
+			function check_available($categoryID){
+				$score = 0;
+				$i = 0;
+				
+				$getPrerequisiteDetails = mysql_query ('SELECT * FROM lessonprerequisitetable WHERE prereqUnlocksID = "'.$categoryID.'"');
+				$prerequisiteDetails = mysql_fetch_assoc ($getPrerequisiteDetails);
+				$prereqCategory = $prerequisiteDetails['prereqCategoryID'];
+				$prereqScore = $prerequisiteDetails['prereqScore'];
+				
+				$getNumLessons = mysql_query('SELECT * FROM lessontable WHERE lessonCategoryID = "'.$prereqCategory.'"');
+				$numLessons = mysql_num_rows($getNumLessons);
+				
+				if($prerequisiteDetails['prereqCategoryID'] > 0){
+					$getUserProgression = mysql_query('SELECT * FROM progressiontable WHERE progressionCategoryID = "'.$prereqCategory.'" AND progressionUserID = "'.$_SESSION['UserID'].'"');
+					$numUserProgression = mysql_num_rows($getUserProgression);
+					
+					if($numLessons == $numUserProgression){
+						while($userScore = mysql_fetch_assoc($getUserProgression)){
+							$score = $score + $userScore['progressionScore'];
+							$i++;
+						}
+						$score = ($score / $i) * 100;
+						if($score >= $prereqScore) {
+							return true;
+						} else {
+							return false;	
+						}
+					} else {
+						return false;
+
+					}
+				} else {
+					return true;
 				}
 			}
 		
