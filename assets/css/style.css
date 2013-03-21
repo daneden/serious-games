@@ -107,6 +107,16 @@ li > ul, li > ol {
 	$TYPE
 \*-----------------------------------*/
 
+::-moz-selection {
+	background-color: #eaecef;
+	text-shadow: none;
+}
+
+::selection {
+	background-color: #eaecef;
+	text-shadow: none;
+}
+
 h1, .alpha {
 	font-size: 48px;
 	font-size: 3rem;
@@ -160,6 +170,7 @@ hr {
 	border-bottom: 1px solid #ddd;
 	border-bottom-color: rgba(0,0,0,.1);
 	margin-top: -1px;
+	clear: both;
 }
 
 pre {
@@ -768,6 +779,17 @@ html {
 			}
 
 /*-----------------------------------*\
+	$SIDEBAR
+\*-----------------------------------*/
+
+.sidebar .alignleft.avatar {
+	margin-right: 12px;
+	margin-right: .75rem;
+	margin-bottom: 12px;
+	margin-bottom: .75rem;
+}
+
+/*-----------------------------------*\
 	$HERO
 \*-----------------------------------*/
 
@@ -880,6 +902,8 @@ html {
 			}
 
 	.challenges .unavailable {
+		min-height: 220px;
+		min-height: 13.75rem;
 		background-color: #fbfbfb;
 		color: #bbb;
 		cursor: not-allowed;
