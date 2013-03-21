@@ -58,7 +58,7 @@
                 	<input type="hidden" name="lesson-id" value="<?php echo $lessonID?>" />
                     <input type="hidden" name="question-id" value="<?php get_question_id()?>" />
                     <input type="hidden" name="num-questions" value="<?php echo count($questionArray); ?>" />
-					<input type="submit" value="Next Question" name="answerQuestion" class="butt butt-primary alignright">
+					<input type="submit" value="<?php if($currentQuestion == count($questionArray)){?>Submit<?php } else { ?>Next Question<?php }?>" name="answerQuestion" class="butt butt-primary alignright">
 					<?php if($_SESSION['CurrentQuestion'] > 1) {?><input type="submit" value="Go Back" name="go-back"class="butt alignleft"><?php } ?>
 				</div>
                 </form>

@@ -28,7 +28,7 @@
 			<h1><?php echo $module['categoryTitle'] ?></h1>
 			<span class="gamma lesson-header">Lesson <?php echo $lessonNumber?>: <strong class="lesson-title"><?php echo $lesson['lessonTitle']?></strong></span>
 			<div class="p lesson-progress">
-				<div class="progress-measure" style="width: 100%;" data-tooltip="100%"><span class="visually-hidden">100% Complete</span></div>
+				<div class="progress-measure" style="width: 100%;" data-tooltip="100% Complete"><span class="visually-hidden">100% Complete</span></div>
 			</div>
             <h2>Lesson Complete!</h2>
             <p>You have finished the lesson, let's take a look at how you've done!</p>
@@ -58,14 +58,13 @@
 			<?php $_SESSION['CurrentQuestion'] = 1;	$_SESSION['Answers'] = array(); ?>            
 			<p class="cf">
             	<a class="butt alignleft" href="dashboard.php">Return to Dashboard</a>
-            	<a class="butt butt-primary alignright" href="lesson.php?Lid=<?php echo $nextLessonID ?>">Next Lesson &raquo;</a>
+                <?php if (isset($nextLessonID)) {?><a class="butt butt-primary alignright" href="lesson.php?Lid=<?php echo $nextLessonID ?>">Next Lesson &raquo;</a><?php } ?>
             </p>
             <hr>
             <p>Or, you can <a href="/lesson.php?Lid=<?php echo $lessonID; ?>">retake this lesson</a><?php if($_SESSION['score']!='100%') echo " and try to beat your previous score"; ?>.</p>
         </div>
 		<div class="sidebar secondary-col island">
-			<h2>Profile Overview</h2>
-			<h3><?php get_user_fname(); ?> <?php get_user_sname(); ?></h3>
+			<?php include('inc/profile.php') ?>
 		</div>
 	</div>
 </div>
