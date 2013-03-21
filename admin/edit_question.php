@@ -20,7 +20,10 @@
 		<div class="main-col island">
 			<h1>Edit Question</h1>
 			<p>Welcome to the Modules Page! From here, you view the current modules and edit existing ones, remove modules and more.</p>
-			<form action="inc/php/edit_question.php" method="post">
+			<form action="inc/php/edit_question.php" method="post" enctype="multipart/form-data">
+            	<label for ="image">Question Image</label>
+                <?php if ($question['questionImg']){ ?><img class="question-image p" src="../../../assets/lesson-images/<?php echo $question['questionImg'] ?>" /><?php } ?>
+                <input type="file" class="input" name="image" id="image"/>            
             	<label for="question-title">Question</label>
                 <input type="text" name="question-title" value="<?php echo $question['questionName']?>" class="input"/>
 				<div class="grid">

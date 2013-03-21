@@ -1002,6 +1002,10 @@ html {
 		color: #999;
 	}
 
+	.question-image {
+		max-width:100%;	
+	}
+
 	.question-answer-group {
 		list-style: none;
 		padding-left: 0;
