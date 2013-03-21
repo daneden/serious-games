@@ -1,6 +1,13 @@
-<footer class="site-footer">
+<footer class="site-footer p">
 	<div class="wrap isle">
-		<p>&copy; Gateway <?php echo date('Y'); ?></p>
+			<div class="alignright" id="google_translate_element"></div>
+			&copy; Gateway <?php echo date('Y'); ?>
+			<script type="text/javascript">
+				function googleTranslateElementInit() {
+				  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');
+				}
+			</script>
+			<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 	</div>
 </footer>
 <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>

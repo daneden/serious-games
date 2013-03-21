@@ -13,8 +13,8 @@
 			<?php include('inc/php/admin_sidebar.php') ?>
 		</div>
 		<div class="main-col island">
-			<h1>Create New Category!</h1>
-            <p>This page allows you to create a new category, simply type in the name of the category and optionally which category needs to be completed to activate it and you're done!</p>
+			<h1>Create New Category</h1>
+            <p>This page allows you to create a new category. Simply type in the name of the category and optionally which category needs to be completed to activate it, and you&rsquo;re done!</p>
             <form class="form" action="inc/php/create_new_category.php" method="post">
                 <label for="category-name">Category Name</label>
                 <input type="text" class="input" name="category-name">

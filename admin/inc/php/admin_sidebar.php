@@ -1,5 +1,5 @@
 <ul class="admin-sidebar-nav">
-	<li><a class="navicon home" href="index.php">Admin Dashboard</a></li>
+	<li><a class="navicon home" href="index.php">Dashboard</a></li>
     <li><a class="navicon modules" href="modules.php">Modules</a>
         <ul>
             <li><a href="create_module.php">Create Module</a></li>
