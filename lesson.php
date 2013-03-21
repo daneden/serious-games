@@ -37,14 +37,16 @@
 			<div class="p lesson-progress">
 				<div class="progress-measure" style="width: <?php echo $progressPercent ?>%;" data-tooltip="<?php echo $progressPercent ?>% Complete"><span class="visually-hidden"><?php echo $progressPercent ?>% Complete</span></div>
 			</div>
-
+                        
 			<div class="lesson-content">
             	<form action="inc/globals/answer_question.php" method="post">
 				<div class="lesson-question">
 					<div class="question-header island">
 						<h2>Question <?php echo $currentQuestion ?> <span class="questions-total">of <?php echo count($questionArray); ?></span></h2>
 						<p class="intro standalone"><?php get_question_title() ?></p>
+                        
 					</div>
+                    <?php get_question_image(); ?>
 					<ol class="question-answer-group standalone">
 						<li class="question-answer isle"><input class="alignleft qa-in" type="radio" value="0" id="q-a1" name="answer"><label for="q-a1"><?php echo $arrayResult[0] ?></label></li>
 						<li class="question-answer isle"><input class="alignleft qa-in" type="radio" value="1" id="q-a2" name="answer"><label for="q-a2"><?php echo $arrayResult[1] ?></label></li>

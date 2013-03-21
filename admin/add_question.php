@@ -14,7 +14,9 @@
 		<div class="main-col island">
 			<h1>New Question</h1>
 			<p>Welcome to the Modules Page! From here, you view the current modules and edit existing ones, remove modules and more.</p>
-			<form action="inc/php/add_question.php" method="post">
+			<form action="inc/php/add_question.php" method="post" enctype="multipart/form-data">
+            	<label for ="question-image">Question Image</label>
+                <input type="file" class="input" name="image" id="image"/>
             	<label for="question-title">Question</label>
                 <input type="text" name="question-title" class="input"/>
 				<div class="grid">

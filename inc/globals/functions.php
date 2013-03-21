@@ -167,6 +167,15 @@
 				global $questionDetails;
 				echo $questionDetails['questionID'];	
 			}
+			
+		/* This outputs the image for the question */
+			function get_question_image() {
+				global	$questionDetails;
+				if($questionDetails['questionImg']){
+					echo "<img style='max-width:100%' src='assets/lesson-images/".$questionDetails['questionImg']."'/>";
+				}
+			}
+			
 		/* This function takes in a field of the database that is a JSON string and returns an array */
 		function decode_array($array) {
 			global $arrayResult;
