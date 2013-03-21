@@ -13,7 +13,7 @@
 		</div>
 		<div class="main-col island">
 			<h1>Users</h1>
-			<p>Welcome to the Users Page! From here, you can delete users, or promote registered users to administrators!</p>
+			<p>Welcome to the Users Page. From here, you can delete users, or promote registered users to administrators.</p>
 			<table class="table zebra admin-user-list">
 				<thead>
 					<tr>

@@ -12,8 +12,8 @@
 			<?php include('inc/php/admin_sidebar.php') ?>
 		</div>
 		<div class="main-col island">
-			<h1>Hi there, <?php get_user_fname(); ?>!</h1>
-			<p>Welcome to the admin dashboard! From here, you can add new challenges and edit existing ones, remove users and more</p>
+			<h1>Hi there, <?php get_user_fname(); ?>.</h1>
+			<p>Welcome to the Admin Dashboard. From here, you can add new challenges and edit existing ones, remove users and more.</p>
 		</div>
 	</div>
 </div>

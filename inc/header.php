@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>Gateway</title>
 	<meta name="viewport" content="width=device-width">
+	<meta name="google-translate-customization" content="1ea44196f56d88fe-e92cbb062515f7b8-g5809ad459861694e-14"></meta>
 	<link rel="stylesheet" href="/assets/css/style.css">
 	<link rel="stylesheet" href="/assets/css/prism.css">
 	<link rel="shortcut icon" href="/assets/images/favicon.png">

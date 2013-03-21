@@ -13,7 +13,7 @@
 		</div>
 		<div class="main-col island">
 			<h1>Categories</h1>
-			<p>Welcome to the Categories Page! From here, you view the current categories and edit existing ones.</p>
+			<p>Welcome to the Categories Page. From here, you view the current categories and edit existing ones.</p>
 			<table class="table zebra admin-categories-list">
 				<thead>
 					<tr>
