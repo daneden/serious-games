@@ -34,13 +34,34 @@
             <p>You have finished the lesson, let's take a look at how you've done!</p>
             <ul class="answers">
             	<?php while ($getAnswers = mysql_fetch_assoc($getQuestions)){?>
-                	<li <?php if($_SESSION['Answers'][$i] == 1){ ?>class="correct-answer"<?php } else { ?>class="incorrect-answer"<?php }?>><?php if($_SESSION['Answers'][$i] == 1){ ?><span class="result">Correct</span> <?php } else {?><span class="result">INCORRECT</span> <?php } ?><?php echo $getAnswers['questionName']?><br /><?php if($_SESSION['Answers'][$i] == 0){ ?><b>Correct Answer:</b> <?php decode_array($getAnswers['questionAnswers']); echo $arrayResult[$getAnswers['questionAnswerIndex']] ?><?php } ?></li>
+                	<li <?php if($_SESSION['Answers'][$i] == 1){ ?>class="correct-answer"<?php } else { ?>class="incorrect-answer"<?php }?>>
+						<p class="standalone">
+	                		<?php if($_SESSION['Answers'][$i] == 1){ ?>
+	                			<strong>Correct:</strong>
+	                		<?php } else {?>
+	                			<strong>Incorrect:</strong>
+	                		<?php } ?>
+
+							<?php echo $getAnswers['questionName']?>
+						</p>
+						<?php if($_SESSION['Answers'][$i] == 0){ ?>
+						<p class="standalone">
+							<em>Correct Answer:</em>
+							<?php decode_array($getAnswers['questionAnswers']);
+							echo $arrayResult[$getAnswers['questionAnswerIndex']] ?>
+						</p>
+						<?php } ?>
+					</li>
                 <?php $i++; } ?>
             </ul>
             <h2>Your final score is: <?php echo $_SESSION['score']; ?></h2>
 			<?php $_SESSION['CurrentQuestion'] = 1;	$_SESSION['Answers'] = array(); ?>            
-            <a class="butt alignleft" href="dashboard.php">Return to Dashboard</a>
-            <a class="butt alignright" href="lesson.php?Lid=<?php echo $nextLessonID ?>">Next Lesson &raquo;</a>
+			<p class="cf">
+            	<a class="butt alignleft" href="dashboard.php">Return to Dashboard</a>
+            	<a class="butt butt-primary alignright" href="lesson.php?Lid=<?php echo $nextLessonID ?>">Next Lesson &raquo;</a>
+            </p>
+            <hr>
+            <p>Or, you can <a href="/lesson.php?Lid=<?php echo $lessonID; ?>">retake this lesson</a><?php if($_SESSION['score']!='100%') echo " and try to beat your previous score"; ?>.</p>
         </div>
 		<div class="sidebar secondary-col island">
 			<h2>Profile Overview</h2>
