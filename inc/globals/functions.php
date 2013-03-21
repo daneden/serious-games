@@ -172,7 +172,7 @@
 			function get_question_image() {
 				global	$questionDetails;
 				if($questionDetails['questionImg']){
-					echo "<img style='max-width:100%' src='assets/lesson-images/".$questionDetails['questionImg']."'/>";
+					echo "<img class='question-image' src='assets/lesson-images/".$questionDetails['questionImg']."'/>";
 				}
 			}
 			
