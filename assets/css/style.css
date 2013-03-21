@@ -160,6 +160,11 @@ a {
 	line-height: 1.1428571429;
 }
 
+	.helper p {
+		margin-bottom: 16px;
+		margin-bottom: 1rem;
+	}
+
 .message-error, .message-danger {
 	color: #b70e0c !important;
 }
@@ -392,7 +397,7 @@ table {
 	}
 
 .sidebar {
-	color: #666;
+	color: #717b81;
 }
 
 	.sidebar-helper {

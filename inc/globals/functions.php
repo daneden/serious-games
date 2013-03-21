@@ -46,19 +46,19 @@
 			$getCategories = mysql_query('SELECT * FROM categorytable');
 			while($category = mysql_fetch_assoc($getCategories)){
 				if(check_available($category['categoryID'])) {?>
-                    <li class="island <?php check_completed($category['categoryID']) ?>">
-                        <h2 class="standalone"><?php echo $category['categoryTitle'];?></h2>
-                        <p class="desc"><?php echo $category['categoryDescription']?></p>
-                        <ol class="sub-challenges">
-                        	<?php 
+					<li class="island <?php check_completed($category['categoryID']) ?>">
+						<h2 class="standalone"><?php echo $category['categoryTitle'];?></h2>
+						<p class="desc"><?php echo $category['categoryDescription']?></p>
+						<ol class="sub-challenges">
+							<?php 
 								$getLessons = mysql_query('SELECT * FROM lessontable WHERE lessonCategoryID = "'.$category['categoryID'].'"');
 								while ($lesson = mysql_fetch_assoc($getLessons)) {
 							?>
-                            <li <?php lesson_completed($lesson['lessonID']) ?> ><a href="lesson.php?Lid=<?php echo $lesson['lessonID'] ?>"><?php echo $lesson['lessonTitle'] ?></a></li>
-                            <?php } ?>
-                        </ol>
-                    </li>
-                <?php
+							<li <?php lesson_completed($lesson['lessonID']) ?> ><a href="lesson.php?Lid=<?php echo $lesson['lessonID'] ?>"><?php echo $lesson['lessonTitle'] ?></a></li>
+							<?php } ?>
+						</ol>
+					</li>
+				<?php
 				} else { 
 					$getPrequisiteDetails = mysql_query('SELECT * FROM lessonprerequisitetable WHERE prereqUnlocksID = "'.$category['categoryID'].'"');
 					$prequisiteDetails = mysql_fetch_assoc($getPrequisiteDetails);
@@ -159,7 +159,11 @@
 		/* This outputs the question helper test */
 			function get_question_helper() {
 				global $questionDetails;
-				echo $questionDetails['questionHelperText'];	
+				if($questionDetails['questionHelperText']!='') {
+					return nl2p($questionDetails['questionHelperText'], false);
+				} else {
+					return false;
+				}
 			}
 			
 		/* This outputs the question ID */
@@ -176,12 +180,6 @@
 				}
 			}
 			
-		/* This function takes in a field of the database that is a JSON string and returns an array */
-		function decode_array($array) {
-			global $arrayResult;
-			$arrayResult = json_decode($array);
-			return $arrayResult;
-		}
 		
 		/* This function adds the class "challenge-complete" to completed lessons */
 		function lesson_completed($lesson) {
@@ -191,4 +189,31 @@
 				echo 'class="challenge-complete"';
 			}
 		}
+
+/*
+======================
+Manipulation Functions
+======================
+*/
+
+/* Turn newlines into <p> tags */
+function nl2p($string, $line_breaks = true, $xml = true) {
+	// Remove existing HTML formatting to avoid double-wrapping things
+	$string = str_replace(array('<p>', '</p>', '<br>', '<br />'), '', $string);
+	
+	// It is conceivable that people might still want single line-breaks
+	// without breaking into a new paragraph.
+	if ($line_breaks == true)
+		return '<p>'.preg_replace(array("/([\n]{2,})/i", "/([^>])\n([^<])/i"), array("</p>\n<p>", '<br'.($xml == true ? ' /' : '').'>'), trim($string)).'</p>';
+	else 
+		return '<p>'.preg_replace("/([\n]{1,})/i", "</p>\n<p>", trim($string)).'</p>';
+}
+
+/* This function takes in a field of the database that is a JSON string and returns an array */
+function decode_array($array) {
+	global $arrayResult;
+	$arrayResult = json_decode($array);
+	return $arrayResult;
+}
+
 ?>
