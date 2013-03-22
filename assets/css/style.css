@@ -214,7 +214,7 @@ table {
 	vertical-align: top;
 }
 
-.table tr + tr {
+.table tbody tr {
 	border-top: 1px solid #dddddd;
 }
 
