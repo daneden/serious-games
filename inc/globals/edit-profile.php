@@ -7,7 +7,7 @@
   else
 	{
 	  $imageName = 'userID'.$_POST['userID'].'.'.pathinfo($_FILES["profile-pic"]["name"], PATHINFO_EXTENSION);
-	  move_uploaded_file($_FILES["profile-pic"]["tmp_name"],'../../assets/profile-pics/'.$imageName);
+	  move_uploaded_file($_FILES["profile-pic"]["tmp_name"], getcwd() . '/../../assets/profile-pics/'.$imageName);
 	}	
 	$userID = $_POST['userID'];
 	$userFName = mysql_real_escape_string($_POST['first-name']);

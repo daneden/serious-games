@@ -2,4 +2,4 @@
 inc/db/connect-local.php
 .DS_Store
 assets/lesson-images/*
-assets/profile-pic/*
+assets/profile-pics/*
