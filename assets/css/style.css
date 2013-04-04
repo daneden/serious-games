@@ -986,6 +986,15 @@ html {
 			.modal .challenge-title {
 				display: block;
 			}
+/*-----------------------------------*\
+	$PROFILE
+\*-----------------------------------*/
+
+	.profile-pic {
+		max-width:100%;
+		max-height:100%;
+		margin-bottom:2em;	
+	}
 
 /*-----------------------------------*\
 	$LESSON
