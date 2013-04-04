@@ -29,10 +29,10 @@
 		</a>
 		<?php if(isset($_SESSION['UserID'])){ ?>
 		<nav class="isle user-nav">
-			<a class="user-link" href="/user">
+			<a class="user-link" href="/dashboard.php">
 				<span class="user-name"><?php get_user_fname(); ?> <?php get_user_sname(); ?></span>
 				 <figure class="navatar">
-					<img src="http://0.gravatar.com/avatar/<?php echo md5(get_user_email());?>?s=64&d=identicon&r=R" width="32" height="32">
+					<img src="<?php get_profile_pic() ?>" width="32" height="32">
 				</figure>
 			</a>
 			<button class="user-nav-toggle" title="Toggle Menu">Toggle Menu</button>

@@ -41,6 +41,15 @@
 			echo $userDetails['userSName'];	
 		}
 		
+		function get_profile_pic() {
+			global $userDetails;
+			if($userDetails['userProfileImg']){
+				echo '/assets/profile-pics/'.$userDetails['userProfileImg'];
+			} else {
+				echo '/assets/images/default-avatar.jpg';	
+			}
+		}
+		
 		/*This function displays all modules for user dashboard */
 		function get_categories() {
 			$getCategories = mysql_query('SELECT * FROM categorytable');
@@ -86,12 +95,15 @@
 		}
 		
 			function check_completed($categoryID){
+				global $numCompleted;
 				$getNumLessons = mysql_query('SELECT * FROM lessontable WHERE lessonCategoryID ="'.$categoryID.'"');
 				$numLessons = mysql_num_rows($getNumLessons);
 				$getNumProgressions = mysql_query('SELECT * FROM progressiontable WHERE progressionCategoryID = "'.$categoryID.'" AND progressionUserID = "'.$_SESSION['UserID'].'"');
 				$numProgressRows = mysql_num_rows($getNumProgressions);
 				if ($numProgressRows == $numLessons) {
 					echo 'completed';
+					$numCompleted = $numCompleted + 1;
+					$_SESSION['numCompleted'] = $numCompleted;
 				}
 			}
 			
@@ -189,6 +201,45 @@
 				echo 'class="challenge-complete"';
 			}
 		}
+
+/*
+======================
+Profile Functions
+======================
+*/
+
+	function get_modules_completed() {
+		echo $_SESSION['numCompleted'];
+	}
+	
+	function get_average_score() {
+		$avScore = 0;
+		$getScore = mysql_query('SELECT * FROM progressiontable WHERE progressionUserID = "'.$_SESSION['UserID'].'"');
+		$i = 0;
+		while ($averageScore = mysql_fetch_assoc($getScore)){
+			$avScore = $avScore + $averageScore['progressionScore'];
+			$i++;
+		}
+		$average = ceil($avScore/$i);
+		echo $average;
+	}
+
+	function compare_language($language){
+		global $userDetails;
+		if($language == $userDetails['userLanguage']){
+			echo 'selected="selected"';
+		}
+	}
+	
+	function check_specialisation($specialisation, $array) {
+		$i = 0;
+		while($i < count($array)){
+			if($specialisation == $array[$i]){
+				echo 'checked="checked"';
+			}
+			$i++;
+		}
+	}
 
 /*
 ======================
