@@ -122,6 +122,7 @@ h1, .alpha {
 	font-size: 3rem;
 	line-height: 1;
 	font-weight: 400;
+	letter-spacing: -.04em;
 }
 
 h2, .beta {
@@ -137,6 +138,14 @@ h3, .gamma {
 	font-weight: 700;
 	letter-spacing: .1em;
 	text-transform: uppercase;
+}
+
+p {
+	-webkit-hyphens: auto;
+	   -moz-hyphens: auto;
+	    -ms-hyphens: auto;
+	     -o-hyphens: auto;
+	        hyphens: auto;
 }
 
 a {
@@ -580,7 +589,7 @@ textarea {
 	background-image:      -o-linear-gradient(transparent, rgba(0,0,0,.1));
 	background-image:         linear-gradient(transparent, rgba(0,0,0,.1));
 	box-shadow: inset 0 0 0 1px rgba(255,255,255,.1), inset 0 1px rgba(255,255,255,.1);
-	border-radius: .15em;
+	border-radius: .2em;
 	border: 1px solid #bbb;
 	border-bottom-color: #aaa;
 	font-weight: 700;
@@ -588,6 +597,15 @@ textarea {
 	text-shadow: 0 1px rgba(255,255,255,.1);
 	padding: .15em .5em;
 }
+
+	.butt-big {
+		font-size: 120%;
+		padding: .3em .5em .35em;
+	}
+
+	.butt:hover {
+		text-decoration: none;
+	}
 
 	.butt:active {
 		background-image: -webkit-linear-gradient(rgba(0,0,0,.1), transparent);
@@ -832,21 +850,13 @@ html {
 
 .home-hero {
 	color: #fff;
-	text-shadow: 0 1px 3px rgba(0,0,0,.7);
+	text-shadow: 0 1px 1px rgba(0,0,0,.2);
 	background-color: #009dd6;
 	background-image: url('../images/promo.jpg');
-	background-image: -webkit-linear-gradient(-45deg, rgba(0,0,0,.9), transparent 75%), url('../images/promo.jpg');
-	background-image:    -moz-linear-gradient(-45deg, rgba(0,0,0,.9), transparent 75%), url('../images/promo.jpg');
-	background-image:     -ms-linear-gradient(-45deg, rgba(0,0,0,.9), transparent 75%), url('../images/promo.jpg');
-	background-image:      -o-linear-gradient(-45deg, rgba(0,0,0,.9), transparent 75%), url('../images/promo.jpg');
-	background-image:         linear-gradient(-45deg, rgba(0,0,0,.9), transparent 75%), url('../images/promo.jpg');
 	background-size: cover;
 	background-position: center;
+	box-shadow: inset 0 0 0 1px rgba(0,0,0,.2)
 }
-
-	.home-hero a {
-		color: #d0a91e;
-	}
 
 	.hero-intro {
 		max-width: 30rem;
