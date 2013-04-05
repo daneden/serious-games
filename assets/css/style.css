@@ -82,8 +82,8 @@ input, label, button, textarea, select {
 	Shared margins and other abstracted properties
 \*-----------------------------------*/
 
-h1, h2, h3,
-.alpha, .beta, .gamma, .mega,
+h1, h2, h3, h4,
+.alpha, .beta, .gamma, .delta, .mega,
 p, ul, ol, dl, table, form, pre, hr, .p {
 	/*
 	 * Rems with px fallback FTW
@@ -138,6 +138,10 @@ h3, .gamma {
 	font-weight: 700;
 	letter-spacing: .1em;
 	text-transform: uppercase;
+}
+
+h4, .delta {
+	font-weight: 700;
 }
 
 p {
@@ -845,7 +849,7 @@ html {
 }
 
 /*-----------------------------------*\
-	$HERO
+	$HOME
 \*-----------------------------------*/
 
 .home-hero {
@@ -861,6 +865,21 @@ html {
 	.hero-intro {
 		max-width: 30rem;
 		min-height: 19rem;
+	}
+
+.landing-promo {
+	font-size: 15px;
+	font-size: .9375rem;
+	line-height: 1.333;
+}
+
+	.landing-promo img {
+		margin: 0 auto;
+	}
+
+	.landing-promo h4 {
+		text-align: center;
+		margin-bottom: .75rem;
 	}
 
 /*-----------------------------------*\
