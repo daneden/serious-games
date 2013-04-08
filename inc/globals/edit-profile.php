@@ -1,5 +1,6 @@
 <?php
 	require_once('../db/connect.php');
+	require_once('functions.php');
   if ($_FILES["profile-pic"]["error"] > 0)
 	{
 	echo "Return Code: " . $_FILES["profile-pic"]["error"] . "<br>";
@@ -8,6 +9,7 @@
 	{
 	  $imageName = 'userID'.$_POST['userID'].'.'.pathinfo($_FILES["profile-pic"]["name"], PATHINFO_EXTENSION);
 	  move_uploaded_file($_FILES["profile-pic"]["tmp_name"], getcwd() . '/../../assets/profile-pics/'.$imageName);
+	  crop_image(getcwd() . '/../../assets/profile-pics/'.$imageName, getcwd() . '/../../assets/profile-pics/'.$imageName);
 	}	
 	$userID = $_POST['userID'];
 	$userFName = mysql_real_escape_string($_POST['first-name']);

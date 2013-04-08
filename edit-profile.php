@@ -8,14 +8,14 @@ require_once('inc/header.php'); ?>
 	<div class="content two-col">
 		<div class="main-col island">
 			<h1>Edit Profile</h1>
-			<p>Hi there! You&rsquo;re only a few minutes away from learning the vocational skills you need to get a job. Complete the form below and we&rsquo;ll do the rest.</p>
-			<form class="signup-form island" action="/inc/globals/edit-profile.php" enctype="multipart/form-data" method="post">
+			<form action="/inc/globals/edit-profile.php" enctype="multipart/form-data" method="post">
 				<div class="grid">
-					<div class="unit one-of-two">
+					<div class="unit one-of-three">
                     	<img src="<?php get_profile_pic() ?>" class="profile-pic"/>
                     </div>
-                    <div class="unit one-of-two">
+                    <div class="unit two-of-three">
                     	<label for="profile-pic">Profile Picture</label>
+                        <p class="helper">Maximum file size: 1MB</p>
                         <input type="file" class="input" name="profile-pic" id="profile-pic"/>
                     </div>
                     <hr class="unit span-grid">
