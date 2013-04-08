@@ -27,10 +27,13 @@ require_once('inc/header.php'); ?>
 						<label for="last-name">Last Name</label>
 						<input type="text" class="input" value="<?php get_user_sname(); ?>" name="last-name" id="last-name">
 					</div>
-					<div class="unit one-of-two p">
+					<div class="unit one-of-two ">
 						<label for="email">Email Address</label>
 						<input type="email" class="input" value="<?php echo (get_user_email()); ?>" name="email" id="email">
 					</div>
+                    <div class="unit span-grid">
+                        <p class="helper">We need your email address in order for you to sign in to Gateway, and in case we need to contact you. We’ll never send you spam or give this information to third party services without your permission.</p>
+                    </div>
 					<hr class="unit span-grid">
                     <div class="unit one-of-two p">
                     	<label for="language">Language</label>
