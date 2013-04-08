@@ -43,6 +43,14 @@
 				<li><a class="isle" href="/logout.php">Log Out</a></li>
 			</ul>
 		</nav>
+		<?php } else { ?>
+		<form action="inc/globals/login.php" class="alignright header-login" method="post">
+			<label class="visually-hidden" for="email-address">Email Address</label>
+			<input class="input in" type="text" placeholder="Email Address" name="email-address" value="">
+			<label class="visually-hidden" for="password">Password</label>
+			<input class="input in" type="password" placeholder="Password" name="password" value="">
+			<input class="butt butt-primary p submit" type="submit" value="Login">
+		</form>
 		<?php } ?>
 	</div>
 </header>

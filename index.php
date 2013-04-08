@@ -2,7 +2,7 @@
 <div class="wrap">
 	<div class="home-hero island">
 		<div class="hero-intro">
-			<h1>Welcome to Gateway</h1>
+			<h1>Welcome To Gateway</h1>
 			<p class="intro"><strong>Gateway</strong> is a website for learning the vocational skills you need to find a job. Start learning today.</p>
 			<p><a class="butt butt-primary butt-big" href="/signup.php">Sign Up Now</a></p>
 		</div>
