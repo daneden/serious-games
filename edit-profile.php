@@ -98,15 +98,12 @@ require_once('inc/header.php'); ?>
                     <hr class="unit span-grid">
 					<div class="unit span-grid">
                     	<input type="hidden" value="<?php echo $userDetails['userID'] ?>" name="userID" />
-						<input class="alignright butt butt-primary submit" type="submit" value="Submit">
+                        <a href="/" title="Cancel and go home" class=" alignright butt">Cancel</a>
+						<input class="alignright butt butt-primary submit" type="submit" value="Save Changes">
 					</div>
 				</div>
 			</form>
 		</div>
-		<!-- <div class="sidebar secondary-col island">
-			<h2>Need some help?</h2>
-			<p>Blah, blah, blah</p>
-		</div> -->
 	</div>
 </div>
 <?php require_once('inc/footer.php'); ?>
