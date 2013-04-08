@@ -3,12 +3,10 @@
 	<div class="home-hero island">
 		<div class="hero-intro">
 			<h1>Login to Gateway</h1>
-			<p class="intro"><strong>Gateway</strong> is a website for learning the vocational skills you need to find a job. Start now by <a href="/signup">signing up</a>.</p>
 		</div>
 	</div>
 	<div class="content two-col">
 		<div class="main-col island">
-			<h1>Login</h1>
 			<p>Please enter your login details into the boxes below.</p>
             <form action="inc/globals/login.php" method="post">
             	<div class="grid">
@@ -22,14 +20,8 @@
                 </div>
             </form>
 		</div>
-		<div class="sidebar secondary-col island">
-			<h2>Page Designs</h2>
-			<ul>
-				<li><a href="/dashboard.php">Dashboard</a></li>
-				<li><a href="/signup.php">Signup</a></li>
-				<li><a href="/lesson.php">Lesson</a></li>
-				<li><a href="/admin/styleguide.php">Styleguide</a></li>
-			</ul>
+		<div class="secondary-col island">
+			<p>Need an account? <a href="/signup.php">Sign up</a> now.</p>
 		</div>
 	</div>
 </div>
