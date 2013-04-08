@@ -2,20 +2,20 @@
 <div class="wrap">
 	<div class="home-hero island">
 		<div class="hero-intro">
-			<h1>Welcome To Gateway</h1>
+			<h1>Welcome to Gateway</h1>
 			<p class="intro"><strong>Gateway</strong> is a website for learning the vocational skills you need to find a job. Start learning today.</p>
 			<p><a class="butt butt-primary butt-big" href="/signup.php">Sign Up Now</a></p>
 		</div>
 	</div>
-	<div class="content two-col">
-		<div class="main-col island">
-			<p class="intro">Take online quizzes and classes in <em>your</em> own time, check your progress, and unlock more advanced stages to help you understand the British workplace, and give you the tools you need to succeed.</p>
+	<div class="content">
+		<div class="island">
+			<p class="intro">Take online quizzes and classes in your own time, check your progress, and unlock more advanced stages to help you understand the British workplace, and give you the tools you need to succeed.</p>
 			<hr>
 			<div class="landing-promo grid">
 				<div class="unit one-of-three">
 					<img src="/assets/images/home-clock@2x.png" width="128" alt="Learn on your own time">
 					<h4>Learn In Your Own Time</h4>
-					<p><em>Gateway is designed to work around you.</em> You choose the kind of work you’re interested in, and the Gateway content creators will make sure that you get the learning materials you need.</p>
+					<p>Gateway is designed to work around you. You choose the kind of work you’re interested in, and the Gateway content creators will make sure that you get the learning materials you need.</p>
 				</div>
 				<div class="unit one-of-three">
 					<img src="/assets/images/home-info@2x.png" width="128" alt="Get the information you need">
@@ -31,18 +31,6 @@
 			<hr>
 			<h2>Start Learning Today</h2>
 			<p>Why wait any longer? <a href="/signup.php">Sign up</a> for a free account today &ndash; it only takes a minute.</p>
-		</div>
-		<div class="sidebar secondary-col island">
-			<h2>Login</h2>
-			<form action="inc/globals/login.php" method="post">
-					<label for="email-address">Email Address</label>
-					<input class="input" type="text" name="email-address" value="">
-					<label for="password">Password</label>
-					<input class="input" type="password" name="password" value="">
-					<input class="butt butt-primary p submit alignright" type="submit" value="Login">
-			</form>
-			<hr>
-			<p class="helper">Need an account? <a href="signup.php">Sign up now</a>.</p>
 		</div>
 	</div>
 </div>
