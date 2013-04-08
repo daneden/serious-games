@@ -17,6 +17,8 @@ require_once('inc/header.php'); ?>
                     	<label for="profile-pic">Profile Picture</label>
                         <p class="helper">Maximum file size: 1MB</p>
                         <input type="file" class="input" name="profile-pic" id="profile-pic"/>
+                        <?php if (isset($_GET['errors']) && $_GET['errors'] == 1){ ?><p class="helper message-error">File size is too big. Please try again.</p><?php } ?>
+                        <?php if (isset($_GET['errors']) && $_GET['errors'] > 1){ ?><p class="helper message-error">Error uploading image. Please try again.</p><?php } ?>
                     </div>
                     <hr class="unit span-grid">
 					<div class="unit one-of-two">
