@@ -263,7 +263,6 @@ Profile Functions
 		$getModulesQuery = $getModulesQuery." OR categorySpecialisation = '' ) AND categoryState = '1' ORDER BY RAND()";}  else {
 			$getModulesQuery = $getModulesQuery."categoryState = '1') ORDER BY RAND()";
 		}
-		echo $getModulesQuery;
 		$getModules = mysql_query($getModulesQuery);
 		$i = 0;
 		while ($i < 2 && $modules = mysql_fetch_assoc($getModules)) {
