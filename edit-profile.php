@@ -98,11 +98,15 @@ require_once('inc/header.php'); ?>
                     <hr class="unit span-grid">
 					<div class="unit span-grid">
                     	<input type="hidden" value="<?php echo $userDetails['userID'] ?>" name="userID" />
+                        <a class="alignleft helper message-error" href="javascript:document.deleteAccount.submit()">Delete your account</a>
                         <a href="/" title="Cancel and go home" class=" alignright butt">Cancel</a>
 						<input class="alignright butt butt-primary submit" type="submit" value="Save Changes">
 					</div>
 				</div>
 			</form>
+            <form method="post" name="deleteAccount" action="inc/globals/delete-acc.php">
+            	<input type="hidden" value="<?php echo $userDetails['userID'] ?>" name="userID" />
+            </form>                
 		</div>
 	</div>
 </div>

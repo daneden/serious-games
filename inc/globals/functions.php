@@ -52,7 +52,7 @@
 		
 		/*This function displays all modules for user dashboard */
 		function get_categories() {
-			$getCategories = mysql_query('SELECT * FROM categorytable');
+			$getCategories = mysql_query('SELECT * FROM categorytable WHERE categoryState = 1');
 			while($category = mysql_fetch_assoc($getCategories)){
 				if(check_available($category['categoryID'])) {?>
 					<li class="island <?php check_completed($category['categoryID']) ?>">
@@ -237,6 +237,32 @@ Profile Functions
 			if($specialisation == $array[$i]){
 				echo 'checked="checked"';
 			}
+			$i++;
+		}
+	}
+	
+	function get_recommended() {
+		global $arrayResult;
+		$getUser = mysql_query ("SELECT * FROM usertable WHERE userID = '".$_SESSION['UserID']."'");
+		$userDetails = mysql_fetch_assoc($getUser);	
+		decode_array($userDetails['userSpecialisation']);
+		$i = 0;
+		$getModulesQuery = "SELECT * FROM categorytable WHERE (";
+		while ($i <= count($arrayResult)){
+			if ($i == 0) {
+				$getModulesQuery = $getModulesQuery." categorySpecialisation LIKE '%".$arrayResult[$i]."%'";
+			} else {
+				$getModulesQuery = $getModulesQuery." OR categorySpecialisation LIKE '%".$arrayResult[$i]."%'";
+			}
+			$i++;
+		}
+		$getModulesQuery = $getModulesQuery." OR categorySpecialisation = '' ) AND categoryState = '1' ORDER BY RAND()";
+		$getModules = mysql_query($getModulesQuery);
+		$i = 0;
+		while ($i < 2 && $modules = mysql_fetch_assoc($getModules)) {
+			?>
+            	<p><?php echo $modules['categoryTitle'] ;?></p>
+            <?php 
 			$i++;
 		}
 	}

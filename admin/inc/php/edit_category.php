@@ -5,7 +5,9 @@
 	$prerequisiteCategoryID = $_POST['prerequisite-category'];
 	$score = $_POST['score'];
 	$categoryID = $_POST['category-id'];
-	$updateQuery = mysql_query("UPDATE categorytable SET categoryTitle ='$categoryName', categoryDescription = '$categoryDescription' WHERE categoryID = '$categoryID'");
+	$categorySpecialisation = mysql_real_escape_string(json_encode ($_POST['specialisation']));
+	$categoryState = $_POST['category-state'];
+	$updateQuery = mysql_query("UPDATE categorytable SET categoryTitle ='$categoryName', categoryDescription = '$categoryDescription', categorySpecialisation = '$categorySpecialisation', categoryState = '$categoryState' WHERE categoryID = '$categoryID'");
 	if($categoryID != $prerequisiteCategoryID) {
 	$updateQuery = mysql_query("UPDATE lessonprerequisitetable SET prereqCategoryID = '$prerequisiteCategoryID', prereqScore = '$score' WHERE prereqUnlocksID = '$categoryID'");
 	}
