@@ -27,4 +27,4 @@
 		</div>
 	</div>
 </div>
-<?php print_r ($_SESSION['CompletedLessons']); require_once('inc/footer.php'); ?>
+<?php require_once('inc/footer.php'); ?>
