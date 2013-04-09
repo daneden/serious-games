@@ -11,6 +11,7 @@
             <form action="inc/globals/login.php" method="post">
             	<div class="grid">
                     <div class="unit one-of-two">
+                    	<?php errors() ?>
                         <label for="email-address">Email Address</label>
                         <input class="input" type="text" name="email-address" value="">
                         <label for="password">Password</label>
