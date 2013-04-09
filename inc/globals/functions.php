@@ -249,7 +249,6 @@ Profile Functions
 		$getUser = mysql_query ("SELECT * FROM usertable WHERE userID = '".$_SESSION['UserID']."'");
 		$userDetails = mysql_fetch_assoc($getUser);	
 		decode_array($userDetails['userSpecialisation']);
-		print_r ($arrayResult);
 		$i = 0;
 		$getModulesQuery = "SELECT * FROM categorytable WHERE (";
 		if (count(arrayResult) > 1){
