@@ -9,6 +9,9 @@
 	$_SESSION['Answers'] = array();
 	verify_user();
 	require_once('inc/header.php');	
+	$_SESSION['CompletedModules'] = array();
+	$_SESSION['LockedModules'] = array();
+	$_SESSION['CompletedLessons'] = array();
 ?>
 <div class="wrap">
 	<div class="content two-col">
@@ -24,4 +27,4 @@
 		</div>
 	</div>
 </div>
-<?php require_once('inc/footer.php'); ?>
+<?php print_r ($_SESSION['CompletedLessons']); require_once('inc/footer.php'); ?>

@@ -73,6 +73,7 @@
 					$prequisiteDetails = mysql_fetch_assoc($getPrequisiteDetails);
 					$getPrequisite = mysql_query('SELECT * FROM categorytable WHERE categoryID = "'.$prequisiteDetails['prereqCategoryID'].'"');
 					$prerequisite = mysql_fetch_assoc($getPrequisite);
+					$_SESSION['LockedModules'][] = $category['categoryID'];
 				?>
 					<li class="unavailable island">
 						<div class="modal island">
@@ -104,6 +105,7 @@
 					echo 'completed';
 					$numCompleted = $numCompleted + 1;
 					$_SESSION['numCompleted'] = $numCompleted;
+					$_SESSION['CompletedModules'][] = $categoryID;
 				}
 			}
 			
@@ -199,6 +201,7 @@
 			$lessonCompleted = mysql_query('SELECT * FROM progressiontable WHERE progressionUserID = "'.$_SESSION['UserID'].'" AND progressionlessonID = "'.$lessonID.'"');
 			if($lessonFetch = mysql_fetch_assoc($lessonCompleted)){
 				echo 'class="challenge-complete"';
+				$_SESSION['CompletedLessons'][] = $lessonID;
 			}
 		}
 
@@ -246,8 +249,10 @@ Profile Functions
 		$getUser = mysql_query ("SELECT * FROM usertable WHERE userID = '".$_SESSION['UserID']."'");
 		$userDetails = mysql_fetch_assoc($getUser);	
 		decode_array($userDetails['userSpecialisation']);
+		print_r ($arrayResult);
 		$i = 0;
 		$getModulesQuery = "SELECT * FROM categorytable WHERE (";
+		if (count(arrayResult) > 1){
 		while ($i <= count($arrayResult)){
 			if ($i == 0) {
 				$getModulesQuery = $getModulesQuery." categorySpecialisation LIKE '%".$arrayResult[$i]."%'";
@@ -256,14 +261,33 @@ Profile Functions
 			}
 			$i++;
 		}
-		$getModulesQuery = $getModulesQuery." OR categorySpecialisation = '' ) AND categoryState = '1' ORDER BY RAND()";
+		$getModulesQuery = $getModulesQuery." OR categorySpecialisation = '' ) AND categoryState = '1' ORDER BY RAND()";}  else {
+			$getModulesQuery = $getModulesQuery."categoryState = '1') ORDER BY RAND()";
+		}
+		echo $getModulesQuery;
 		$getModules = mysql_query($getModulesQuery);
 		$i = 0;
 		while ($i < 2 && $modules = mysql_fetch_assoc($getModules)) {
+			if (!in_array($modules['categoryID'],$_SESSION['CompletedModules'], $strict = true) && !in_array($modules['categoryID'],$_SESSION['LockedModules'], $strict = true)){
 			?>
-            	<p><?php echo $modules['categoryTitle'] ;?></p>
+            	<p><a href="lesson.php?Lid=<?php get_recommended_lesson($modules['categoryID']); ?>"><?php echo $modules['categoryTitle'] ;?></a></p>
             <?php 
 			$i++;
+			} else {
+				
+			}
+		}
+	}
+	
+	function get_recommended_lesson($categoryID){
+		$escapeFlag = 0;
+		$getLessons = 'SELECT * FROM lessontable WHERE lessonCategoryID = '.$categoryID;
+		$getLessons = mysql_query($getLessons);
+		while(($lesson = mysql_fetch_assoc($getLessons)) && $escapeFlag == 0){
+			if(!in_array($lesson['lessonID'],$_SESSION['CompletedLessons'], $strict = true)) {
+				echo $lesson['lessonID'];
+				$escapeFlag = 1;
+			}
 		}
 	}
 
@@ -372,6 +396,7 @@ function nl2p($string, $line_breaks = true, $xml = true) {
 /* This function takes in a field of the database that is a JSON string and returns an array */
 function decode_array($array) {
 	global $arrayResult;
+	$arrayResult = array();
 	$arrayResult = json_decode($array);
 	return $arrayResult;
 }
