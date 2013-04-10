@@ -1,7 +1,7 @@
 <?php
 	$isAdmin = true;
 	$verify = true;
-	require_once('/../inc/header.php');
+	require_once('../inc/header.php');
 ?>
 <div class="wrap">
 	<div class="content two-col">
