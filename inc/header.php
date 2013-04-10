@@ -1,6 +1,6 @@
 <?php
-	require_once('/db/connect.php');
-	require_once('/globals/functions.php');
+	require_once('db/connect.php');
+	require_once('globals/functions.php');
 	if ($verify == true){verify_user();}
 	if ($isAdmin == true){verify_admin();require_once('inc/php/functions.php');};
 ?>
