@@ -252,30 +252,37 @@ Profile Functions
 		decode_array($userDetails['userSpecialisation']);
 		$i = 0;
 		$getModulesQuery = "SELECT * FROM categorytable WHERE (";
-		if (count(arrayResult) > 1){
-		while ($i <= count($arrayResult)){
-			if ($i == 0) {
-				$getModulesQuery = $getModulesQuery." categorySpecialisation LIKE '%".$arrayResult[$i]."%'";
-			} else {
-				$getModulesQuery = $getModulesQuery." OR categorySpecialisation LIKE '%".$arrayResult[$i]."%'";
+		if (count($arrayResult) > 1){
+			while ($i < (count($arrayResult))) {
+				if ($i == 0) {
+					$getModulesQuery = $getModulesQuery." categorySpecialisation LIKE '%".$arrayResult[$i]."%'";
+				} else {
+					$getModulesQuery = $getModulesQuery." OR categorySpecialisation LIKE '%".$arrayResult[$i]."%'";
+				}
+				$i++;
 			}
-			$i++;
-		}
-		$getModulesQuery = $getModulesQuery." OR categorySpecialisation = '' ) AND categoryState = '1' ORDER BY RAND()";}  else {
+			$getModulesQuery = $getModulesQuery." OR categorySpecialisation = 'null' ) AND categoryState = '1' ORDER BY RAND()";
+		}  else {
 			$getModulesQuery = $getModulesQuery."categoryState = '1') ORDER BY RAND()";
 		}
 		$getModules = mysql_query($getModulesQuery);
 		$i = 0;
-		while ($i < 2 && $modules = mysql_fetch_assoc($getModules)) {
+		?>
+		<h4 class="standalone">Recommended for you:</h4>
+		<ul class="recommended">
+		<?php
+		while ($i < 3 && $modules = mysql_fetch_assoc($getModules)) {
 			if (!in_array($modules['categoryID'],$_SESSION['CompletedModules'], $strict = true) && !in_array($modules['categoryID'],$_SESSION['LockedModules'], $strict = true)){
 			?>
-            	<p><a href="lesson.php?Lid=<?php get_recommended_lesson($modules['categoryID']); ?>"><?php echo $modules['categoryTitle'] ;?></a></p>
+            	<li><a href="lesson.php?Lid=<?php get_recommended_lesson($modules['categoryID']); ?>"><?php echo $modules['categoryTitle'] ;?></a></li>
             <?php 
-			$i++;
-			} else {
-				
 			}
+			$i++;
 		}
+		?>
+		</ul>
+		<hr>
+		<?php
 	}
 	
 	function get_recommended_lesson($categoryID){
