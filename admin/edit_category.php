@@ -1,16 +1,12 @@
 <?php
 	$isAdmin = true;
-	require_once('../inc/db/connect.php');
-	require_once('../inc/globals/functions.php');
-	require_once('inc/php/functions.php');
-	verify_user();
-	verify_admin();
+	$verify = true;
+	require_once('../inc/header.php');
 	$categoryID = $_GET['cID'];
 	$getCategory = mysql_query('SELECT * FROM categorytable WHERE categoryID = "'.$categoryID.'"');
 	$category = mysql_fetch_assoc($getCategory);
 	$getPreReq = mysql_query('SELECT * FROM lessonprerequisitetable WHERE prereqUnlocksID = "'.$categoryID.'"');
 	$preReq = mysql_fetch_assoc($getPreReq);
-	require_once('../inc/header.php');	
 ?>
 <div class="wrap">
 	<div class="content two-col">

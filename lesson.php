@@ -1,7 +1,6 @@
 <?php
-	require_once('inc/db/connect.php');
-	require_once('inc/globals/functions.php');
-	verify_user();
+	$verify = true;
+	$isAdmin = false;
 	require_once('inc/header.php');	
 	$lessonNum[] = "";
 	$i = 1;

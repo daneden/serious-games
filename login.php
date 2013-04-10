@@ -1,4 +1,6 @@
-<?php require_once('inc/header.php'); ?>
+<?php $verify = false; $isAdmin = false; require_once('inc/header.php');
+?>
+
 <div class="wrap">
 	<div class="home-hero island">
 		<div class="hero-intro">

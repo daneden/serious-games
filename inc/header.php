@@ -1,3 +1,9 @@
+<?php
+	require_once('/db/connect.php');
+	require_once('/globals/functions.php');
+	if ($verify == true){verify_user();}
+	if ($isAdmin == true){verify_admin();require_once('inc/php/functions.php');};
+?>
 <!DOCTYPE html>
 <html lang="en"<?php if (isset($isAdmin) && ($isAdmin === true)): ?> class="admin-area"<?php endif; ?>>
 <head>
@@ -37,7 +43,7 @@
 			</a>
 			<button class="user-nav-toggle" title="Toggle Menu">Toggle Menu</button>
 			<ul class="user-nav-items">
-            	<?php if(isset($isAdmin) && $_SESSION['AdminState'] == 1) { ?><li><a class="isle" href="/dashboard.php">Switch to Front End</a></li><?php } else if (!isset($isAdmin) && $_SESSION['AdminState'] == 1){?>
+            	<?php if($isAdmin == true && $_SESSION['AdminState'] == 1) { ?><li><a class="isle" href="/dashboard.php">Switch to Front End</a></li><?php } else if ($isAdmin == 0 && $_SESSION['AdminState'] == 1){?>
                 <li><a class="isle" href="/admin">Switch to Back End</a></li><?php } ?>
 				<li><a class="isle" href="/edit-profile.php">Edit Profile</a></li>
 				<li><a class="isle" href="/logout.php">Log Out</a></li>
