@@ -170,6 +170,10 @@ a {
 	line-height: 1.1428571429;
 }
 
+.promo {
+	text-align: center;
+}
+
 .helper {
 	font-size: 14px;
 	font-size: .875rem;
