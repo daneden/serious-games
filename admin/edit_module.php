@@ -56,6 +56,32 @@
 			<div class="unit span-grid alignright">
 				<a class="butt alignright" href="add_question.php?Mid=<?php echo $lessonID?>">Add Question</a>
 			</div>
+			<table class="table zebra admin-question-list">
+				<thead>
+					<tr>
+						<th>Reference</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+			<?php
+				$getReferences = mysql_query('SELECT * FROM referencetable WHERE referenceLessonID ="'.$lessonID.'"');
+				while($references = mysql_fetch_assoc($getReferences)){
+			?>
+				<tr>
+					<td>
+						<a href="edit_reference.php?Rid=<?php echo $references['referenceID'];?>"><?php echo $references['referenceTitle'] ?></a>
+					</td>
+					<td>
+						<a class="message-danger" href="inc/php/delete_reference.php?Rid=<?php echo $references['referenceID'];?>">Delete</a>
+					</td>
+				</tr>
+			<?php } ?>
+				</tbody>
+			</table>
+			<div class="unit span-grid alignright">
+				<a class="butt alignright" href="add_reference.php?Mid=<?php echo $lessonID?>">Add Reference</a>
+			</div>
 		</div>
 	</div>
 </div>
