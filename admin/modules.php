@@ -14,6 +14,10 @@
 		<div class="main-col island">
 			<h1>Modules</h1>
 			<p>Welcome to the Modules Page. From here, you can edit existing or remove modules and more.</p>
+			<?php
+				$query = mysql_query("SELECT * FROM lessontable");
+				if(mysql_fetch_assoc($query)) {
+			?>
 				<table class="table zebra admin-module-list">
 					<thead>
 						<tr>
@@ -24,8 +28,8 @@
 					</thead>
 					<tbody>
 						<?php
-						$query=mysql_query("SELECT * FROM lessontable");
-						while ($result = mysql_fetch_assoc($query)) {
+							$query = mysql_query("SELECT * FROM lessontable");
+							while ($result = mysql_fetch_assoc($query)) {
 						?>
 						<tr>
 								<td><a href="edit_module.php?mID=<?php echo $result['lessonID'] ?>"><?php echo $result['lessonTitle'] ?></a></td>
@@ -52,6 +56,10 @@
 					</tbody>            
 				</table>
 				<a class="alignright butt butt-primary" href="create_module.php">Create Module</a>
+			<?php } else { ?>
+				<hr>
+				<p class="intro promo">No modules yet. <a href="create_module.php">Add one now</a>.</p>
+			<?php } ?>
 		</div>
 	</div>
 </div>
