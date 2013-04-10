@@ -4,6 +4,7 @@
 /* This Function verifies the user */
 	function verify_user() {
 		session_start();
+		error_reporting(0);
 		global $userDetails;
 		if(!isset($_SESSION['UserID'])){
 			header ('location:login.php');	
@@ -397,6 +398,10 @@ function decode_array($array) {
 	$arrayResult = array();
 	$arrayResult = json_decode($array);
 	return $arrayResult;
+}
+
+function errors (){
+	
 }
 
 ?>

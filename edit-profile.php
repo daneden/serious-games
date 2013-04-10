@@ -1,9 +1,9 @@
 <?php
-	require_once('inc/db/connect.php');
-	require_once('inc/globals/functions.php');
-	verify_user();
+	$verify = true;
+	$isAdmin = false;	
+	require_once('inc/header.php');
 	decode_array($userDetails['userSpecialisation']);
-require_once('inc/header.php'); ?>
+?>
 <div class="wrap">
 	<div class="content two-col">
 		<div class="main-col island">
