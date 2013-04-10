@@ -5,5 +5,5 @@
 	$referenceLessonID = $_POST['module-id'];
 	$referenceQuery = 'Insert INTO referencetable (referenceID, referenceLessonID, referenceTitle, referenceURL) VALUES ( NULL, "'.$referenceLessonID.'","'.$referenceTitle.'","'.$referenceURL.'")';
 	mysql_query ($referenceQuery);
-	/* header('location:../../modules.php');*/
+	header('location:../../modules.php');
 ?>
