@@ -29,8 +29,10 @@
 				</div>
 			</div>
 			<hr>
-			<h2>Start Learning Today</h2>
-			<p>Why wait any longer? <a href="/signup.php">Sign up</a> for a free account today &ndash; it only takes a minute.</p>
+			<div class="promo">
+				<h2>Start Learning Today</h2>
+				<p>Why wait any longer? <a href="/signup.php">Sign up</a> for a free account today &ndash; it only takes a minute.</p>
+			</div>
 		</div>
 	</div>
 </div>
