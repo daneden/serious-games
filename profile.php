@@ -17,7 +17,7 @@
                 	<img src="<?php get_full_profile_pic($profileID)?>" class="profile-pic">
                 </div>
             	<div class="unit two-of-three">
-                	<h2>I am using Gateway to learn skills in...</h2>
+                	<p><strong>I am using Gateway to learn skills in:</strong></p>
                     <ul>
                     	<?php decode_array($user_details['userSpecialisation']);
 							$i = 0;
@@ -29,8 +29,10 @@
                         
                     </ul>
                 </div>
+                <hr class="unit span-grid">
                 <div class="unit span-grid">
-                	<h2>Here is my progress so far...</h2>
+                	<h2>Progress</h2>
+                	<p>Here you can see my progress through lessons and my average scores.</p>
                     <?php get_completed_modules($profileID) ?>
                 </div>
             </div>
@@ -39,9 +41,9 @@
         <?php if(isset($_SESSION['UserID']) && $_SESSION['UserID'] == $profileID) {?>
         	<h3>This is your profile</h3>
             <p>You can share this profile with people by sending them this URL:</p>
-            <a href="profile.php?ID=<?php echo $profileID?>">http://www.gateway-learning.com/profile.php?ID=<?php echo $profileID?></a>
-            <p>You can also print your profile out and show it as a record of your achievements</p>
-            <a href="javascript:window.print()" class="butt butt-primary">Print</a>
+            <input class="p clipboard" value="http://www.gateway-learning.com/profile.php?ID=<?php echo $profileID?>">
+            <p>You can also print your profile out and show it as a record of your progress on Gateway.</p>
+            <a href="javascript:window.print()" class="butt butt-primary">Print Profile</a>
         <?php } ?>
 		</div>
 	</div>

@@ -19,5 +19,10 @@ $(document).ready(function(){
 		$('.question-answer').removeClass('selected-answer');
 		$(this).parent('.question-answer').addClass('selected-answer');
 	});
+
+	// Select clipboard elements on click
+	$('.clipboard').click(function(){
+		$(this).select();
+	});
 	
 });

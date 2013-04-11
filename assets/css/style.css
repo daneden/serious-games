@@ -533,7 +533,7 @@ table {
 	$FORMS
 \*-----------------------------------*/
 
-.input,
+.input, .clipboard,
 label, .label,
 textarea {
 	display: block;
@@ -543,6 +543,15 @@ textarea {
 	        appearance: none;
 	width: 100%;
 	max-width: 100%;
+}
+
+.clipboard {
+	background-color: #e9ecef;
+	color: #003d52;
+	border: 0;
+	padding: 6px;
+	padding: .375rem;
+	box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);
 }
 
 .input {
@@ -1082,6 +1091,40 @@ html {
 		max-height:100%;
 		margin-bottom:2em;	
 	}
+
+	.profile-challenge {
+		padding-right: 30%
+	}
+
+		.profile-score {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			width: 30%;
+			background-color: #fafafa;
+			background-color: rgba(255,255,255,.5);
+			border-left: 1px solid #ddd;
+		}
+
+			@media screen and (max-width: 540px) {
+				.profile-challenge {
+					padding-right: 24px;
+					padding-right: 1.5rem;
+				}
+
+				.profile-score {
+					position: relative;
+					width: auto;
+					background-color: transparent;
+					border-top: 1px solid #ddd;
+					border-bottom: 1px solid #ddd;
+					padding-bottom: 0;
+					margin-bottom: 24px;
+					margin-bottom: 1.5rem;
+					border-left: 0;
+				}
+			}
 
 /*-----------------------------------*\
 	$LESSON

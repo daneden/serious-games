@@ -445,6 +445,7 @@ function get_specialisation($arrayReplaced){
 
 function get_completed_modules($userID){
 	$getModules = mysql_query('SELECT * FROM categorytable WHERE categoryState = 1');
+	echo '<ul class="challenges">';
 	while($modules = mysql_fetch_assoc($getModules)){
 		$score = 0;
 		$getModuleLessons = mysql_query('SELECT * FROM lessontable WHERE lessonCategoryID = "'.$modules['categoryID'].'"');
@@ -452,7 +453,7 @@ function get_completed_modules($userID){
 		$getUserProgression = mysql_query('SELECT * FROM progressiontable WHERE progressionUserID = "'.$userID.'" AND progressionCategoryID = "'.$modules['categoryID'].'"');
 		$numProgression = mysql_num_rows($getUserProgression);
 		if($numLessons == $numProgression){ ?>
-        	<div>
+        	<li class="island profile-challenge">
             	<h2><?php echo $modules['categoryTitle'] ?></h2>
                 <?php
                 	while($getScore = mysql_fetch_assoc($getUserProgression)){
@@ -460,12 +461,13 @@ function get_completed_modules($userID){
 					}
 					$score  = $score / $numProgression;
 				?>
-                <h2>Score <?php echo $score ?>%</h2>
-                <p><?php echo $modules['categoryDescription']?></p>
-            </div>
+                <div class="profile-score promo island"><em class="standalone">Average Score</em> <strong class="alpha"><?php echo $score ?>%</strong></div>
+                <p class="standalone"><?php echo $modules['categoryDescription']?></p>
+            </li>
         <?php
 		}
 	}
+	echo '</ul>';
 }
 
 	function get_full_profile_pic($userID) {
