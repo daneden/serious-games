@@ -434,7 +434,7 @@ function errors (){
 	
 }
 
-function spec_array($arrayReplaced){
+function get_specialisation($arrayReplaced){
 	$arrayReplaced = str_replace('accounting', 'Accounting & Finance', $arrayReplaced);
 	$arrayReplaced = str_replace('health', 'Health & Beauty', $arrayReplaced);
 	$arrayReplaced = str_replace('human', 'Human Resources', $arrayReplaced);
