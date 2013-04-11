@@ -21,6 +21,7 @@
                  <input type="text" name="reference-url" value="<?php echo $reference['referenceURL'];?>" class="input"/>
                 <input type="submit" class="butt butt-primary alignright" value="Submit"/>
                 <input type="hidden" name="reference-id" value="<?php echo $reference['referenceID'];?>" />
+                <input type="hidden" name="module-id" value="<?php echo $reference['moduleID'];?>" />
             </form>
 		</div>
 	</div>
