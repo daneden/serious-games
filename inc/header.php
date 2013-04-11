@@ -26,14 +26,14 @@
 <body>
 <header class="site-header">
 	<div class="wrap isle cf">
-		<a href="<?php if(isset($_SESSION['UserID']) && !isset($isAdmin)){?>/dashboard.php<?php } else if(isset($_SESSION['UserID']) && isset($isAdmin)){?>/admin<?php } else {?>/<?php } ?>" title="Gateway Home" class="site-title">
+		<a href="<?php if(is_logged_in() && $isAdmin == false){?>/dashboard.php<?php } else if(is_logged_in() && isset($isAdmin)){?>/admin<?php } else {?>/<?php } ?>" title="Gateway Home" class="site-title">
 			<?php if (isset($isAdmin) && ($isAdmin === true)) { ?>
 				<img width="165" height="34" src="/assets/images/admin-site-logo@2x.png" alt="Gateway logo">
 			<?php } else { ?>
 				<img width="132" height="34" src="/assets/images/site-logo@2x.png" alt="Gateway logo">
 			<?php } ?>
 		</a>
-		<?php if(isset($_SESSION['UserID'])){ ?>
+		<?php if(is_logged_in()){ get_user_details(); ?>
 		<nav class="isle user-nav">
 			<a class="user-link" href="/dashboard.php">
 				<span class="user-name"><?php get_user_fname(); ?> <?php get_user_sname(); ?></span>

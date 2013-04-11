@@ -16,16 +16,20 @@
 	function verify_user() {
 		session_start();
 		error_reporting(0);
-		global $userDetails;
 		if(!isset($_SESSION['UserID'])){
 			header ('location:login.php');
 		} else {
-			$userID = $_SESSION['UserID'];
-			$getUser = mysql_query ("SELECT * FROM usertable WHERE userID = '".$userID."'");
-			$userDetails = mysql_fetch_assoc($getUser);
+			get_user_details();
 			return true;
 		}
 	}
+	
+		function get_user_details() {
+			global $userDetails;
+			$userID = $_SESSION['UserID'];
+			$getUser = mysql_query ("SELECT * FROM usertable WHERE userID = '".$userID."'");
+			$userDetails = mysql_fetch_assoc($getUser);
+		}
 		/* This function verifies that the user is an admin */
 		function verify_admin() {
 			global $userDetails;
