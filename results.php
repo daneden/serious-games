@@ -62,15 +62,16 @@
             </p>
             <hr>
             <p>Or, you can <a href="/lesson.php?Lid=<?php echo $lessonID; ?>">retake this lesson</a><?php if($_SESSION['score']!='100%') echo " and try to beat your previous score"; ?>.</p>
-            <h2>Further Reading</h2>
-			<ul>
 			<?php
-				$getReferences = mysql_query('SELECT * FROM referencetable WHERE referenceLessonID ="'.$lessonID.'"');
-				while($references = mysql_fetch_assoc($getReferences)){
-			?>
-				<li><a href="<?php echo $references['referenceURL'];?>"><?php echo $references['referenceTitle'] ?></a></li>
-			<?php } ?>
-			</ul>
+            	$getReferences = mysql_query('SELECT * FROM referencetable WHERE referenceLessonID ="'.$lessonID.'"');
+            	if(mysql_num_rows($getReferences) > 0) {?>
+            		<h2>Further Reading</h2>
+            		<ul>
+            		<?php while($references = mysql_fetch_assoc($getReferences)){ ?>
+            			<li><a href="<?php echo $references['referenceURL'];?>"><?php echo $references['referenceTitle'] ?></a></li>
+            		<?php } ?>
+            		</ul>
+                <?php } ?>    
         </div>
 		<div class="sidebar secondary-col island">
 			<?php include('inc/profile.php') ?>
