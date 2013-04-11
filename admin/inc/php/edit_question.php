@@ -3,6 +3,9 @@
 	  if ($_FILES["image"]["error"] > 0)
 		{
 		echo "Return Code: " . $_FILES["image"]["error"] . "<br>";
+		$getImageQuery = mysql_query('SELECT * FROM questiontable WHERE questionID = "'.$_POST['question-id'].'"');
+		$getImage = mysql_fetch_assoc($getImageQuery);
+		$imageName = $getImage['questionImg'];
 		}
 	  else
 		{
