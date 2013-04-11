@@ -439,4 +439,39 @@ function spec_array($arrayReplaced){
 	return $arrayReplaced;
 }
 
+function get_completed_modules($userID){
+	$getModules = mysql_query('SELECT * FROM categorytable WHERE categoryState = 1');
+	while($modules = mysql_fetch_assoc($getModules)){
+		$score = 0;
+		$getModuleLessons = mysql_query('SELECT * FROM lessontable WHERE lessonCategoryID = "'.$modules['categoryID'].'"');
+		$numLessons = mysql_num_rows($getModuleLessons);
+		$getUserProgression = mysql_query('SELECT * FROM progressiontable WHERE progressionUserID = "'.$userID.'" AND progressionCategoryID = "'.$modules['categoryID'].'"');
+		$numProgression = mysql_num_rows($getUserProgression);
+		if($numLessons == $numProgression){ ?>
+        	<div>
+            	<h2><?php echo $modules['categoryTitle'] ?></h2>
+                <?php
+                	while($getScore = mysql_fetch_assoc($getUserProgression)){
+						$score = $score + $getScore['progressionScore'];
+					}
+					$score  = $score / $numProgression;
+				?>
+                <h2>Score <?php echo $score ?>%</h2>
+                <p><?php echo $modules['categoryDescription']?></p>
+            </div>
+        <?php
+		}
+	}
+}
+
+	function get_full_profile_pic($userID) {
+		$getUser = mysql_query('SELECT * FROM usertable WHERE userID = "'.$userID.'"');
+		$userDetails = mysql_fetch_assoc($getUser);
+		if($userDetails['userProfileImg']){
+			echo '/assets/profile-pics/'.$userDetails['userProfileImg'];
+		} else {
+			echo '/assets/images/default-avatar.jpg';	
+		}
+	}
+
 ?>
