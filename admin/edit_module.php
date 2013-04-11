@@ -22,6 +22,11 @@
 					<?php fetch_categories(); ?>
 				</select>
 				<input type="hidden" value="<?php echo $lessonID ?>" name="module-id">
+                <label for="module-state">Module State</label>
+                <select class="input" name="module-state">
+                	<option <?php if($lesson['lessonState'] == 0){?>selected="selected"<?php } ?> value="0">Draft</option>
+                    <option <?php if($lesson['lessonState'] == 1){?>selected="selected"<?php } ?> value="1">Published</option>
+                </select>
 				<input type="submit" value="Save" class="butt butt-primary alignright" name="submit" id="submit">
 			</form>
 			<hr>
