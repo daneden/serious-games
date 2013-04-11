@@ -30,7 +30,7 @@
                 </div>
                 <div class="unit span-grid">
                 	<h2>Here is my progress so far...</h2>
-                    <?php get_completed_modules ?>
+                    <?php get_completed_modules() ?>
                 </div>
             </div>
 		</div>

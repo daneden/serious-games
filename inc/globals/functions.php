@@ -80,7 +80,7 @@
 						<p class="desc"><?php echo $category['categoryDescription']?></p>
 						<ol class="sub-challenges">
 							<?php 
-								$getLessons = mysql_query('SELECT * FROM lessontable WHERE lessonCategoryID = "'.$category['categoryID'].'"');
+								$getLessons = mysql_query('SELECT * FROM lessontable WHERE lessonCategoryID = "'.$category['categoryID'].'" AND lessonState = 1');
 								while ($lesson = mysql_fetch_assoc($getLessons)) {
 							?>
 							<li <?php lesson_completed($lesson['lessonID']) ?> ><a href="lesson.php?Lid=<?php echo $lesson['lessonID'] ?>"><?php echo $lesson['lessonTitle'] ?></a></li>
@@ -117,11 +117,11 @@
 		
 			function check_completed($categoryID){
 				global $numCompleted;
-				$getNumLessons = mysql_query('SELECT * FROM lessontable WHERE lessonCategoryID ="'.$categoryID.'"');
+				$getNumLessons = mysql_query('SELECT * FROM lessontable WHERE lessonCategoryID ="'.$categoryID.'" AND lessonState = 1');
 				$numLessons = mysql_num_rows($getNumLessons);
 				$getNumProgressions = mysql_query('SELECT * FROM progressiontable WHERE progressionCategoryID = "'.$categoryID.'" AND progressionUserID = "'.$_SESSION['UserID'].'"');
 				$numProgressRows = mysql_num_rows($getNumProgressions);
-				if ($numProgressRows == $numLessons) {
+				if ($numProgressRows >= $numLessons) {
 					echo 'completed';
 					$numCompleted = $numCompleted + 1;
 					$_SESSION['numCompleted'] = $numCompleted;
@@ -437,6 +437,10 @@ function spec_array($arrayReplaced){
 	$arrayReplaced = str_replace('science', 'Science & Technology', $arrayReplaced);
 	$arrayReplaced = str_replace('social', 'Social Services', $arrayReplaced);
 	return $arrayReplaced;
+}
+
+function get_completed_modules($userID){
+	$modules = mysql_query('SELECT * FROM categorytable');
 }
 
 ?>
