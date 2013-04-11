@@ -10,7 +10,7 @@
 	<div class="content two-col">
 		<div class="main-col island">
 			<p>Please enter your login details into the boxes below.</p>
-            <form action="inc/globals/login.php" method="post">
+            <form action="/inc/globals/login.php" method="post">
             	<div class="grid">
                     <div class="unit one-of-two">
                     	<?php errors() ?>

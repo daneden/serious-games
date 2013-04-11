@@ -30,6 +30,7 @@
 			}
 		}
 	} else {
-		header ('location:/login.php');	
+		header('HTTP/1.1 403 Forbidden');
+		include $_SERVER['DOCUMENT_ROOT'].'/403.php';
 	}
 ?>
