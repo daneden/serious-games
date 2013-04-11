@@ -289,7 +289,8 @@ Profile Functions
 			$getModulesQuery = $getModulesQuery."categoryState = '1') ORDER BY RAND()";
 		}
 		$getModules = mysql_query($getModulesQuery);
-		$i = 0;
+		$recommendedFound = false;
+		$i = 0;	
 		?>
 		<h4 class="standalone">Recommended for you:</h4>
 		<ul class="recommended">
@@ -299,11 +300,16 @@ Profile Functions
 			?>
             	<li><a href="lesson.php?Lid=<?php get_recommended_lesson($modules['categoryID']); ?>"><?php echo $modules['categoryTitle'] ;?></a></li>
             <?php 
+				$recommendedFound = true;
 			}
 			$i++;
 		}
 		?>
 		</ul>
+        <?php if($recommendedFound == false){ ?>
+		<p>There is nothing recommended for you at this time.</p>
+		<?php }?>
+		<p><a href="/dashboard.php">View all available lessons</a></p>
 		<hr>
 		<?php
 	}
