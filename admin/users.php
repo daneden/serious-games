@@ -29,7 +29,8 @@
 						<td><?php echo $result['userID'] ?></td>
 						<td><?php echo $result['userFName'] ?> <?php echo $result['userSName']?></td>
 						<td><?php echo $result['userEmail'] ?></td>
-						<td><a class="message-danger" href="delete_module.php?id=">Delete</a></td>
+                        <td><?php if($result['userIsAdmin'] == 0){?><a href="inc/php/promote_user.php?id=<?php echo $result['userID'] ?>">Make Admin</a><?php } else {?> <a href="inc/php/demote_user.php?id=<?php echo $result['userID'] ?>">Remove Admin</a><?php } ?></td>
+						<td><a class="message-danger" href="inc/php/delete_user.php?id=<?php echo $result['userID'] ?>">Delete</a></td>
 					</tr>
 					<?php } ?>
 				</tbody>
