@@ -3,8 +3,7 @@
 	$isAdmin = false;
 	require_once('inc/header.php');
 	$profileID = $_GET['ID'];
-	echo $profileID;
-	$get_user_query = mysql_query("SELECT * FROM userTable WHERE userID = '$profileID'");
+	$get_user_query = mysql_query("SELECT * FROM usertable WHERE userID = '$profileID'");
 	$user_details = mysql_fetch_assoc($get_user_query);
 ?>
 <div class="wrap">
