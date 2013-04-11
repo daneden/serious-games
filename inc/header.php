@@ -11,8 +11,8 @@
 	<title>Gateway</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="google-translate-customization" content="1ea44196f56d88fe-e92cbb062515f7b8-g5809ad459861694e-14"></meta>
-	<link rel="stylesheet" href="/assets/css/style.css">
-	<link rel="stylesheet" href="/assets/css/prism.css">
+	<link rel="stylesheet" href="/assets/css/style.min.css">
+	<link rel="stylesheet" href="/assets/css/prism.min.css">
 	<link rel="shortcut icon" href="/assets/images/favicon.png">
 	<!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
