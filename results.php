@@ -21,6 +21,10 @@
 	$nextLessonID = $lessonNum[($lessonNumber + 1)];
 	}
 	$i = 1;
+	if(!isset($_SERVER['HTTP_REFERER'])) {
+    	header("Location:/dashboard.php");
+	}
+
 ?>
 <div class="wrap">
 	<div class="content two-col">
