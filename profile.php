@@ -20,10 +20,9 @@
                 	<h2>I am using Gateway to learn skills in...</h2>
                     <ul>
                     	<?php decode_array($user_details['userSpecialisation']);
-							spec_array($arrayResult);
 							$i = 0;
 							while ($i < count($arrayResult)){
-								?><li><?php echo ucwords($arrayResult[$i])?> </li> <?php
+								?><li><?php echo ucwords(get_specialisation($arrayResult[$i]))?> </li> <?php
 								$i++;
 							}
 						?>
