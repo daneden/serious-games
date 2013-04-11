@@ -1041,7 +1041,8 @@ html {
 
 		.unavailable .modal {
 			text-align: center;
-			max-width: 70%;
+			max-width: 448px;
+			margin: 0 24px;
 			background-color: #e7f9ff;
 			background-color: rgba(231,249,255,.85);
 			color: #00465f;
