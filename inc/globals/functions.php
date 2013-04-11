@@ -286,22 +286,24 @@ Profile Functions
 		}
 		$getModules = mysql_query($getModulesQuery);
 		$i = 0;
+		if(mysql_num_rows($getModules)!=0) {
 		?>
-		<h4 class="standalone">Recommended for you:</h4>
-		<ul class="recommended">
-		<?php
-		while ($i < 3 && $modules = mysql_fetch_assoc($getModules)) {
-			if (!in_array($modules['categoryID'],$_SESSION['CompletedModules'], $strict = true) && !in_array($modules['categoryID'],$_SESSION['LockedModules'], $strict = true)){
-			?>
-            	<li><a href="lesson.php?Lid=<?php get_recommended_lesson($modules['categoryID']); ?>"><?php echo $modules['categoryTitle'] ;?></a></li>
-            <?php 
+			<h4 class="standalone">Recommended for you:</h4>
+			<ul class="recommended">
+			<?php
+			while ($i < 3 && $modules = mysql_fetch_assoc($getModules)) {
+				if (!in_array($modules['categoryID'],$_SESSION['CompletedModules'], $strict = true) && !in_array($modules['categoryID'],$_SESSION['LockedModules'], $strict = true)){
+				?>
+	            	<li><a href="lesson.php?Lid=<?php get_recommended_lesson($modules['categoryID']); ?>"><?php echo $modules['categoryTitle'] ;?></a></li>
+	            <?php 
+				}
+				$i++;
 			}
-			$i++;
-		}
-		?>
-		</ul>
-		<hr>
+			?>
+			</ul>
+			<hr>
 		<?php
+		}
 	}
 	
 	function get_recommended_lesson($categoryID){
