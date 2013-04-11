@@ -27,7 +27,7 @@
 					?>
 					<tr>
 						<td><?php echo $result['userID'] ?></td>
-						<td><?php echo $result['userFName'] ?> <?php echo $result['userSName']?></td>
+						<td><a href="/profile.php?ID=<?php echo $result['userID'] ?>" title="View <?php echo $result['userFName'] ?>'s profile"><?php echo $result['userFName'] ?> <?php echo $result['userSName']?></a></td>
 						<td><?php echo $result['userEmail'] ?></td>
                         <td><?php if($result['userIsAdmin'] == 0){?><a href="inc/php/promote_user.php?id=<?php echo $result['userID'] ?>">Make Admin</a><?php } else {?> <a href="inc/php/demote_user.php?id=<?php echo $result['userID'] ?>">Remove Admin</a><?php } ?></td>
 						<td><a class="message-danger" href="inc/php/delete_user.php?id=<?php echo $result['userID'] ?>">Delete</a></td>
