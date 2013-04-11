@@ -1096,6 +1096,11 @@ html {
 		padding-right: 30%
 	}
 
+		.profile-challenge p {
+			margin-right: 24px;
+			margin-right: 1.5rem;
+		}
+
 		.profile-score {
 			position: absolute;
 			top: 0;
@@ -1112,6 +1117,10 @@ html {
 					padding-right: 24px;
 					padding-right: 1.5rem;
 				}
+
+					.profile-challenge p {
+						margin-right: 0;
+					}
 
 				.profile-score {
 					position: relative;
