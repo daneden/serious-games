@@ -10,6 +10,7 @@
 			<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 	</div>
 </footer>
+<script src="/assets/js/modernizr.min.js"></script>
 <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 <script type="text/javascript">
 if (typeof jQuery == 'undefined') {

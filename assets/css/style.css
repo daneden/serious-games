@@ -1049,6 +1049,8 @@ html {
 			        transition: .3s;
 		}
 
+			/* Touch friendly and hover state */
+			.no-touch .unavailable .modal,
 			.unavailable:hover .modal {
 				opacity: 1;
 				-webkit-transform: none;
