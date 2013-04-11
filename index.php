@@ -34,7 +34,8 @@
 			<hr>
 			<div class="promo">
 				<h2>Start Learning Today</h2>
-				<p>Why wait any longer? <a href="/signup.php">Sign up</a> for a free account today &ndash; it only takes a minute.</p>
+				<p>Why wait any longer? Sign up for a free account today &ndash; it only takes a minute.</p>
+				<p><a class="butt butt-big butt-primary" href="/signup.php">Sign Up</a> <a class="butt butt-big" href="/login.php">Log In</a></p>
 			</div>
 		</div>
 	</div>
