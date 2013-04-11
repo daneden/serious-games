@@ -1158,6 +1158,7 @@ html {
 			.selected-answer, .selected-answer:hover {
 				background-color: #e7f9ff;
 				background-color: rgba(231,249,255,.85);
+				color: #003d52;
 			}
 
 			.qa-in {
