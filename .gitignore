@@ -1,5 +1,5 @@
 # We want different server settings, so let’s make that happen
-.htaccess
+/.htaccess
 
 # Also different local db settings
 inc/db/connect-local.php

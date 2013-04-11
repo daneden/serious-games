@@ -32,6 +32,7 @@
 		$updateQuery = mysql_query("UPDATE usertable SET userEmail = '$userEmail', userFName = '$userFName', userSName = '$userSName', userLanguage = '$userLanguage', userSpecialisation = '$userSpecialisation', userProfileImg = '$imageName' WHERE userID = '$userID'");
 		header('location:/edit-profile.php?errors='.$errors);
 	} else {
-		header ('location:/login.php');	
+		header('HTTP/1.1 403 Forbidden');
+		include $_SERVER['DOCUMENT_ROOT'].'/403.php';
 	}
 ?>

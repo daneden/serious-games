@@ -17,7 +17,7 @@
 			$_SESSION['UserID'] = $UserDetails['userID'];
 			if($UserDetails['userIsAdmin'] == 1){
 				$_SESSION['AdminState'] = 1;
-				header("location:../../admin/index.php");
+				header("location:../../admin/");
 			} else {
 				$_SESSION['AdminState'] = 0;
 				header("location:../../dashboard.php");
@@ -27,6 +27,7 @@
 		}
 		ob_end_flush();
 	} else {
-		header ('location:/login.php');	
+		header('HTTP/1.1 403 Forbidden');
+		include $_SERVER['DOCUMENT_ROOT'].'/403.php';
 	}
 ?>

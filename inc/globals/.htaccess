@@ -1,0 +1,5 @@
+allow from all
+
+<Files functions.php>
+deny from all
+</Files>

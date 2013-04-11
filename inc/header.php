@@ -43,14 +43,17 @@
 			</a>
 			<button class="user-nav-toggle" title="Toggle Menu">Toggle Menu</button>
 			<ul class="user-nav-items">
-            	<?php if($isAdmin == true && $_SESSION['AdminState'] == 1) { ?><li><a class="isle" href="/dashboard.php">Switch to Front End</a></li><?php } else if ($isAdmin == 0 && $_SESSION['AdminState'] == 1){?>
-                <li><a class="isle" href="/admin">Switch to Back End</a></li><?php } ?>
+        	<?php if($isAdmin == true && $_SESSION['AdminState'] == 1) { ?>
+            	<li><a class="isle" href="/dashboard.php">Switch to Front End</a></li>
+        	<?php } else if ($isAdmin == 0 && $_SESSION['AdminState'] == 1){?>
+                <li><a class="isle" href="/admin/">Switch to Back End</a></li>
+            <?php } ?>
 				<li><a class="isle" href="/edit-profile.php">Edit Profile</a></li>
 				<li><a class="isle" href="/logout.php">Log Out</a></li>
 			</ul>
 		</nav>
 		<?php } else { ?>
-		<form action="inc/globals/login.php" class="alignright header-login" method="post">
+		<form action="/inc/globals/login.php" class="alignright header-login" method="post">
 			<label class="visually-hidden" for="email-address">Email Address</label>
 			<input class="input in" type="text" placeholder="Email Address" name="email-address" value="">
 			<label class="visually-hidden" for="password">Password</label>
