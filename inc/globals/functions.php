@@ -311,7 +311,7 @@ Profile Functions
         <?php if($recommendedFound == false){ ?>
 		<p>There is nothing recommended for you at this time.</p>
 		<?php }?>
-		<p><a href="/dashboard.php">View all available lessons</a></p>
+		<p><a class="butt" href="/dashboard.php">View all available lessons</a></p>
 		<hr>
 		<?php
 	}
