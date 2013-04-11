@@ -1050,7 +1050,7 @@ html {
 		}
 
 			/* Touch friendly and hover state */
-			.no-touch .unavailable .modal,
+			.touch .unavailable .modal,
 			.unavailable:hover .modal {
 				opacity: 1;
 				-webkit-transform: none;
