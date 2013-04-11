@@ -1137,7 +1137,8 @@ html {
 
 	.question-image {
 		max-width:100%;
-		margin: 0 auto;
+		margin: 24px auto;
+		margin: 1.5rem auto;
 	}
 
 	.question-answer-group {
