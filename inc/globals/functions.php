@@ -54,6 +54,13 @@
 			echo $userDetails['userSName'];	
 		}
 		
+		/* This function prints the user's ID*/
+		function get_user_ID() {
+			global $userDetails;
+			echo $userDetails['userID'];	
+		}
+		
+		/* This function prints the user's profile image */
 		function get_profile_pic() {
 			global $userDetails;
 			if($userDetails['userProfileImg']){
@@ -91,7 +98,7 @@
 					<li class="unavailable island">
 						<div class="modal island">
 							<h3>Challenges Unavailable</h3>
-							<p>Unlock these challenges by scoring more than <strong><?php echo $prequisiteDetails['prereqScore'] ?></strong> in <em class="challenge-title">&ldquo;<?php echo $prerequisite['categoryTitle'] ?>.&rdquo;</em></p>
+							<p>Unlock these challenges by scoring <strong><?php echo $prequisiteDetails['prereqScore'] ?> %</strong> in <em class="challenge-title">&ldquo;<?php echo $prerequisite['categoryTitle'] ?>.&rdquo;</em></p>
 						</div>
 						<h2 class="standalone"><?php echo $category['categoryTitle'];?></h2>
 						<p class="desc"><?php echo $category['categoryDescription']?></p>
