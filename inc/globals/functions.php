@@ -80,8 +80,9 @@
 			while($category = mysql_fetch_assoc($getCategories)){
 				if(check_available($category['categoryID'])) {?>
 					<li class="island <?php check_completed($category['categoryID']) ?>">
-						<h2 class="standalone"><?php echo $category['categoryTitle'];?></h2>
+						<h2><?php echo $category['categoryTitle'];?></h2>
 						<p class="desc"><?php echo $category['categoryDescription']?></p>
+						<hr>
 						<ol class="sub-challenges">
 							<?php 
 								$getLessons = mysql_query('SELECT * FROM lessontable WHERE lessonCategoryID = "'.$category['categoryID'].'"');
