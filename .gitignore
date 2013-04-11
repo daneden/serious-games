@@ -1,5 +1,17 @@
-.htaccess
+# We want different server settings, so let’s make that happen
+/.htaccess
+
+# Also different local db settings
 inc/db/connect-local.php
+
+# Ignore junk files
 .DS_Store
+
+# Ignore uploaded images
 assets/lesson-images/*
 assets/profile-pics/*
+
+# Ignore nodejs stuff
+node_modules/*
+gruntfile.js
+package.json

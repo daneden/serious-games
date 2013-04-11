@@ -1,17 +1,29 @@
 <?php
 /* THIS IS THE GLOBAL FUNCTIONS FILE */
 
+/* True/false check if a session is started */
+	function is_logged_in() {
+		session_start();
+		error_reporting(0);
+		if(!isset($_SESSION['UserID'])){
+			return false;
+		} else {
+			return true;
+		}
+	}
+
 /* This Function verifies the user */
 	function verify_user() {
 		session_start();
 		error_reporting(0);
 		global $userDetails;
 		if(!isset($_SESSION['UserID'])){
-			header ('location:login.php');	
+			header ('location:login.php');
 		} else {
-		$userID = $_SESSION['UserID'];
-		$getUser = mysql_query ("SELECT * FROM usertable WHERE userID = '".$userID."'");
-		$userDetails = mysql_fetch_assoc($getUser);	
+			$userID = $_SESSION['UserID'];
+			$getUser = mysql_query ("SELECT * FROM usertable WHERE userID = '".$userID."'");
+			$userDetails = mysql_fetch_assoc($getUser);
+			return true;
 		}
 	}
 		/* This function verifies that the user is an admin */

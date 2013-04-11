@@ -1,4 +1,7 @@
 <?php $verify = false; $isAdmin = false; require_once('inc/header.php'); ?>
+<?php if(is_logged_in()) {
+	header("Location:/dashboard.php");
+} else { ?>
 <div class="wrap">
 	<div class="home-hero island">
 		<div class="hero-intro">
@@ -36,4 +39,5 @@
 		</div>
 	</div>
 </div>
+<?php } ?>
 <?php require_once('inc/footer.php'); ?>
