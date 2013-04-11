@@ -105,8 +105,9 @@
 							<h3>Challenges Unavailable</h3>
 							<p>Unlock these challenges by scoring <strong><?php echo $prequisiteDetails['prereqScore'] ?> %</strong> in <em class="challenge-title">&ldquo;<?php echo $prerequisite['categoryTitle'] ?>.&rdquo;</em></p>
 						</div>
-						<h2 class="standalone"><?php echo $category['categoryTitle'];?></h2>
+						<h2><?php echo $category['categoryTitle'];?></h2>
 						<p class="desc"><?php echo $category['categoryDescription']?></p>
+						<hr>
 						<ol class="sub-challenges">
 							<?php 
 								$getLessons = mysql_query('SELECT * FROM lessontable WHERE lessonCategoryID = "'.$category['categoryID'].'"');
