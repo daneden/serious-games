@@ -1030,6 +1030,15 @@ html {
 			color: inherit;
 		}
 
+		/* Overlay unavailable lessons so they can’t be clicked */
+		.challenges .unavailable:after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+
 		.unavailable .modal {
 			text-align: center;
 			max-width: 70%;
