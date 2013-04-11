@@ -1030,9 +1030,19 @@ html {
 			color: inherit;
 		}
 
+		/* Overlay unavailable lessons so they can’t be clicked */
+		.challenges .unavailable:after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+
 		.unavailable .modal {
 			text-align: center;
-			max-width: 70%;
+			max-width: 448px;
+			margin: 0 24px;
 			background-color: #e7f9ff;
 			background-color: rgba(231,249,255,.85);
 			color: #00465f;
@@ -1049,6 +1059,8 @@ html {
 			        transition: .3s;
 		}
 
+			/* Touch friendly and hover state */
+			.touch .unavailable .modal,
 			.unavailable:hover .modal {
 				opacity: 1;
 				-webkit-transform: none;
@@ -1146,6 +1158,7 @@ html {
 			.selected-answer, .selected-answer:hover {
 				background-color: #e7f9ff;
 				background-color: rgba(231,249,255,.85);
+				color: #003d52;
 			}
 
 			.qa-in {
