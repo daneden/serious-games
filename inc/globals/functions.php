@@ -430,4 +430,13 @@ function errors (){
 	
 }
 
+function spec_array($arrayReplaced){
+	$arrayReplaced = str_replace('accounting', 'Accounting & Finance', $arrayReplaced);
+	$arrayReplaced = str_replace('health', 'Health & Beauty', $arrayReplaced);
+	$arrayReplaced = str_replace('human', 'Human Resources', $arrayReplaced);
+	$arrayReplaced = str_replace('science', 'Science & Technology', $arrayReplaced);
+	$arrayReplaced = str_replace('social', 'Social Services', $arrayReplaced);
+	return $arrayReplaced;
+}
+
 ?>

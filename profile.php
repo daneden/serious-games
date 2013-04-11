@@ -14,6 +14,24 @@
             	<div class="unit one-of-three">
                 	<img src="assets/profile-pics/<?php echo $user_details['userProfileImg'] ?>" class="profile-pic">
                 </div>
+            	<div class="unit two-of-three">
+                	<h2>I am using Gateway to learn skills in...</h2>
+                    <ul>
+                    	<?php decode_array($user_details['userSpecialisation']);
+							spec_array($arrayResult);
+							$i = 0;
+							while ($i < count($arrayResult)){
+								?><li><?php echo ucwords($arrayResult[$i])?> </li> <?php
+								$i++;
+							}
+						?>
+                        
+                    </ul>
+                </div>
+                <div class="unit span-grid">
+                	<h2>Here is my progress so far...</h2>
+                    <?php get_completed_modules ?>
+                </div>
             </div>
 		</div>
 		<div class="sidebar secondary-col island">
