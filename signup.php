@@ -4,6 +4,7 @@
 		<div class="main-col island">
 			<h1>Sign Up</h1>
 			<p>Hi there! You&rsquo;re only a few minutes away from learning the vocational skills you need to get a job. Complete the form below and we&rsquo;ll do the rest.</p>
+            <?php errors() ?>
 			<form class="signup-form island" action="/inc/globals/signup.php" method="post">
 				<div class="grid">
 					<div class="unit one-of-two">
@@ -38,7 +39,7 @@
                             <option value="bengali">Bengali</option>
                             <option value="creole">Creole Malay</option>
                             <option value="dari">Dari</option>
-                            <option value="english">English</option>
+                            <option selected="selected" value="english">English</option>
                             <option value="farsi">Farsi</option>
                             <option value="french">French</option>
                             <option value="georgian">Georgian</option>
