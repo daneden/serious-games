@@ -58,7 +58,7 @@
 					</li>
                 <?php $i++; } ?>
             </ul>
-            <h2>Your final score is: <?php echo $_SESSION['score']; ?></h2>
+            <p>Your final score is: <strong><?php echo $_SESSION['score']; ?></strong></p>
 			<?php $_SESSION['CurrentQuestion'] = 1;	$_SESSION['Answers'] = array(); ?>            
 			<p class="cf">
             	<a class="butt alignleft" href="dashboard.php">Return to Dashboard</a>
