@@ -8,7 +8,7 @@
 		$getImageQuery = mysql_query('SELECT * FROM usertable WHERE userID = "'.$_POST['userID'].'"');
 		$getImage = mysql_fetch_assoc($getImageQuery);
 		$imageName = $getImage['userProfileImg'];
-		$errors= $_FILES["profile-pic"]["error"];
+		if ($_FILES["profile-pic"]["error"] != 4){ $errors= $_FILES["profile-pic"]["error"];}
 		}
 	  else
 		{

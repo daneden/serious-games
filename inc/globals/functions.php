@@ -439,7 +439,17 @@ function decode_array($array) {
 }
 
 function errors (){
-	
+	if(isset($_GET['errors'])){ ?>
+    <p class="message-error">
+		<?php if ($_GET['errors'] == 5){echo "Passwords don't match, please try again.";} ?>
+    	<?php if ($_GET['errors'] == 1){echo "Please enter your first name";} ?>
+        <?php if ($_GET['errors'] == 2){echo "Please enter your last name";} ?>
+        <?php if ($_GET['errors'] == 3){echo "Please enter a valid email address";} ?>
+        <?php if ($_GET['errors'] == 4){echo "Please enter a password";} ?>
+        <?php if ($_GET['errors'] == 7){echo "Please enter a valid password (at least 8 characters long and containing one digit (0-9))";} ?>
+        <?php if ($_GET['errors'] == 6){echo "Email Address already registered";} ?>
+    </p><?php
+	}
 }
 
 function get_specialisation($arrayReplaced){
